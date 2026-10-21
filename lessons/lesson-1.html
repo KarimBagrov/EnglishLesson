@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#3b62e0">
+  <title>Урок 1 — Основы английского с нуля | English for Developers</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body data-lesson-id="lesson-1">
+
+<button id="menu-toggle" class="menu-toggle" aria-label="Открыть меню">☰</button>
+<div id="overlay" class="overlay"></div>
+
+<aside id="sidebar" class="sidebar">
+  <div class="sidebar__header">
+    <button id="menu-toggle-inside" class="menu-toggle-inside" aria-label="Закрыть меню">×</button>
+    <div class="sidebar__title-wrap">
+      <h3>Урок 1</h3>
+      <a href="../index.html" class="sidebar__home-link">← На главную</a>
+    </div>
+  </div>
+  <div class="sidebar__nav">
+    <ol>
+      <li><a href="#intro">Как устроен английский</a></li>
+      <li><a href="#parts">Части речи (с нуля)</a></li>
+      <li><a href="#alphabet">Алфавит и звуки</a></li>
+      <li><a href="#reading">Правила чтения</a></li>
+      <li><a href="#wordorder">Порядок слов</a></li>
+      <li><a href="#tobe">Глагол to be</a></li>
+      <li><a href="#articles">Артикли a / an / the</a></li>
+      <li><a href="#vocab">Словарь: 30 слов</a></li>
+      <li><a href="#phrases">🗣️ Разговорные фразы</a></li>
+      <li><a href="#docs">📖 Чтение документации</a></li>
+      <li><a href="#mistakes">Типичные ошибки</a></li>
+      <li><a href="#task">Итоговое задание</a></li>
+    </ol>
+  </div>
+</aside>
+
+<div class="container">
+
+  <header>
+    <a href="../index.html" class="back-link">← Вернуться к курсу</a>
+    <h1>Урок 1 · Основы английского с нуля</h1>
+    <p>Как устроен язык, части речи, звуки, правила чтения, порядок слов, to be, артикли</p>
+    <div class="badge">A1 · ≈ 120 МИН</div>
+  </header>
+
+  <!-- ============ ВВЕДЕНИЕ ============ -->
+  <section id="intro">
+    <h2><span class="lesson-num">1</span> Как устроен английский: с нуля</h2>
+
+    <p>Прежде чем учить слова и фразы, нужно понять <strong>логику языка</strong>. Английский устроен иначе, чем русский. Если понять это сразу — дальше будет намного легче.</p>
+
+    <h3>1.1. Главное отличие: строгий порядок слов</h3>
+    <p>В русском языке слова можно переставлять, потому что у нас есть <strong>падежи</strong> (окончания слов меняются). Сравните:</p>
+    <div class="example">
+      <div class="en">Мама мыла раму.</div>
+      <div class="ru">Мама — мыла — раму. (Понятно, кто мыл, а что мыли).</div>
+    </div>
+    <div class="example">
+      <div class="en">Раму мыла мама.</div>
+      <div class="ru">Тот же смысл, но порядок другой. В русском так можно.</div>
+    </div>
+    <p>В английском так <strong>нельзя</strong>. Если поменять порядок слов — изменится смысл. Поэтому в английском <strong>порядок слов фиксированный</strong>:</p>
+    <div class="formula">
+      <strong>Кто</strong> → <strong>что делает</strong> → <strong>что / кого</strong> → <strong>где / когда</strong>
+    </div>
+    <p>Подробно разберём это в <a href="#wordorder">части 5</a>.</p>
+
+    <h3>1.2. В английском есть артикли</h3>
+    <p>В русском артиклей нет. В английском они есть — это маленькие слова <strong>a / an / the</strong>, которые стоят перед предметами. Они показывают, идёт ли речь о <em>чём-то конкретном</em> или о <em>чём-то вообще</em>. Подробно — в <a href="#articles">части 7</a>.</p>
+
+    <h3>1.3. В английском нет падежей</h3>
+    <p>В русском: <em>стол — стола — столу — столом</em> (слово меняется). В английском слово <strong>не меняется</strong>: <em>table</em> (тэйбл) всегда <em>table</em>. Связь между словами показывается <strong>порядком слов</strong> и <strong>предлогами</strong> (<em>of, to, with, for</em> и т.д.).</p>
+
+    <h3>1.4. В английском есть глагол-связка to be</h3>
+    <p>В русском мы говорим: «Я разработчик». В английском <strong>нельзя</strong> просто сказать «I developer» — нужен глагол-связка <strong>to be</strong> («быть»):</p>
+    <div class="example">
+      <div class="en">I <strong>am</strong> a developer.</div>
+      <div class="ru">Я (есть) разработчик. (ай ЭМ э ди-ВЭ-лэ-пэ(р))</div>
+    </div>
+    <p>Подробно — в <a href="#tobe">части 6</a>.</p>
+
+    <div class="note">
+      💡 <strong>Главное:</strong> не пытайтесь переводить русские конструкции слово в слово. Английский — это <em>другая логика</em>. Сначала поймите её, потом учите слова.
+    </div>
+  </section>
+
+  <!-- ============ ЧАСТИ РЕЧИ ============ -->
+  <section id="parts">
+    <h2><span class="lesson-num">2</span> Части речи: из чего состоит язык</h2>
+
+    <p>Представьте, что предложение — это конструктор. У каждого слова есть своя роль (деталь). Эти роли называются <strong>частями речи</strong>. Чтобы понимать, как строятся предложения, нужно знать хотя бы 5 основных.</p>
+
+    <h3>2.1. Существительное (Noun) — «предмет»</h3>
+    <p><strong>Что это:</strong> любое слово, которое обозначает предмет, человека, животное, место или явление. Отвечает на вопросы <strong>«Кто?»</strong> или <strong>«Что?»</strong>.</p>
+    <p><strong>Примеры на английском:</strong></p>
+    <div class="table-wrap">
+      <table style="min-width: auto;">
+        <thead><tr><th>Слово</th><th>Произношение</th><th>Перевод</th><th>Вопрос</th></tr></thead>
+        <tbody>
+          <tr><td>developer</td><td>ди-ВЭ-лэ-пэ(р)</td><td>разработчик</td><td>Кто?</td></tr>
+          <tr><td>code</td><td>коуд</td><td>код</td><td>Что?</td></tr>
+          <tr><td>bug</td><td>баг</td><td>баг (ошибка)</td><td>Что?</td></tr>
+          <tr><td>team</td><td>тим</td><td>команда</td><td>Кто?</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>2.2. Глагол (Verb) — «действие»</h3>
+    <p><strong>Что это:</strong> слово, которое показывает, что делает предмет. Отвечает на вопрос <strong>«Что делать?»</strong>.</p>
+    <p><strong>Примеры на английском:</strong></p>
+    <div class="table-wrap">
+      <table style="min-width: auto;">
+        <thead><tr><th>Слово</th><th>Произношение</th><th>Перевод</th></tr></thead>
+        <tbody>
+          <tr><td>write</td><td>райт</td><td>писать (пишу)</td></tr>
+          <tr><td>read</td><td>рид</td><td>читать (читаю)</td></tr>
+          <tr><td>fix</td><td>фикс</td><td>исправлять</td></tr>
+          <tr><td>be</td><td>би</td><td>быть</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>2.3. Прилагательное (Adjective) — «признак»</h3>
+    <p><strong>Что это:</strong> слово, которое описывает предмет (какой он). Отвечает на вопрос <strong>«Какой?»</strong>.</p>
+    <p><strong>Примеры на английском:</strong></p>
+    <div class="table-wrap">
+      <table style="min-width: auto;">
+        <thead><tr><th>Слово</th><th>Произношение</th><th>Перевод</th></tr></thead>
+        <tbody>
+          <tr><td>good</td><td>гуд</td><td>хороший</td></tr>
+          <tr><td>clean</td><td>клин</td><td>чистый</td></tr>
+          <tr><td>new</td><td>нью</td><td>новый</td></tr>
+          <tr><td>fast</td><td>фаст</td><td>быстрый</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>2.4. Местоимение (Pronoun) — «заменитель»</h3>
+    <p><strong>Что это:</strong> слово, которое заменяет существительное, чтобы не повторяться. Например, вместо «Иван» говорим «он».</p>
+    <p><strong>Примеры на английском:</strong></p>
+    <div class="table-wrap">
+      <table style="min-width: auto;">
+        <thead><tr><th>Слово</th><th>Произношение</th><th>Перевод</th></tr></thead>
+        <tbody>
+          <tr><td>I</td><td>ай</td><td>я</td></tr>
+          <tr><td>you</td><td>ю</td><td>ты / вы</td></tr>
+          <tr><td>he</td><td>хи</td><td>он</td></tr>
+          <tr><td>she</td><td>ши</td><td>она</td></tr>
+          <tr><td>it</td><td>ит</td><td>оно (для предметов)</td></tr>
+          <tr><td>we</td><td>ви</td><td>мы</td></tr>
+          <tr><td>they</td><td>зэй</td><td>они</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>2.5. Предлог (Preposition) — «связка»</h3>
+    <p><strong>Что это:</strong> маленькое слово, которое показывает связь между предметами (где, когда, куда).</p>
+    <p><strong>Примеры на английском:</strong></p>
+    <div class="table-wrap">
+      <table style="min-width: auto;">
+        <thead><tr><th>Слово</th><th>Произношение</th><th>Перевод</th></tr></thead>
+        <tbody>
+          <tr><td>in</td><td>ин</td><td>в</td></tr>
+          <tr><td>on</td><td>он</td><td>на</td></tr>
+          <tr><td>at</td><td>эт</td><td>у, в (о месте/времени)</td></tr>
+          <tr><td>from</td><td>фром</td><td>из</td></tr>
+          <tr><td>to</td><td>ту / тэ</td><td>к</td></tr>
+          <tr><td>for</td><td>фо(р)</td><td>для</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>2.6. Как части речи собираются в предложение</h3>
+    <p>Давайте соберём предложение из «кирпичиков»:</p>
+    <div class="example">
+      <div class="en">The developer writes clean code.</div>
+      <div class="ru">(Этот) разработчик пишет чистый код. (зэ ди-ВЭ-лэ-пэ(р) райтс клин коуд)</div>
+    </div>
+    <ul>
+      <li><strong>The developer</strong> (зэ ди-ВЭ-лэ-пэ(р)) — существительное (кто? — разработчик)</li>
+      <li><strong>writes</strong> (райтс) — глагол (что делает? — пишет)</li>
+      <li><strong>clean</strong> (клин) — прилагательное (какой? — чистый)</li>
+      <li><strong>code</strong> (коуд) — существительное (что? — код)</li>
+    </ul>
+    <p>Вот и всё! Теперь вы знаете, из чего состоят предложения. Дальше будет проще.</p>
+  </section>
+
+  <!-- ============ АЛФАВИТ ============ -->
+  <section id="alphabet">
+    <h2><span class="lesson-num">3</span> Алфавит и звуки</h2>
+
+    <p>В английском алфавите <strong>26 букв</strong>: 5 гласных (A, E, I, O, U) и 21 согласная. Но звуков <strong>больше, чем букв</strong> — примерно 44. Поэтому одна и та же буква может читаться по-разному.</p>
+
+    <h3>3.1. Алфавит с произношением</h3>
+    <div class="table-wrap">
+      <table class="alphabet-table">
+        <thead><tr><th>Буква</th><th>Название</th><th>Произношение</th><th>Буква</th><th>Название</th><th>Произношение</th></tr></thead>
+        <tbody>
+          <tr><td>A a</td><td>эй</td><td>[eɪ]</td><td>N n</td><td>эн</td><td>[en]</td></tr>
+          <tr><td>B b</td><td>би</td><td>[biː]</td><td>O o</td><td>оу</td><td>[əʊ]</td></tr>
+          <tr><td>C c</td><td>си</td><td>[siː]</td><td>P p</td><td>пи</td><td>[piː]</td></tr>
+          <tr><td>D d</td><td>ди</td><td>[diː]</td><td>Q q</td><td>кью</td><td>[kjuː]</td></tr>
+          <tr><td>E e</td><td>и</td><td>[iː]</td><td>R r</td><td>ар</td><td>[ɑːr]</td></tr>
+          <tr><td>F f</td><td>эф</td><td>[ef]</td><td>S s</td><td>эс</td><td>[es]</td></tr>
+          <tr><td>G g</td><td>джи</td><td>[dʒiː]</td><td>T t</td><td>ти</td><td>[tiː]</td></tr>
+          <tr><td>H h</td><td>эйч</td><td>[eɪtʃ]</td><td>U u</td><td>ю</td><td>[juː]</td></tr>
+          <tr><td>I i</td><td>ай</td><td>[aɪ]</td><td>V v</td><td>ви</td><td>[viː]</td></tr>
+          <tr><td>J j</td><td>джей</td><td>[dʒeɪ]</td><td>W w</td><td>дабл-ю</td><td>[ˈdʌbəljuː]</td></tr>
+          <tr><td>K k</td><td>кей</td><td>[keɪ]</td><td>X x</td><td>экс</td><td>[eks]</td></tr>
+          <tr><td>L l</td><td>эл</td><td>[el]</td><td>Y y</td><td>уай</td><td>[waɪ]</td></tr>
+          <tr><td>M m</td><td>эм</td><td>[em]</td><td>Z z</td><td>зед / зи</td><td>[zed] / [ziː]</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note">
+      💡 <strong>Важно:</strong> название буквы и звук, который она даёт в слове, — это <em>разные вещи</em>. Буква <strong>A</strong> называется «эй», но в слове <em>cat</em> (кэт) читается как «э», а в слове <em>name</em> (нэйм) — как «эй».
+    </div>
+
+    <h3>3.2. Звуки, которых нет в русском</h3>
+    <p>Есть 5 звуков, которые особенно важны — их нет в русском, и без них вас могут не понять:</p>
+
+    <div class="word-grid">
+      <div class="word-card">
+        <div class="en">th — глухой [θ]</div>
+        <div class="ru">Язык между зубами, выдох без голоса. Не «с», не «ф»!</div>
+        <div class="example" style="margin-top: 8px; padding: 8px 12px;">
+          <div class="en">think</div>
+          <div class="ru">думать (θинк)</div>
+        </div>
+      </div>
+      <div class="word-card">
+        <div class="en">th — звонкий [ð]</div>
+        <div class="ru">То же положение языка, но с голосом. Не «з»!</div>
+        <div class="example" style="margin-top: 8px; padding: 8px 12px;">
+          <div class="en">this</div>
+          <div class="ru">этот (зис)</div>
+        </div>
+      </div>
+      <div class="word-card">
+        <div class="en">w [w]</div>
+        <div class="ru">Губы трубочкой, как для «у», но без вибрации. Не «в»!</div>
+        <div class="example" style="margin-top: 8px; padding: 8px 12px;">
+          <div class="en">web</div>
+          <div class="ru">веб (уэб)</div>
+        </div>
+      </div>
+      <div class="word-card">
+        <div class="en">r [r]</div>
+        <div class="ru">Язык загнут назад, не касается нёба. Не русское «р»!</div>
+        <div class="example" style="margin-top: 8px; padding: 8px 12px;">
+          <div class="en">read</div>
+          <div class="ru">читать (рид)</div>
+        </div>
+      </div>
+      <div class="word-card">
+        <div class="en">æ [æ]</div>
+        <div class="ru">Среднее между «э» и «а». Рот широко открыт.</div>
+        <div class="example" style="margin-top: 8px; padding: 8px 12px;">
+          <div class="en">app</div>
+          <div class="ru">приложение (эп)</div>
+        </div>
+      </div>
+      <div class="word-card">
+        <div class="en">ə (шва) [ə]</div>
+        <div class="ru">Очень короткий «э», почти беззвучный. Встречается в безударных слогах.</div>
+        <div class="example" style="margin-top: 8px; padding: 8px 12px;">
+          <div class="en">developer</div>
+          <div class="ru">разработчик (ди-ВЭ-лэ-пэ(р))</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ЧТЕНИЕ ============ -->
+  <section id="reading">
+    <h2><span class="lesson-num">4</span> Правила чтения</h2>
+
+    <p>В английском <strong>буквы и звуки не совпадают</strong>. Одна буква может читаться по-разному. Но есть <strong>базовые правила</strong>, которые покрывают 80% слов.</p>
+
+    <h3>4.1. Открытый и закрытый слог</h3>
+    <p>Гласная буква читается по-разному в зависимости от того, <strong>закрыт ли слог</strong>:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Тип слога</th><th>Когда</th><th>Буква A</th><th>Пример</th><th>Произношение</th><th>Перевод</th></tr></thead>
+        <tbody>
+          <tr><td>Открытый</td><td>заканчивается на гласную или на «гласная + согласная + e»</td><td>«эй»</td><td>name</td><td>нэйм</td><td>имя</td></tr>
+          <tr><td>Закрытый</td><td>заканчивается на согласную</td><td>«э»</td><td>cat</td><td>кэт</td><td>кот</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>4.2. Немая e в конце слова</h3>
+    <p>Если слово заканчивается на <strong>e</strong>, она обычно <strong>не читается</strong>, но делает предыдущую гласную «открытой» (долгой):</p>
+    <div class="example">
+      <div class="en">code <span class="pron">[kəʊd] · коуд</span></div>
+      <div class="ru">код (e не читается, «о» долгая)</div>
+    </div>
+    <div class="example">
+      <div class="en">make <span class="pron">[meɪk] · мэйк</span></div>
+      <div class="ru">делать</div>
+    </div>
+    <div class="example">
+      <div class="en">name <span class="pron">[neɪm] · нэйм</span></div>
+      <div class="ru">имя</div>
+    </div>
+
+    <h3>4.3. Сочетания букв</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Буквы</th><th>Звук</th><th>Пример</th><th>Произношение</th><th>Перевод</th></tr></thead>
+        <tbody>
+          <tr><td>ee</td><td>«и»</td><td>need</td><td>нид</td><td>нуждаться</td></tr>
+          <tr><td>ea</td><td>«и»</td><td>read</td><td>рид</td><td>читать</td></tr>
+          <tr><td>oo</td><td>«у»</td><td>tool</td><td>тул</td><td>инструмент</td></tr>
+          <tr><td>ou</td><td>«ау»</td><td>about</td><td>э-БАУТ</td><td>около, о</td></tr>
+          <tr><td>ai</td><td>«эй»</td><td>email</td><td>И-мэйл</td><td>электронная почта</td></tr>
+          <tr><td>ck</td><td>«к»</td><td>check</td><td>чек</td><td>проверять</td></tr>
+          <tr><td>sh</td><td>«ш»</td><td>share</td><td>шэ(р)</td><td>делиться</td></tr>
+          <tr><td>ch</td><td>«ч»</td><td>check</td><td>чек</td><td>проверять</td></tr>
+          <tr><td>ph</td><td>«ф»</td><td>phone</td><td>фоун</td><td>телефон</td></tr>
+          <tr><td>wh</td><td>«у» / «х»</td><td>what</td><td>уот</td><td>что</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note">
+      💡 <strong>Совет:</strong> не пытайтесь запомнить все правила сразу. Начните с простых слов, слушайте их на <a href="https://forvo.com" target="_blank">Forvo</a> и повторяйте вслух. Правила запомнятся сами.
+    </div>
+  </section>
+
+  <!-- ============ ПОРЯДОК СЛОВ ============ -->
+  <section id="wordorder">
+    <h2><span class="lesson-num">5</span> Порядок слов в предложении</h2>
+
+    <p>Это <strong>самая важная тема</strong>. В русском слова можно переставлять — падежи спасают. В английском — <strong>нельзя</strong>. Позиция определяет, кто есть кто.</p>
+
+    <div class="formula">
+      <strong>Кто</strong> → <strong>что делает</strong> → <strong>что / кого</strong> → <strong>где / когда</strong>
+    </div>
+
+    <div class="step">
+      <span class="step-num">1</span> <strong>Кто</strong> — подлежащее (существительное или местоимение). Всегда первым.
+      <div class="table-wrap" style="margin: 10px 0 0;">
+        <table style="min-width: auto;">
+          <thead><tr><th>Английский</th><th>Произношение</th><th>Перевод</th></tr></thead>
+          <tbody>
+            <tr><td>I</td><td>ай</td><td>я</td></tr>
+            <tr><td>She</td><td>ши</td><td>она</td></tr>
+            <tr><td>We</td><td>ви</td><td>мы</td></tr>
+            <tr><td>The team</td><td>зэ тим</td><td>(эта, наша) команда</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note" style="margin-top: 10px;">
+        💡 <strong>The</strong> (зэ) — это <em>определённый артикль</em>. Он означает «тот самый, конкретный». Подробно разберём в <a href="#articles">части 7</a>. Пока просто запомните: <em>The team</em> = «(эта, наша) команда».
+      </div>
+    </div>
+
+    <div class="step">
+      <span class="step-num">2</span> <strong>Что делает</strong> — глагол.
+      <div class="table-wrap" style="margin: 10px 0 0;">
+        <table style="min-width: auto;">
+          <thead><tr><th>Английский</th><th>Произношение</th><th>Перевод</th></tr></thead>
+          <tbody>
+            <tr><td>write</td><td>райт</td><td>пишу</td></tr>
+            <tr><td>reads</td><td>ридз</td><td>читает</td></tr>
+            <tr><td>use</td><td>юз</td><td>использую</td></tr>
+            <tr><td>builds</td><td>билдз</td><td>строит</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="step">
+      <span class="step-num">3</span> <strong>Что / кого</strong> — дополнение (существительное).
+      <div class="table-wrap" style="margin: 10px 0 0;">
+        <table style="min-width: auto;">
+          <thead><tr><th>Английский</th><th>Произношение</th><th>Перевод</th></tr></thead>
+          <tbody>
+            <tr><td>code</td><td>коуд</td><td>код</td></tr>
+            <tr><td>documentation</td><td>докьюмен-ТЭЙ-шн</td><td>документация</td></tr>
+            <tr><td>React</td><td>РИ-ЭКТ</td><td>Реакт</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="step">
+      <span class="step-num">4</span> <strong>Где / когда</strong> — обстоятельство (место или время).
+      <div class="table-wrap" style="margin: 10px 0 0;">
+        <table style="min-width: auto;">
+          <thead><tr><th>Английский</th><th>Произношение</th><th>Перевод</th></tr></thead>
+          <tbody>
+            <tr><td>every day</td><td>ЭВ-ри дэй</td><td>каждый день</td></tr>
+            <tr><td>at work</td><td>эт ВЁ(р)к</td><td>на работе</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h3>5.1. Разбор примеров</h3>
+    <div class="example">
+      <div class="en">I write code every day.</div>
+      <div class="ru">Я пишу код каждый день. (ай РАЙТ КОУД ЭВ-ри ДЭЙ)</div>
+    </div>
+    <div class="example">
+      <div class="en">She reads documentation at work.</div>
+      <div class="ru">Она читает документацию на работе. (ши РИДЗ докьюмен-ТЭЙ-шн эт ВЁ(р)к)</div>
+    </div>
+    <div class="example">
+      <div class="en">We use React for frontend.</div>
+      <div class="ru">Мы используем React для фронтенда. (ви ЮЗ РИ-ЭКТ фо(р) ФРАНТ-ЭНД)</div>
+    </div>
+
+    <h3>5.2. Что будет, если порядок нарушить</h3>
+    <div class="error-box">
+      <div><span class="wrong">❌</span> "Bug in code I found yesterday."</div>
+      <div class="ru" style="margin-top: 4px; font-style: italic; color: #7a2340;">(Баг в коде я нашёл вчера.) — так по-английски не говорят.</div>
+      <div style="margin-top: 10px;"><span class="right">✅</span> "I found a bug in the code yesterday."</div>
+      <div class="ru" style="margin-top: 4px; font-style: italic; color: #2a7a5c;">(Я нашёл баг в коде вчера. — ай ФАУНД э баг ин зэ коуд ЕС-тэ-дэй)</div>
+      
+      <details style="margin-top: 12px; background: rgba(255,255,255,0.5); border-color: #f3c0cf;">
+        <summary style="color: #c02a55;">💡 Почему именно так?</summary>
+        <p style="margin-top: 8px; font-size: 0.9rem;">В русском языке мы можем выкинуть слово «вчера» в самое начало, и смысл не потеряется. В английском <strong>порядок слов жесткий</strong>: сначала всегда идет тот, кто действует (I), потом действие (found), потом то, на что направлено действие (a bug), и только в конце — когда это было (yesterday).</p>
+      </details>
+    </div>
+
+    <div class="mini-task">
+      <div class="title">✏️ Упражнение 5.1</div>
+      <p>Поставьте слова в правильном порядке:</p>
+      <p><strong>1.</strong> <code>every day / I / check / email</code></p>
+      <div class="ru" style="margin-bottom: 6px; font-style: italic; color: var(--muted);">(каждый день / я / проверяю / почту)</div>
+      <details><summary>Показать ответ</summary>I check email every day. — Я проверяю почту каждый день. (ай ЧЕК И-мэйл ЭВ-ри дэй)</details>
+
+      <p><strong>2.</strong> <code>our team / new features / builds / fast</code></p>
+      <div class="ru" style="margin-bottom: 6px; font-style: italic; color: var(--muted);">(наша команда / новые фичи / строит / быстро)</div>
+      <details><summary>Показать ответ</summary>Our team builds new features fast. — Наша команда быстро делает новые фичи. (АУ(р) тим БИЛДЗ нью ФИ-чэ(р)з фаст)</details>
+
+      <p><strong>3.</strong> <code>the server / is / down / now</code></p>
+      <div class="ru" style="margin-bottom: 6px; font-style: italic; color: var(--muted);">(сервер / есть / лежит / сейчас)</div>
+      <details><summary>Показать ответ</summary>The server is down now. — Сервер сейчас лежит. (зэ СЁ-вэ(р) из ДАУН нау)</details>
+    </div>
+  </section>
+
+  <!-- ============ TO BE ============ -->
+  <section id="tobe">
+    <h2><span class="lesson-num">6</span> Глагол to be («быть»)</h2>
+
+    <p><strong>to be</strong> <span class="pron">[tuː biː] · ту БИ</span> — «быть / являться». В русском мы его часто опускаем («Я разработчик»), в английском — <strong>нельзя</strong>. Без него предложение неполное.</p>
+
+    <div class="error-box">
+      <div><span class="wrong">❌</span> "I developer."</div>
+      <div class="ru" style="margin-top: 4px; font-style: italic; color: #7a2340;">(Я разработчик.) — так нельзя.</div>
+      <div style="margin-top: 10px;"><span class="right">✅</span> "I <strong>am</strong> a developer."</div>
+      <div class="ru" style="margin-top: 4px; font-style: italic; color: #2a7a5c;">(Я есть разработчик. — ай ЭМ э ди-ВЭ-лэ-пэ(р))</div>
+      
+      <details style="margin-top: 12px; background: rgba(255,255,255,0.5); border-color: #f3c0cf;">
+        <summary style="color: #c02a55;">💡 Почему именно так?</summary>
+        <p style="margin-top: 8px; font-size: 0.9rem;">В русском языке мы можем сказать «Я разработчик», и нам не нужен глагол «быть». В английском языке <strong>без глагола не бывает предложения</strong>. Если нет действия (например, «я пишу»), обязательно нужен глагол-связка <strong>to be</strong> («быть / являться»).</p>
+      </details>
+    </div>
+
+    <h3>6.1. Три формы глагола to be в настоящем времени</h3>
+    <div class="formula">
+      <div style="margin-bottom: 10px;">
+        <strong>am</strong> <span class="pron">ЭМ</span> — только с <em>I</em>
+        <div class="ru" style="font-style: italic; color: var(--muted);">(я)</div>
+      </div>
+      <div style="margin-bottom: 10px;">
+        <strong>is</strong> <span class="pron">ИЗ</span> — с <em>he</em>, <em>she</em>, <em>it</em>
+        <div class="ru" style="font-style: italic; color: var(--muted);">(он, она, оно)</div>
+      </div>
+      <div>
+        <strong>are</strong> <span class="pron">А(р)</span> — с <em>you</em>, <em>we</em>, <em>they</em>
+        <div class="ru" style="font-style: italic; color: var(--muted);">(ты/вы, мы, они)</div>
+      </div>
+    </div>
+
+    <h3>6.2. Таблица с примерами</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Местоимение</th><th>Форма</th><th>Пример</th><th>Произношение</th><th>Перевод</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>I (я)</td><td>am</td><td>I am a developer.</td><td>ай ЭМ э ди-ВЭ-лэ-пэ(р)</td><td>Я разработчик.</td></tr>
+          <tr><td>You (ты/вы)</td><td>are</td><td>You are a student.</td><td>ю А(р) э СТЬЮ-дэнт</td><td>Ты студент.</td></tr>
+          <tr><td>He (он)</td><td>is</td><td>He is a programmer.</td><td>хи ИЗ э ПРОУ-гра-мэ(р)</td><td>Он программист.</td></tr>
+          <tr><td>She (она)</td><td>is</td><td>She is a designer.</td><td>ши ИЗ э ди-ЗАЙ-нэ(р)</td><td>Она дизайнер.</td></tr>
+          <tr><td>It (оно)</td><td>is</td><td>It is a bug.</td><td>ит ИЗ э баг</td><td>Это баг.</td></tr>
+          <tr><td>We (мы)</td><td>are</td><td>We are in the office.</td><td>ви А(р) ин зэ О-фис</td><td>Мы в офисе.</td></tr>
+          <tr><td>They (они)</td><td>are</td><td>They are from Russia.</td><td>зэй А(р) фром РА-шэ</td><td>Они из России.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note">
+      💡 <em>are</em> используется и для «ты», и для «вы». В английском нет отдельного вежливого «вы» — <em>you</em> универсально.
+    </div>
+
+    <h3>6.3. Отрицание</h3>
+    <p>Чтобы сказать «не», ставим <strong>not</strong> после формы to be:</p>
+    <div class="example"><div class="en">I <strong>am not</strong> a backend developer.</div><div class="ru">Я не бэкенд-разработчик. (ай эм НОТ э БЭК-ЭНД ди-ВЭ-лэ-пэ(р))</div></div>
+    <div class="example"><div class="en">The bug <strong>is not</strong> fixed.</div><div class="ru">Баг не исправлен. (зэ баг ИЗ НОТ фикст)</div></div>
+    <div class="example"><div class="en">They <strong>are not</strong> online.</div><div class="ru">Они не онлайн. (зэй А(р) НОТ он-ЛАЙН)</div></div>
+
+    <div class="note">
+      💡 <strong>Сокращения:</strong> I am → I'm (айм) · you are → you're (ю(р)) · he is → he's (хиз) · is not → isn't (И-зэнт) · are not → aren't (А(р)нт)
+    </div>
+
+    <h3>6.4. Вопрос</h3>
+    <p>Чтобы задать вопрос, форму to be ставим <strong>в начало</strong> предложения:</p>
+    <div class="example"><div class="en"><strong>Are</strong> you a developer?</div><div class="ru">Ты разработчик? (А(р) ю э ди-ВЭ-лэ-пэ(р))</div></div>
+    <div class="example"><div class="en"><strong>Is</strong> the server down?</div><div class="ru">Сервер лежит? (ИЗ зэ СЁ-вэ(р) даун)</div></div>
+    <div class="example"><div class="en"><strong>Is</strong> it a bug or a feature?</div><div class="ru">Это баг или фича? (ИЗ ит э баг о(р) э ФИ-чэ(р))</div></div>
+
+    <div class="mini-task">
+      <div class="title">✏️ Упражнение 6.1</div>
+      <p>Вставьте правильную форму to be:</p>
+      <p><strong>1.</strong> I ___ a web developer.</p>
+      <div class="ru" style="margin-bottom: 6px; font-style: italic; color: var(--muted);">(Я ___ веб-разработчик.)</div>
+      <details><summary>Ответ</summary>I <strong>am</strong> a web developer. — Я веб-разработчик. (ай ЭМ э уэб ди-ВЭ-лэ-пэ(р))</details>
+      <p><strong>2.</strong> The code ___ clean.</p>
+      <div class="ru" style="margin-bottom: 6px; font-style: italic; color: var(--muted);">(Код ___ чистый.)</div>
+      <details><summary>Ответ</summary>The code <strong>is</strong> clean. — Код чистый. (зэ коуд ИЗ клин)</details>
+      <p><strong>3.</strong> We ___ ready.</p>
+      <div class="ru" style="margin-bottom: 6px; font-style: italic; color: var(--muted);">(Мы ___ готовы.)</div>
+      <details><summary>Ответ</summary>We <strong>are</strong> ready. — Мы готовы. (ви А(р) РЭ-ди)</details>
+      <p><strong>4.</strong> They ___ from Russia.</p>
+      <div class="ru" style="margin-bottom: 6px; font-style: italic; color: var(--muted);">(Они ___ из России.)</div>
+      <details><summary>Ответ</summary>They <strong>are</strong> from Russia. — Они из России. (зэй А(р) фром РА-шэ)</details>
+      <p><strong>5.</strong> She ___ a designer.</p>
+      <div class="ru" style="margin-bottom: 6px; font-style: italic; color: var(--muted);">(Она ___ дизайнер.)</div>
+      <details><summary>Ответ</summary>She <strong>is</strong> a designer. — Она дизайнер. (ши ИЗ э ди-ЗАЙ-нэ(р))</details>
+    </div>
+  </section>
+
+  <!-- ============ АРТИКЛИ ============ -->
+  <section id="articles">
+    <h2><span class="lesson-num">7</span> Артикли a / an / the</h2>
+
+    <p>В русском языке артиклей нет — поэтому это боль. В английском есть два типа артиклей:</p>
+    <ul>
+      <li><strong>a / an</strong> — <em>неопределённый</em> артикль («какой-то, один из многих»)</li>
+      <li><strong>the</strong> — <em>определённый</em> артикль («тот самый, конкретный»)</li>
+    </ul>
+
+    <h3>7.1. a / an — «какой-то, один из многих»</h3>
+    <p>Ставим перед <strong>единственным числом</strong>, когда говорим о <em>чём-то вообще, впервые, одном из многих</em>:</p>
+    <div class="example"><div class="en">I am <strong>a</strong> developer.</div><div class="ru">Я разработчик. (один из многих)</div></div>
+    <div class="example"><div class="en">It is <strong>a</strong> bug.</div><div class="ru">Это баг. (какой-то)</div></div>
+    <div class="example"><div class="en">I have <strong>a</strong> question.</div><div class="ru">У меня есть вопрос. (ай хэв э КВЭС-чэн)</div></div>
+
+    <h4>a или an?</h4>
+    <ul>
+      <li><strong>a</strong> [ə · э] — перед <strong>согласным звуком</strong>:</li>
+    </ul>
+    <div class="example" style="margin-left: 20px; padding: 8px 12px;">
+      <div class="en">a developer / a bug / a question</div>
+      <div class="ru">разработчик / баг / вопрос (э ди-ВЭ-лэ-пэ(р) / э баг / э КВЭС-чэн)</div>
+    </div>
+    <ul>
+      <li><strong>an</strong> [ən · эн] — перед <strong>гласным звуком</strong>:</li>
+    </ul>
+    <div class="example" style="margin-left: 20px; padding: 8px 12px;">
+      <div class="en">an error / an API / an issue / an hour</div>
+      <div class="ru">ошибка / API / проблема / час (эн Э-рэ(р) / эн Эй-Пи-Ай / эн И-шу / эн АУ-э(р))</div>
+    </div>
+
+    <div class="note">
+      💡 Правило про <strong>звук</strong>, а не букву: <em>an hour</em> (эн АУ-э(р)) — звук «а»; но <em>a university</em> (э ю-ни-ВЁ(р)-си-ти) — звук «ю».
+    </div>
+
+    <h3>7.2. the — «тот самый, конкретный»</h3>
+    <p><strong>the</strong> <span class="pron">[ðə · зэ (язык между зубами)]</span> — это <strong>определённый артикль</strong>. В русском языке артиклей нет, поэтому точного перевода у <em>the</em> нет. Он показывает, что речь идёт о <strong>чём-то конкретном, уже известном</strong> собеседникам. Ближайший смысл — <strong>«тот самый», «этот», «наш»</strong>.</p>
+
+    <div class="formula">
+      <strong>a / an</strong> — «какой-то, один из многих»<br>
+      <strong>the</strong> — «тот самый, конкретный»
+    </div>
+
+    <h4>Сравните</h4>
+    <div class="example">
+      <div class="en">I saw <strong>a</strong> bug.</div>
+      <div class="ru">Я увидел (какой-то) баг. (ай СО э баг)</div>
+    </div>
+    <div class="example">
+      <div class="en"><strong>The</strong> bug was critical.</div>
+      <div class="ru">(Этот, тот самый) баг был критическим. (зэ баг уоз КРИ-ти-кэл)</div>
+    </div>
+    <p>Сначала мы говорим про «какой-то» баг (<em>a bug</em>), а потом, когда он уже известен, — про «тот самый» (<em>the bug</em>).</p>
+
+    <h4>Примеры с the</h4>
+    <div class="example">
+      <div class="en">The server is down.</div>
+      <div class="ru">(Тот самый, наш) сервер лежит. (зэ СЁ-вэ(р) из даун)</div>
+    </div>
+    <div class="example">
+      <div class="en">The code is clean.</div>
+      <div class="ru">Код (этот, конкретный) чистый. (зэ коуд из клин)</div>
+    </div>
+    <div class="example">
+      <div class="en">The meeting is at 10.</div>
+      <div class="ru">Встреча в 10. (та самая, о которой договорились) (зэ МИ-тин из эт тэн)</div>
+    </div>
+    <div class="example">
+      <div class="en">The team builds new features.</div>
+      <div class="ru">(Наша) команда делает новые фичи. (зэ тим билдз нью ФИ-чэ(р)з)</div>
+    </div>
+
+    <div class="note">
+      💡 <strong>Запомните:</strong> в русском мы часто опускаем «тот самый» — он понятен из контекста. В английском <em>the</em> обязателен, если речь о конкретном предмете.
+    </div>
+
+    <h3>7.3. Когда артикль НЕ нужен</h3>
+    <ul>
+      <li>Перед именами:</li>
+    </ul>
+    <div class="example" style="margin-left: 20px; padding: 8px 12px;">
+      <div class="en">I am Ivan.</div>
+      <div class="ru">Я Иван. (ай эм И-ван)</div>
+    </div>
+    <ul>
+      <li>Перед городами и странами:</li>
+    </ul>
+    <div class="example" style="margin-left: 20px; padding: 8px 12px;">
+      <div class="en">from Russia / in Moscow</div>
+      <div class="ru">из России / в Москве (фром РА-шэ / ин МОС-коу)</div>
+    </div>
+    <ul>
+      <li>Перед множественным числом в общем смысле:</li>
+    </ul>
+    <div class="example" style="margin-left: 20px; padding: 8px 12px;">
+      <div class="en">I fix bugs.</div>
+      <div class="ru">Я исправляю баги. (ай фикс багз)</div>
+    </div>
+    <ul>
+      <li>Перед неисчисляемыми (то, что нельзя посчитать):</li>
+    </ul>
+    <div class="example" style="margin-left: 20px; padding: 8px 12px;">
+      <div class="en">I write code.</div>
+      <div class="ru">Я пишу код. (ай райт коуд)</div>
+    </div>
+
+    <div class="error-box">
+      <div><span class="wrong">❌</span> "I write a code."</div>
+      <div class="ru" style="margin-top: 4px; font-style: italic; color: #7a2340;">(Я пишу код.) — <em>code</em> неисчисляемое, артикль не нужен.</div>
+      <div style="margin-top: 10px;"><span class="right">✅</span> "I write code."</div>
+      <div class="ru" style="margin-top: 4px; font-style: italic; color: #2a7a5c;">(Я пишу код. — ай райт коуд)</div>
+      
+      <details style="margin-top: 12px; background: rgba(255,255,255,0.5); border-color: #f3c0cf;">
+        <summary style="color: #c02a55;">💡 Почему именно так?</summary>
+        <p style="margin-top: 8px; font-size: 0.9rem;"><em>Code</em> (код) — это <strong>неисчисляемое</strong> существительное (как вода, сахар или любовь). Его нельзя посчитать по штукам (нельзя сказать «один код, два кода»). Артикль <strong>a</strong> означает «один», поэтому с неисчисляемыми словами он не ставится.</p>
+        <p style="font-size: 0.9rem;">Если вы хотите подчеркнуть какой-то конкретный код, можно сказать <em>the code</em> (этот код), но просто <em>a code</em> сказать нельзя.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ============ СЛОВАРЬ ============ -->
+  <section id="vocab">
+    <h2><span class="lesson-num">8</span> Словарь: 30 слов</h2>
+
+    <p>Сначала — <strong>общие слова</strong>, которые нужны каждый день. Потом — IT-лексика. Оба списка важны.</p>
+
+    <h3>8.1. Общие слова (для жизни)</h3>
+    <div class="word-grid">
+      <div class="word-card"><div class="en">hello</div><div class="tr">[həˈləʊ] · хэ-ЛОУ</div><div class="ru">привет</div></div>
+      <div class="word-card"><div class="en">name</div><div class="tr">[neɪm] · нэйм</div><div class="ru">имя</div></div>
+      <div class="word-card"><div class="en">work</div><div class="tr">[wɜːrk] · ВЁ(р)к</div><div class="ru">работа / работать</div></div>
+      <div class="word-card"><div class="en">friend</div><div class="tr">[frend] · фрэнд</div><div class="ru">друг</div></div>
+      <div class="word-card"><div class="en">day</div><div class="tr">[deɪ] · дэй</div><div class="ru">день</div></div>
+      <div class="word-card"><div class="en">time</div><div class="tr">[taɪm] · тайм</div><div class="ru">время</div></div>
+      <div class="word-card"><div class="en">good</div><div class="tr">[ɡʊd] · гуд</div><div class="ru">хороший</div></div>
+      <div class="word-card"><div class="en">please</div><div class="tr">[pliːz] · плиз</div><div class="ru">пожалуйста</div></div>
+      <div class="word-card"><div class="en">thanks</div><div class="tr">[θæŋks] · θэнкс</div><div class="ru">спасибо</div></div>
+      <div class="word-card"><div class="en">sorry</div><div class="tr">[ˈsɒri] · СО-ри</div><div class="ru">извините</div></div>
+      <div class="word-card"><div class="en">the</div><div class="tr">[ðə] · зэ</div><div class="ru">определённый артикль («тот самый»)</div></div>
+    </div>
+
+    <h3>8.2. IT-слова (для работы)</h3>
+    <div class="word-grid">
+      <div class="word-card"><div class="en">developer</div><div class="tr">[dɪˈveləpər] · ди-ВЭ-лэ-пэ(р)</div><div class="ru">разработчик</div></div>
+      <div class="word-card"><div class="en">code</div><div class="tr">[kəʊd] · коуд</div><div class="ru">код</div></div>
+      <div class="word-card"><div class="en">bug</div><div class="tr">[bʌɡ] · баг</div><div class="ru">ошибка, баг</div></div>
+      <div class="word-card"><div class="en">feature</div><div class="tr">[ˈfiːtʃər] · ФИ-чэ(р)</div><div class="ru">функция, фича</div></div>
+      <div class="word-card"><div class="en">to fix</div><div class="tr">[tə fɪks] · тэ фикс</div><div class="ru">исправлять</div></div>
+      <div class="word-card"><div class="en">to build</div><div class="tr">[tə bɪld] · тэ билд</div><div class="ru">строить, собирать</div></div>
+      <div class="word-card"><div class="en">to deploy</div><div class="tr">[tə dɪˈplɔɪ] · тэ ди-ПЛОЙ</div><div class="ru">деплоить</div></div>
+      <div class="word-card"><div class="en">frontend</div><div class="tr">[ˈfrʌntend] · ФРАНТ-ЭНД</div><div class="ru">фронтенд</div></div>
+      <div class="word-card"><div class="en">backend</div><div class="tr">[ˈbækend] · БЭК-ЭНД</div><div class="ru">бэкенд</div></div>
+      <div class="word-card"><div class="en">database</div><div class="tr">[ˈdeɪtəbeɪs] · ДЭЙ-тэ-бэйс</div><div class="ru">база данных</div></div>
+      <div class="word-card"><div class="en">request</div><div class="tr">[rɪˈkwest] · ри-КВЭСТ</div><div class="ru">запрос</div></div>
+      <div class="word-card"><div class="en">response</div><div class="tr">[rɪˈspɒns] · ри-СПОНС</div><div class="ru">ответ</div></div>
+      <div class="word-card"><div class="en">server</div><div class="tr">[ˈsɜːrvər] · СЁ-вэ(р)</div><div class="ru">сервер</div></div>
+      <div class="word-card"><div class="en">user</div><div class="tr">[ˈjuːzər] · Ю-зэ(р)</div><div class="ru">пользователь</div></div>
+      <div class="word-card"><div class="en">tool</div><div class="tr">[tuːl] · тул</div><div class="ru">инструмент</div></div>
+      <div class="word-card"><div class="en">app</div><div class="tr">[æp] · эп</div><div class="ru">приложение</div></div>
+      <div class="word-card"><div class="en">issue</div><div class="tr">[ˈɪʃuː] · И-шу</div><div class="ru">проблема, вопрос</div></div>
+      <div class="word-card"><div class="en">error</div><div class="tr">[ˈerər] · Э-рэ(р)</div><div class="ru">ошибка</div></div>
+      <div class="word-card"><div class="en">file</div><div class="tr">[faɪl] · файл</div><div class="ru">файл</div></div>
+      <div class="word-card"><div class="en">page</div><div class="tr">[peɪdʒ] · пэйдж</div><div class="ru">страница</div></div>
+    </div>
+
+    <h3>8.3. Как слова ведут себя в предложении</h3>
+    <div class="example"><div class="en">I fix bugs.</div><div class="ru">Я исправляю баги. (ай фикс багз)</div></div>
+    <div class="example"><div class="en">I want <strong>to deploy</strong> the app.</div><div class="ru">Я хочу задеплоить приложение. (ай уонт ту ди-ПЛОЙ зэ эп)</div></div>
+    <div class="example"><div class="en">I have <strong>a</strong> question.</div><div class="ru">У меня есть вопрос. (ай хэв э КВЭС-чэн)</div></div>
+
+    <div class="note">
+      💡 Если после глагола действия идёт <em>ещё один глагол</em> — между ними часто ставится <strong>to</strong>:
+      <div class="example" style="margin-top: 6px; padding: 8px 12px; background: #fff8e8;">
+        <div class="en">I want to build</div>
+        <div class="ru">я хочу строить (ай уонт ту билд)</div>
+        <div class="en">I need to fix</div>
+        <div class="ru">мне нужно исправить (ай нид ту фикс)</div>
+      </div>
+    </div>
+
+    <div class="mini-task">
+      <div class="title">✏️ Упражнение 8.1</div>
+      <p>Переведите на английский:</p>
+      <p><strong>1.</strong> Я разработчик.</p>
+      <details><summary>Ответ</summary>I am a developer. (ай ЭМ э ди-ВЭ-лэ-пэ(р))</details>
+      <p><strong>2.</strong> Мы исправляем баги.</p>
+      <details><summary>Ответ</summary>We fix bugs. (ви фикс багз)</details>
+      <p><strong>3.</strong> Сервер недоступен.</p>
+      <details><summary>Ответ</summary>The server is down. (зэ СЁ-вэ(р) из даун)</details>
+      <p><strong>4.</strong> Я хочу задеплоить приложение.</p>
+      <details><summary>Ответ</summary>I want to deploy the app. (ай уонт ту ди-ПЛОЙ зэ эп)</details>
+      <p><strong>5.</strong> Это фича, не баг.</p>
+      <details><summary>Ответ</summary>It is a feature, not a bug. (ит из э ФИ-чэ(р), нот э баг)</details>
+    </div>
+  </section>
+
+  <!-- ============ РАЗГОВОР ============ -->
+  <section id="phrases">
+    <h2><span class="lesson-num">9</span> 🗣️ Разговорные фразы</h2>
+
+    <p>Грамматика — это фундамент. Но чтобы <strong>общаться</strong>, нужны готовые фразы. Их учат наизусть — как формулы.</p>
+
+    <h3>9.1. Приветствия</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Фраза</th><th>Произношение</th><th>Когда</th><th>Перевод</th></tr></thead>
+        <tbody>
+          <tr><td>Hello!</td><td>хэ-ЛОУ</td><td>универсально</td><td>Привет / Здравствуйте</td></tr>
+          <tr><td>Hi!</td><td>хай</td><td>неформально</td><td>Привет</td></tr>
+          <tr><td>Good morning</td><td>гуд МО-нин</td><td>до 12:00</td><td>Доброе утро</td></tr>
+          <tr><td>Good afternoon</td><td>гуд аф-тэ-НУН</td><td>12:00–18:00</td><td>Добрый день</td></tr>
+          <tr><td>Good evening</td><td>гуд ИВ-нин</td><td>после 18:00</td><td>Добрый вечер</td></tr>
+          <tr><td>Hey!</td><td>хэй</td><td>очень неформально</td><td>Эй / Привет</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note">
+      💡 <strong>Good night</strong> (гуд НАЙТ) — это не «добрый вечер», а «спокойной ночи» (когда прощаетесь перед сном). Не путайте с <em>Good evening</em>.
+    </div>
+
+    <h3>9.2. Как представиться</h3>
+    <div class="example"><div class="en">Hi, I'm Ivan.</div><div class="ru">Привет, я Иван. (хай, айм И-ван)</div></div>
+    <div class="example"><div class="en">My name is Ivan.</div><div class="ru">Меня зовут Иван. (май нэйм из И-ван)</div></div>
+    <div class="example"><div class="en">Nice to meet you.</div><div class="ru">Приятно познакомиться. (найс ту МИТ ю)</div></div>
+    <div class="example"><div class="en">Nice to meet you too.</div><div class="ru">Мне тоже приятно. (найс ту МИТ ю ту)</div></div>
+
+    <h3>9.3. Что сказать о себе</h3>
+    <div class="example"><div class="en">I am a developer.</div><div class="ru">Я разработчик. (ай ЭМ э ди-ВЭ-лэ-пэ(р))</div></div>
+    <div class="example"><div class="en">I am from Russia.</div><div class="ru">Я из России. (ай ЭМ фром РА-шэ)</div></div>
+    <div class="example"><div class="en">I work at a tech company.</div><div class="ru">Я работаю в tech-компании. (ай ВЁ(р)к эт э тек КОМ-пэ-ни)</div></div>
+    <div class="example"><div class="en">I speak Russian and a little English.</div><div class="ru">Я говорю по-русски и немного по-английски. (ай СПИК РА-шэн энд э ЛИТ-л ИН-глиш)</div></div>
+    <div class="example"><div class="en">I am learning English.</div><div class="ru">Я учу английский. (ай ЭМ ЛЁ-нин ИН-глиш)</div></div>
+
+    <h3>9.4. Small talk — как поддержать разговор</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Вопрос</th><th>Произношение</th><th>Перевод</th></tr></thead>
+        <tbody>
+          <tr><td>How are you?</td><td>хау А(р) ю</td><td>Как дела?</td></tr>
+          <tr><td>How's it going?</td><td>хауз ит ГО-ин</td><td>Как оно? (неформ.)</td></tr>
+          <tr><td>What do you do?</td><td>уот ду ю ДУ</td><td>Чем занимаешься? (о работе)</td></tr>
+          <tr><td>Where are you from?</td><td>уэ(р) А(р) ю фром</td><td>Откуда ты?</td></tr>
+          <tr><td>How long have you been here?</td><td>хау лон хэв ю бин хи(р)</td><td>Как долго ты здесь?</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>9.5. Как ответить</h3>
+    <div class="example"><div class="en">I'm fine, thanks. And you?</div><div class="ru">У меня всё хорошо, спасибо. А у тебя? (айм файн, сэнкс. энд Ю)</div></div>
+    <div class="example"><div class="en">Not bad, thanks.</div><div class="ru">Неплохо, спасибо. (нот бэд, сэнкс)</div></div>
+    <div class="example"><div class="en">I'm a web developer.</div><div class="ru">Я веб-разработчик. (айм э уэб ди-ВЭ-лэ-пэ(р))</div></div>
+    <div class="example"><div class="en">I'm from Moscow.</div><div class="ru">Я из Москвы. (айм фром МОС-коу)</div></div>
+
+    <h3>9.6. Если не понял — как переспросить</h3>
+    <p>Это <strong>самые важные фразы</strong> для начинающего. Не бойтесь переспрашивать — это нормально.</p>
+    <div class="example"><div class="en">Sorry, I don't understand.</div><div class="ru">Извините, я не понимаю. (СО-ри, ай доунт ан-дэ-СТЭНД)</div></div>
+    <div class="example"><div class="en">Could you repeat that, please?</div><div class="ru">Не могли бы вы повторить? (куд ю ри-ПИТ зэт, плиз)</div></div>
+    <div class="example"><div class="en">Could you speak slower, please?</div><div class="ru">Не могли бы вы говорить помедленнее? (куд ю спик СЛОУ-э(р), плиз)</div></div>
+    <div class="example"><div class="en">What does "deploy" mean?</div><div class="ru">Что значит «deploy»? (уот даз ди-ПЛОЙ мин)</div></div>
+    <div class="example"><div class="en">How do you spell that?</div><div class="ru">Как это пишется? (хау ду ю спэл зэт)</div></div>
+
+    <h3>9.7. Как попрощаться</h3>
+    <div class="example"><div class="en">Goodbye!</div><div class="ru">До свидания! (гуд-БАЙ)</div></div>
+    <div class="example"><div class="en">Bye!</div><div class="ru">Пока! (бай)</div></div>
+    <div class="example"><div class="en">See you later.</div><div class="ru">Увидимся позже. (си ю ЛЭЙ-тэ(р))</div></div>
+    <div class="example"><div class="en">Have a nice day!</div><div class="ru">Хорошего дня! (хэв э найс ДЭЙ)</div></div>
+    <div class="example"><div class="en">Take care!</div><div class="ru">Береги себя! (тэйк КЭ(р))</div></div>
+
+    <div class="mini-task">
+      <div class="title">✏️ Упражнение 9.1</div>
+      <p>Переведите на английский:</p>
+      <p><strong>1.</strong> Привет! Меня зовут Иван.</p>
+      <details><summary>Ответ</summary>Hi! My name is Ivan. (хай! май нэйм из И-ван)</details>
+      <p><strong>2.</strong> Приятно познакомиться.</p>
+      <details><summary>Ответ</summary>Nice to meet you. (найс ту МИТ ю)</details>
+      <p><strong>3.</strong> Как дела?</p>
+      <details><summary>Ответ</summary>How are you? (хау А(р) ю)</details>
+      <p><strong>4.</strong> Извините, я не понимаю.</p>
+      <details><summary>Ответ</summary>Sorry, I don't understand. (СО-ри, ай доунт ан-дэ-СТЭНД)</details>
+      <p><strong>5.</strong> Не могли бы вы повторить?</p>
+      <details><summary>Ответ</summary>Could you repeat that, please? (куд ю ри-ПИТ зэт, плиз)</details>
+      <p><strong>6.</strong> Я из России, я разработчик.</p>
+      <details><summary>Ответ</summary>I am from Russia, I am a developer. (ай ЭМ фром РА-шэ, ай ЭМ э ди-ВЭ-лэ-пэ(р))</details>
+    </div>
+
+    <div class="note">
+      💡 <strong>Как тренировать:</strong> выберите 5 фраз и произнесите их вслух 10 раз. Потом представьте диалог: вы знакомитесь с коллегой.
+      <div class="example" style="margin-top: 6px; padding: 8px 12px; background: #e8efff;">
+        <div class="en">Hi, I'm Ivan. I'm a developer from Russia. Nice to meet you.</div>
+        <div class="ru">Привет, я Иван. Я разработчик из России. Приятно познакомиться. (хай, айм И-ван. айм э ди-ВЭ-лэ-пэ(р) фром РА-шэ. найс ту МИТ ю)</div>
+        <div class="en" style="margin-top: 6px;">Nice to meet you too. How are you?</div>
+        <div class="ru">Мне тоже приятно. Как дела? (найс ту МИТ ю ту. хау А(р) ю)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ДОКУМЕНТАЦИЯ ============ -->
+  <section id="docs">
+    <h2><span class="lesson-num">10</span> 📖 Как читать документацию</h2>
+
+    <p>Вы <strong>не должны понимать каждое слово</strong>. Это нормально. Даже носители не знают всех терминов. Вот стратегия, которая работает.</p>
+
+    <h3>10.1. Пять правил чтения</h3>
+    <ol>
+      <li><strong>Сначала прочитайте заголовки</strong> — поймёте структуру текста.</li>
+      <li><strong>Найдите главный глагол</strong> в каждом предложении — он несёт смысл.</li>
+      <li><strong>Не переводите каждое слово</strong> — угадывайте по контексту.</li>
+      <li><strong>Незнакомые слова</strong> — выписывайте, но не тормозите чтение.</li>
+      <li><strong>Читайте вслух</strong> — так лучше запоминается.</li>
+    </ol>
+
+    <h3>10.2. Разбор реального предложения</h3>
+    <div class="example">
+      <div class="en">"This function returns a new array with the results of calling a provided function on every element."</div>
+      <div class="ru">«Эта функция возвращает новый массив с результатами вызова переданной функции для каждого элемента.»</div>
+    </div>
+    <p>Разбираем по шагам:</p>
+    <ul>
+      <li><strong>This function</strong> — эта функция (кто)</li>
+      <li><strong>returns</strong> — возвращает (что делает)</li>
+      <li><strong>a new array</strong> — новый массив (что)</li>
+      <li><strong>with the results...</strong> — с результатами... (уточнение)</li>
+    </ul>
+
+    <h3>10.3. Частые слова в документации</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Слово</th><th>Произношение</th><th>Перевод</th></tr></thead>
+        <tbody>
+          <tr><td>returns</td><td>ри-ТЁ(р)нз</td><td>возвращает</td></tr>
+          <tr><td>takes</td><td>тэйкс</td><td>принимает</td></tr>
+          <tr><td>requires</td><td>ри-КВАЙ-э(р)з</td><td>требует</td></tr>
+          <tr><td>default</td><td>ди-ФОЛТ</td><td>по умолчанию</td></tr>
+          <tr><td>optional</td><td>ОП-шэ-нэл</td><td>необязательный</td></tr>
+          <tr><td>example</td><td>иг-ЗАМ-пэл</td><td>пример</td></tr>
+          <tr><td>note</td><td>ноут</td><td>примечание</td></tr>
+          <tr><td>warning</td><td>УО(р)-нин</td><td>предупреждение</td></tr>
+          <tr><td>usage</td><td>Ю-сидж</td><td>использование</td></tr>
+          <tr><td>deprecated</td><td>ДЭ-при-кэй-тэд</td><td>устаревший</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>10.4. Где читать (от простого к сложному)</h3>
+    <ul>
+      <li><strong>MDN</strong> — написано простым языком, много примеров.</li>
+      <li><strong>React docs</strong> — короткие примеры, понятная структура.</li>
+      <li><strong>freeCodeCamp</strong> — статьи с переводом на русский.</li>
+      <li><strong>Dev.to</strong> — статьи разработчиков, живой язык.</li>
+      <li><strong>GitHub README</strong> — как пишут реальные проекты.</li>
+    </ul>
+
+    <div class="note">
+      💡 <strong>Совет:</strong> начните с README небольших библиотек на GitHub. Там короткие предложения и много примеров кода. Читайте по 1 абзацу в день — через месяц привыкнете.
+    </div>
+
+    <div class="mini-task">
+      <div class="title">✏️ Упражнение 10.1</div>
+      <p>Прочитайте и переведите (не переводя каждое слово):</p>
+      <div class="example">
+        <div class="en">"The function takes two arguments and returns a string. The second argument is optional."</div>
+      </div>
+      <details><summary>Ответ</summary>«Функция принимает два аргумента и возвращает строку. Второй аргумент необязательный.»</details>
+    </div>
+  </section>
+
+  <!-- ============ ОШИБКИ (С АККОРДЕОНАМИ) ============ -->
+  <section id="mistakes">
+    <h2><span class="lesson-num">11</span> Типичные ошибки русскоязычных</h2>
+
+    <h3>1. Пропуск to be</h3>
+    <div class="error-box">
+      <div><span class="wrong">❌</span> I developer. · <span class="wrong">❌</span> He programmer.</div>
+      <div class="ru" style="margin-top: 4px; font-style: italic; color: #7a2340;">(Я разработчик. · Он программист.)</div>
+      <div style="margin-top: 10px;"><span class="right">✅</span> I <strong>am</strong> a developer. · <span class="right">✅</span> He <strong>is</strong> a programmer.</div>
+      <div class="ru" style="margin-top: 4px; font-style: italic; color: #2a7a5c;">(Я разработчик. · Он программист. — ай ЭМ э ди-ВЭ-лэ-пэ(р) · хи ИЗ э ПРОУ-гра-мэ(р))</div>
+      
+      <details style="margin-top: 12px; background: rgba(255,255,255,0.5); border-color: #f3c0cf;">
+        <summary style="color: #c02a55;">💡 Почему именно так?</summary>
+        <p style="margin-top: 8px; font-size: 0.9rem;">В русском языке мы можем сказать «Я разработчик», и нам не нужен глагол «быть». В английском языке <strong>без глагола не бывает предложения</strong>. Если нет действия (например, «я пишу»), обязательно нужен глагол-связка <strong>to be</strong> («быть / являться»).</p>
+        <p style="font-size: 0.9rem;">Запомните: <em>I am</em> (я есть), <em>he is</em> (он есть), <em>we are</em> (мы есть).</p>
+      </details>
+    </div>
+
+    <h3>2. Лишний артикль</h3>
+    <div class="error-box">
+      <div><span class="wrong">❌</span> I write a code.</div>
+      <div class="ru" style="margin-top: 4px; font-style: italic; color: #7a2340;">(Я пишу код.)</div>
+      <div style="margin-top: 10px;"><span class="right">✅</span> I write code.</div>
+      <div class="ru" style="margin-top: 4px; font-style: italic; color: #2a7a5c;">(Я пишу код. — ай райт коуд)</div>
+      
+      <details style="margin-top: 12px; background: rgba(255,255,255,0.5); border-color: #f3c0cf;">
+        <summary style="color: #c02a55;">💡 Почему именно так?</summary>
+        <p style="margin-top: 8px; font-size: 0.9rem;"><em>Code</em> (код) — это <strong>неисчисляемое</strong> существительное (как вода, сахар или любовь). Его нельзя посчитать по штукам (нельзя сказать «один код, два кода»). Артикль <strong>a</strong> означает «один», поэтому с неисчисляемыми словами он не ставится.</p>
+        <p style="font-size: 0.9rem;">Если вы хотите подчеркнуть какой-то конкретный код, можно сказать <em>the code</em> (этот код), но просто <em>a code</em> сказать нельзя.</p>
+      </details>
+    </div>
+
+    <h3>3. Русский порядок слов</h3>
+    <div class="error-box">
+      <div><span class="wrong">❌</span> Yesterday I found bug in code.</div>
+      <div class="ru" style="margin-top: 4px; font-style: italic; color: #7a2340;">(Вчера я нашёл баг в коде.)</div>
+      <div style="margin-top: 10px;"><span class="right">✅</span> I found <strong>a</strong> bug in <strong>the</strong> code yesterday.</div>
+      <div class="ru" style="margin-top: 4px; font-style: italic; color: #2a7a5c;">(Я нашёл баг в коде вчера. — ай ФАУНД э баг ин зэ коуд ЕС-тэ-дэй)</div>
+      
+      <details style="margin-top: 12px; background: rgba(255,255,255,0.5); border-color: #f3c0cf;">
+        <summary style="color: #c02a55;">💡 Почему именно так?</summary>
+        <p style="margin-top: 8px; font-size: 0.9rem;">В русском мы можем выкинуть слово «вчера» в самое начало, и смысл не потеряется. В английском <strong>порядок слов жесткий</strong>: сначала всегда идет тот, кто действует (I), потом действие (found), потом то, на что направлено действие (a bug), и только в конце — когда это было (yesterday).</p>
+        <p style="font-size: 0.9rem;">Кроме того, про баг мы говорим впервые (<em>a bug</em> — какой-то), а код уже обсуждали, он для нас конкретный (<em>the code</em>).</p>
+      </details>
+    </div>
+
+    <h3>4. Забывают -s в третьем лице</h3>
+    <div class="error-box">
+      <div><span class="wrong">❌</span> He fix bugs.</div>
+      <div class="ru" style="margin-top: 4px; font-style: italic; color: #7a2340;">(Он исправляет баги.)</div>
+      <div style="margin-top: 10px;"><span class="right">✅</span> He fix<strong>es</strong> bugs.</div>
+      <div class="ru" style="margin-top: 4px; font-style: italic; color: #2a7a5c;">(Он исправляет баги. — хи ФИК-сиз багз)</div>
+      
+      <details style="margin-top: 12px; background: rgba(255,255,255,0.5); border-color: #f3c0cf;">
+        <summary style="color: #c02a55;">💡 Почему именно так?</summary>
+        <p style="margin-top: 8px; font-size: 0.9rem;">В настоящем времени (Present Simple) к глаголу добавляется окончание <strong>-s</strong> или <strong>-es</strong>, если действие совершает <strong>он (he)</strong>, <strong>она (she)</strong> или <strong>оно (it)</strong>. </p>
+        <p style="font-size: 0.9rem;">Почему <em>fixes</em>, а не <em>fixs</em>? Потому что после шипящих и свистящих звуков (x, s, sh, ch) всегда добавляется <strong>-es</strong>, чтобы было удобно произносить.</p>
+      </details>
+    </div>
+
+    <h3>5. it's / its</h3>
+    <div class="error-box">
+      <div style="margin-bottom: 8px;"><span class="wrong">❌</span> Its a bug. <em>(ошибка)</em></div>
+      <div><span class="right">✅</span> <strong>It's</strong> a bug. <em>(Это баг.)</em> (итс э баг)</div>
+      <div style="margin-top: 8px;"><span class="wrong">❌</span> The app and it's features. <em>(ошибка)</em></div>
+      <div><span class="right">✅</span> The app and <strong>its</strong> features. <em>(Приложение и его функции.)</em> (зэ эп энд итс ФИ-чэ(р)з)</div>
+      
+      <details style="margin-top: 12px; background: rgba(255,255,255,0.5); border-color: #f3c0cf;">
+        <summary style="color: #c02a55;">💡 Почему именно так?</summary>
+        <p style="margin-top: 8px; font-size: 0.9rem;"><strong>It's</strong> — это сокращение от <strong>It is</strong> (это есть). Апостроф заменяет пропущенную букву «i».</p>
+        <p style="font-size: 0.9rem;"><strong>Its</strong> (без апострофа) — это притяжательное местоимение. Оно означает «его» или «её» (принадлежность). Как <em>my</em> (мой), <em>your</em> (твой).</p>
+      </details>
+    </div>
+
+    <h3>6. w и v</h3>
+    <div class="error-box">
+      <div><span class="wrong">❌</span> «вэб» вместо <em>web</em> — губы трубочкой!</div>
+      <div style="margin-top: 10px;"><span class="right">✅</span> <em>web</em> [web · уэб] · <em>very</em> [ˈveri · ВЭ-ри]</div>
+      
+      <details style="margin-top: 12px; background: rgba(255,255,255,0.5); border-color: #f3c0cf;">
+        <summary style="color: #c02a55;">💡 Почему именно так?</summary>
+        <p style="margin-top: 8px; font-size: 0.9rem;">Звук <strong>[w]</strong> — это не русская «в». Когда мы говорим <em>web</em> или <em>work</em>, губы нужно сложить в трубочку, как будто вы собираетесь свистнуть или сказать «у». </p>
+        <p style="font-size: 0.9rem;">А вот звук <strong>[v]</strong> (буква V) — это как раз русская «в» (верхние зубы касаются нижней губы), как в слове <em>very</em>.</p>
+      </details>
+    </div>
+
+    <h3>7. th и s/z</h3>
+    <div class="error-box">
+      <div><span class="wrong">❌</span> «зэ» вместо <em>the</em> — язык должен быть между зубами!</div>
+      <div style="margin-top: 10px;"><span class="right">✅</span> <em>the</em> [ðə · зэ(язык между зубами)] · <em>think</em> [θɪŋk · θинк]</div>
+      
+      <details style="margin-top: 12px; background: rgba(255,255,255,0.5); border-color: #f3c0cf;">
+        <summary style="color: #c02a55;">💡 Почему именно так?</summary>
+        <p style="margin-top: 8px; font-size: 0.9rem;">В русском языке нет звуков, где язык находится между зубами. Когда мы пытаемся сказать <em>the</em> (определённый артикль) или <em>this</em>, кончик языка нужно буквально высунуть и прикусить между верхними и нижними зубами.</p>
+        <p style="font-size: 0.9rem;">При этом <em>the</em> произносится со звонким звуком <strong>[ð]</strong> (с вибрацией в горле), а <em>think</em> — с глухим <strong>[θ]</strong> (как будто вы дуете на свечу).</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ============ ЗАДАНИЕ ============ -->
+  <section id="task" class="task">
+    <h2>📝 Итоговое задание</h2>
+
+    <p>Напишите <strong>10–12 предложений</strong> о себе и работе, используя всё, что разобрали:</p>
+    <ol>
+      <li>Глагол <span class="blue">to be</span> — минимум 3 раза</li>
+      <li>Порядок слов «кто → что делает → что → где/когда»</li>
+      <li>Минимум 10 слов из списка</li>
+      <li>Одно отрицание</li>
+      <li>Один вопрос</li>
+      <li>Одно предложение с <em>to</em> + глагол</li>
+      <li>Приветствие и представление</li>
+      <li>Одна фраза для переспроса</li>
+    </ol>
+
+    <div class="hint">
+      <strong>Пример:</strong><br>
+      <em>"Hello! My name is Ivan. I am a web developer. I am from Russia. I work at a tech company. I write code every day. I use React and Node.js. My team builds new features. I am not a backend developer, but I fix bugs. The server is usually stable. I want to deploy the app tomorrow. Is it a bug or a feature? Sorry, I don't understand. Could you repeat that, please?"</em>
+      <br><br>
+      <strong>Перевод примера:</strong> «Привет! Меня зовут Иван. Я веб-разработчик. Я из России. Я работаю в tech-компании. Я пишу код каждый день. Я использую React и Node.js. Моя команда делает новые фичи. Я не бэкенд-разработчик, но я исправляю баги. Сервер обычно стабилен. Я хочу задеплоить приложение завтра. Это баг или фича? Извините, я не понимаю. Не могли бы вы повторить?»
+      <br><br>
+      <strong>Произношение примера:</strong> Хэ-ЛОУ! Май нэйм из И-ван. Ай ЭМ э уэб ди-ВЭ-лэ-пэ(р). Ай ЭМ фром РА-шэ. Ай ВЁ(р)к эт э тек КОМ-пэ-ни. Ай РАЙТ коуд ЭВ-ри дэй. Ай ЮЗ РИ-ЭКТ энд НОУД дот ДЖЭЙ-ЭС. Май тим БИЛДЗ нью ФИ-чэ(р)з. Ай ЭМ НОТ э БЭК-ЭНД ди-ВЭ-лэ-пэ(р), бат ай ФИКС багз. Зэ СЁ-вэ(р) из Ю-жу-э-ли СТЭЙ-бл. Ай УОНТ ту ди-ПЛОЙ зэ эп ту-МО-роу. ИЗ ит э баг о(р) э ФИ-чэ(р)? СО-ри, ай ДОУНТ ан-дэ-СТЭНД. КУД ю ри-ПИТ зэт, плиз?
+      <br><br>
+      ✍️ Пишите как можете — <strong>с ошибками это нормально</strong>. Пришлите текст в чат, я разберу каждое предложение и объясню.
+    </div>
+
+    <button id="complete-btn" class="complete-btn">✅ Отметить урок пройденным</button>
+  </section>
+
+  <nav class="lesson-nav">
+    <a href="../index.html">← К курсу</a>
+    <a href="#" class="disabled">Следующий урок →</a>
+  </nav>
+
+  <footer>
+    English for Developers · Урок 1 · Продолжение следует 🚀
+  </footer>
+
+</div>
+
+<button id="scroll-top" class="scroll-top" aria-label="Наверх">↑</button>
+
+<script src="../script.js"></script>
+</body>
+</html>

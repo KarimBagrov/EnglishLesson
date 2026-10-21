@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#3b62e0">
+  <title>English for Developers — Курс</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+
+  <header class="course-header">
+    <h1>English for Developers</h1>
+    <p>Английский для работы и жизни: разговор, чтение, документация, IT</p>
+    <div class="badge">🚀 СТАРТ · A1 → B1</div>
+  </header>
+
+  <section class="intro-card">
+    <h2>👋 Что внутри</h2>
+    <p>Курс не только про IT. Мы учим <strong>живому английскому</strong>: как представиться, поддержать small talk, спросить дорогу, заказать кофе — и параллельно читать документацию, писать коммиты, понимать созвоны.</p>
+    <p><strong>Принцип:</strong> каждый урок = <em>грамматика + разговорная практика + лексика (общая + IT)</em>.</p>
+  </section>
+
+  <section>
+    <h2>📚 Уроки</h2>
+
+    <div class="lesson-grid">
+
+      <a href="lessons/lesson-1.html" class="lesson-card">
+        <div class="lesson-card__num">1</div>
+        <div class="lesson-card__body">
+          <h3>Основы + знакомство</h3>
+          <p>Части речи, произношение, порядок слов, to be, артикли. Как представиться и сказать о себе.</p>
+          <div class="lesson-card__meta">
+            <span class="tag tag--green">A1–A2</span>
+            <span class="tag">🗣️ разговор</span>
+            <span class="tag">💻 IT</span>
+          </div>
+        </div>
+        <div class="lesson-card__arrow">→</div>
+      </a>
+
+      <div class="lesson-card lesson-card--disabled">
+        <div class="lesson-card__num">2</div>
+        <div class="lesson-card__body">
+          <h3>Present Simple + small talk</h3>
+          <p>Как говорить о привычках и работе. Фразы для small talk: how are you, what do you do.</p>
+          <div class="lesson-card__meta">
+            <span class="tag tag--green">A2</span>
+            <span class="tag">🗣️ разговор</span>
+            <span class="tag">скоро</span>
+          </div>
+        </div>
+        <div class="lesson-card__arrow">🔒</div>
+      </div>
+
+      <div class="lesson-card lesson-card--disabled">
+        <div class="lesson-card__num">3</div>
+        <div class="lesson-card__body">
+          <h3>Вопросы + как спросить</h3>
+          <p>Do/does, wh-вопросы. Как спросить дорогу, время, помощь — и понять ответ.</p>
+          <div class="lesson-card__meta">
+            <span class="tag tag--green">A2</span>
+            <span class="tag">🗣️ разговор</span>
+            <span class="tag">скоро</span>
+          </div>
+        </div>
+        <div class="lesson-card__arrow">🔒</div>
+      </div>
+
+      <div class="lesson-card lesson-card--disabled">
+        <div class="lesson-card__num">4</div>
+        <div class="lesson-card__body">
+          <h3>Числа, время, дни</h3>
+          <p>Как сказать время, дату, цену. Дни недели, месяцы. Бытовые фразы.</p>
+          <div class="lesson-card__meta">
+            <span class="tag tag--green">A2</span>
+            <span class="tag">🗣️ жизнь</span>
+            <span class="tag">скоро</span>
+          </div>
+        </div>
+        <div class="lesson-card__arrow">🔒</div>
+      </div>
+
+      <div class="lesson-card lesson-card--disabled">
+        <div class="lesson-card__num">5</div>
+        <div class="lesson-card__body">
+          <h3>Чтение документации + IT-лексика</h3>
+          <p>Как читать MDN, React docs, GitHub issues. 50 IT-слов, стратегии чтения.</p>
+          <div class="lesson-card__meta">
+            <span class="tag tag--green">A2–B1</span>
+            <span class="tag">📖 чтение</span>
+            <span class="tag">💻 IT</span>
+            <span class="tag">скоро</span>
+          </div>
+        </div>
+        <div class="lesson-card__arrow">🔒</div>
+      </div>
+
+      <div class="lesson-card lesson-card--disabled">
+        <div class="lesson-card__num">6</div>
+        <div class="lesson-card__body">
+          <h3>Созвоны и рабочие фразы</h3>
+          <p>Как начать встречу, переспросить, согласиться, вежливо возразить. Фразы для Slack/Teams.</p>
+          <div class="lesson-card__meta">
+            <span class="tag tag--green">B1</span>
+            <span class="tag">🗣️ работа</span>
+            <span class="tag">скоро</span>
+          </div>
+        </div>
+        <div class="lesson-card__arrow">🔒</div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="progress-section">
+    <h2>📊 Ваш прогресс</h2>
+    <div class="progress-bar">
+      <div class="progress-bar__fill" id="progress-fill" style="width: 0%"></div>
+    </div>
+    <p class="progress-text"><span id="progress-count">0</span> из 6 уроков пройдено</p>
+  </section>
+
+  <footer>
+    English for Developers · Курс · Продолжение следует 🚀
+  </footer>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
