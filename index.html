@@ -1,87 +1,58 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#3b62e0">
-  <title>English for Lesson — Выбор направления</title>
-  
-  <!-- Подключение манифеста для PWA (офлайн-режим) -->
-  <link rel="manifest" href="manifest.json">
-  
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<div class="container">
+const CACHE_NAME = 'english-lesson-cache-v3'; // Подняли версию, чтобы браузеры сбросили старый кеш
 
-  <header class="course-header">
-    <h1>English for Lesson</h1>
-    <p>Выберите направление, которое вам ближе</p>
-    <div class="badge">🚀 СТАРТ · A1 → B1</div>
-  </header>
+// Список файлов, которые нужно сохранить для офлайн-режима
+const ASSETS = [
+  './',
+  './index.html',
+  './style.css',
+  './script.js',
+  './manifest.json',
+  './lessons/it/it-lesson-1.html',
+  './lessons/it/it-lesson-2.html',
+  './lessons/life/life-lesson-1.html',
+  './lessons/life/life-lesson-2.html'
+];
 
-  <section class="intro-card">
-    <h2>👋 С чего начнём?</h2>
-    <p>Мы подготовили два пути. Вы можете выбрать тот, который нужен вам прямо сейчас, или проходить оба параллельно.</p>
-  </section>
+// 1. Установка: кэшируем основные файлы
+self.addEventListener('install', (e) => {
+  e.waitUntil(
+    caches.open(CACHE_NAME).then((cache) => {
+      return cache.addAll(ASSETS);
+    })
+  );
+  self.skipWaiting(); // Активируем сразу
+});
 
-  <!-- Карточки направлений -->
-  <div class="lesson-grid">
-    
-    <!-- Ветка IT -->
-    <a href="lessons/it/it-lesson-1.html" class="lesson-card" style="flex-direction: column; align-items: flex-start; padding: 30px;">
-      <div class="lesson-card__num" style="width: 60px; height: 60px; font-size: 1.5rem; margin-bottom: 15px;">💻</div>
-      <div class="lesson-card__body">
-        <h3 style="font-size: 1.3rem;">Английский для IT (Developers)</h3>
-        <p>Для тех, кто работает в технологиях. Учим не только язык, но и профессиональную лексику: чтение документации, code review, деплой и созвоны с командой.</p>
-        <div class="lesson-card__meta">
-          <span class="tag tag--green">A1–B1</span>
-          <span class="tag">📖 документация</span>
-          <span class="tag">💻 IT-лексика</span>
-        </div>
-      </div>
-      <div class="lesson-card__arrow" style="margin-top: 15px; align-self: flex-end;">→</div>
-    </a>
-
-    <!-- Ветка LIFE -->
-    <a href="lessons/life/life-lesson-1.html" class="lesson-card" style="flex-direction: column; align-items: flex-start; padding: 30px;">
-      <div class="lesson-card__num" style="width: 60px; height: 60px; font-size: 1.5rem; margin-bottom: 15px; background: linear-gradient(135deg, var(--accent-2), #0a7c5c);">🌍</div>
-      <div class="lesson-card__body">
-        <h3 style="font-size: 1.3rem;">Общий английский (Для жизни)</h3>
-        <p>Для путешествий и повседневного общения. Учим, как заказать кофе, спросить дорогу, поддержать Small Talk, рассказать о семье и своих хобби.</p>
-        <div class="lesson-card__meta">
-          <span class="tag tag--green">A1–B1</span>
-          <span class="tag">🗣️ разговор</span>
-          <span class="tag">✈️ путешествия</span>
-        </div>
-      </div>
-      <div class="lesson-card__arrow" style="margin-top: 15px; align-self: flex-end; color: var(--accent-2);">→</div>
-    </a>
-
-  </div>
-
-  <footer>
-    English for Lesson · Выберите свой путь 🚀
-  </footer>
-
-</div>
-
-<script src="script.js"></script>
-
-<!-- Скрипт для включения офлайн-режима -->
-<script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('./sw.js')
-        .then(registration => {
-          console.log('Service Worker зарегистрирован успешно!');
+// 2. Активация: чистим старый кэш
+self.addEventListener('activate', (e) => {
+  e.waitUntil(
+    caches.keys().then((keys) => {
+      return Promise.all(
+        keys.map((key) => {
+          if (key !== CACHE_NAME) {
+            return caches.delete(key);
+          }
         })
-        .catch(error => {
-          console.log('Ошибка регистрации Service Worker:', error);
-        });
-    });
-  }
-</script>
+      );
+    })
+  );
+  self.clients.claim(); // Берем контроль над страницами сразу
+});
 
-</body>
-</html>
+// 3. Стратегия Stale-While-Revalidate (Быстро из кэша, обновление в фоне)
+self.addEventListener('fetch', (e) => {
+  if (e.request.method !== 'GET') return;
+
+  e.respondWith(
+    caches.open(CACHE_NAME).then((cache) => {
+      return cache.match(e.request).then((cachedResponse) => {
+        const fetchPromise = fetch(e.request).then((networkResponse) => {
+          cache.put(e.request, networkResponse.clone());
+          return networkResponse;
+        }).catch(() => null);
+
+        return cachedResponse || fetchPromise;
+      });
+    })
+  );
+});
