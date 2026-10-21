@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0fa981">
+  <title>Урок 2 — Еда и заказ в кафе | English for Life</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body data-lesson-id="life-lesson-2">
+
+<button id="menu-toggle" class="menu-toggle" aria-label="Открыть меню">☰</button>
+<div id="overlay" class="overlay"></div>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar__header">
+    <button id="menu-toggle-inside" class="menu-toggle-inside" aria-label="Закрыть меню">×</button>
+    <div class="sidebar__title-wrap">
+      <h3>Урок 2 (Life)</h3>
+      <a href="../../index.html" class="sidebar__home-link">← На главную</a>
+    </div>
+  </div>
+  <div class="sidebar__nav">
+    <ol>
+      <li><a href="#intro">Введение</a></li>
+      <li><a href="#vocabulary">Словарь: Еда и напитки</a></li>
+      <li><a href="#ordering">Как заказать еду</a></li>
+      <li><a href="#paying">Как попросить счет</a></li>
+      <li><a href="#dialogues">🗣️ Диалоги в кафе</a></li>
+      <li><a href="#mistakes">Типичные ошибки</a></li>
+      <li><a href="#task">Итоговое задание</a></li>
+    </ol>
+  </div>
+</aside>
+
+<div class="container">
+
+  <header>
+    <a href="../../index.html" class="back-link">← Вернуться к выбору курса</a>
+    <h1>Урок 2 · Еда и заказ в кафе</h1>
+    <p>Как заказать любимое блюдо, попросить счет и не остаться голодным за границей</p>
+    <div class="badge" style="background: #d4f5e6; color: #0a7c5c; border-color: #b8e6d2;">A1 · LIFE · ≈ 90 МИН</div>
+    
+    <!-- Панель навигации по урокам (без класса active) -->
+    <div class="lesson-top-nav">
+      <a href="life-lesson-1.html">1</a>
+      <a href="life-lesson-2.html">2</a>
+      <a href="life-lesson-3.html">3</a>
+      <a href="#" class="disabled">4</a>
+      <a href="#" class="disabled">5</a>
+    </div>
+  </header>
+
+  <!-- ============ 1. ВВЕДЕНИЕ ============ -->
+  <section id="intro">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, var(--accent-2), #0a7c5c);">1</span> Введение: Самая важная тема</h2>
+
+    <p>Даже если вы не знаете сложных времен, но умеете заказать себе кофе и пообедать — вы не пропадете в любой стране. В этом уроке мы разберем самые нужные фразы для кафе и ресторанов.</p>
+    
+    <p>В английском языке, в отличие от русского, фраза «Я хочу» (<em>I want</em>) звучит довольно грубо, как требование. Поэтому мы будем использовать вежливую форму <strong>I would like</strong> (Я бы хотел).</p>
+
+    <div class="note">
+      💡 <strong>Совет:</strong> В разговорной речи <em>I would like</em> часто сокращают до <strong>I'd like</strong> (айд ЛАЙК). Это звучит более естественно.
+    </div>
+  </section>
+
+  <!-- ============ 2. СЛОВАРЬ ============ -->
+  <section id="vocabulary">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, var(--accent-2), #0a7c5c);">2</span> Словарь: Еда и напитки</h2>
+
+    <p>Вот базовый набор слов, которые есть в любом меню.</p>
+
+    <h3>2.1. Напитки (Drinks)</h3>
+    <div class="word-grid">
+      <div class="word-card"><div class="en">water</div><div class="tr">УО-тэ(р)</div><div class="ru">вода</div></div>
+      <div class="word-card"><div class="en">coffee</div><div class="tr">КО-фи</div><div class="ru">кофе</div></div>
+      <div class="word-card"><div class="en">tea</div><div class="tr">ти</div><div class="ru">чай</div></div>
+      <div class="word-card"><div class="en">juice</div><div class="tr">джус</div><div class="ru">сок</div></div>
+      <div class="word-card"><div class="en">milk</div><div class="tr">милк</div><div class="ru">молоко</div></div>
+      <div class="word-card"><div class="en">sugar</div><div class="tr">ШУ-гэ(р)</div><div class="ru">сахар</div></div>
+    </div>
+
+    <h3>2.2. Еда (Food)</h3>
+    <div class="word-grid">
+      <div class="word-card"><div class="en">bread</div><div class="tr">брэд</div><div class="ru">хлеб</div></div>
+      <div class="word-card"><div class="en">meat</div><div class="tr">мит</div><div class="ru">мясо</div></div>
+      <div class="word-card"><div class="en">fish</div><div class="tr">фиш</div><div class="ru">рыба</div></div>
+      <div class="word-card"><div class="en">salad</div><div class="tr">СА-лэд</div><div class="ru">салат</div></div>
+      <div class="word-card"><div class="en">soup</div><div class="tr">суп</div><div class="ru">суп</div></div>
+      <div class="word-card"><div class="en">cheese</div><div class="tr">чиз</div><div class="ru">сыр</div></div>
+      <div class="word-card"><div class="en">chicken</div><div class="tr">ЧИ-кин</div><div class="ru">курица</div></div>
+      <div class="word-card"><div class="en">cake</div><div class="tr">кэйк</div><div class="ru">пирожное, торт</div></div>
+    </div>
+  </section>
+
+  <!-- ============ 3. КАК ЗАКАЗАТЬ ============ -->
+  <section id="ordering">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, var(--accent-2), #0a7c5c);">3</span> Как заказать еду</h2>
+
+    <p>Чтобы сделать заказ, мы используем глагол <strong>would like</strong> (бы хотел).</p>
+    
+    <div class="formula" style="background: #eefaf4; border-left-color: #0fa981;">
+      <strong>I would like</strong> + <strong>еда</strong> + <strong>please</strong>.
+    </div>
+
+    <div class="example">
+      <div class="en">I would like a salad, please.</div>
+      <div class="ru">Я бы хотел салат, пожалуйста. (ай вуд ЛАЙК э СА-лэд, плиз)</div>
+    </div>
+    <div class="example">
+      <div class="en">I would like a cup of tea, please.</div>
+      <div class="ru">Я бы хотел чашку чая, пожалуйста. (ай вуд ЛАЙК э кап ов ти, плиз)</div>
+    </div>
+    <div class="example">
+      <div class="en">I would like some bread.</div>
+      <div class="ru">Я бы хотел немного хлеба. (ай вуд ЛАЙК сам брэд)</div>
+    </div>
+
+    <div class="note">
+      💡 <strong>Обратите внимание:</strong> перед неисчисляемыми словами (bread, water, cheese) мы ставим слово <strong>some</strong> (немного). Перед исчисляемыми (a salad, a cup, an apple) — артикль <em>a/an</em>.
+    </div>
+  </section>
+
+  <!-- ============ 4. КАК ПОПРОСИТЬ СЧЕТ ============ -->
+  <section id="paying">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, var(--accent-2), #0a7c5c);">4</span> Как попросить счет</h2>
+
+    <p>Когда вы поели и хотите уйти, нужно попросить счет.</p>
+
+    <div class="example">
+      <div class="en">The bill, please.</div>
+      <div class="ru">Счет, пожалуйста. (зэ бил, плиз)</div>
+    </div>
+    <div class="example">
+      <div class="en">Can I have the bill, please?</div>
+      <div class="ru">Можно мне счет, пожалуйста? (кэн ай хэв зэ бил, плиз)</div>
+    </div>
+
+    <h3>4.1. Оплата картой или наличными</h3>
+    <div class="example">
+      <div class="en">Can I pay by card?</div>
+      <div class="ru">Можно я оплачу картой? (кэн ай пэй бай кад)</div>
+    </div>
+    <div class="example">
+      <div class="en">I will pay in cash.</div>
+      <div class="ru">Я оплачу наличными. (ай уил пэй ин кэш)</div>
+    </div>
+  </section>
+
+  <!-- ============ 5. ДИАЛОГИ ============ -->
+  <section id="dialogues">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, var(--accent-2), #0a7c5c);">5</span> 🗣️ Диалоги в кафе</h2>
+
+    <p>Давайте посмотрим, как это выглядит в реальной жизни.</p>
+
+    <h3>Диалог 1: Заказ в кофейне</h3>
+    <div class="example" style="background: #f8f9fa; padding: 15px; border-left: 4px solid #0fa981;">
+      <div class="en"><strong>Barista:</strong> Hello! What would you like?</div>
+      <div class="ru">Здравствуйте! Что бы вы хотели? (хэ-ЛОУ! уот вуд ю ЛАЙК)</div>
+      <div class="en" style="margin-top: 8px;"><strong>You:</strong> Hi! I would like a coffee, please.</div>
+      <div class="ru">Привет! Я бы хотел кофе, пожалуйста. (хай! ай вуд ЛАЙК э КО-фи, плиз)</div>
+      <div class="en" style="margin-top: 8px;"><strong>Barista:</strong> With milk or sugar?</div>
+      <div class="ru">С молоком или сахаром? (уиз милк о(р) ШУ-гэ(р))</div>
+      <div class="en" style="margin-top: 8px;"><strong>You:</strong> No sugar, please. Just milk.</div>
+      <div class="ru">Без сахара, пожалуйста. Только молоко. (ноу ШУ-гэ(р), плиз. джаст милк)</div>
+      <div class="en" style="margin-top: 8px;"><strong>Barista:</strong> That’s $3.</div>
+      <div class="ru">С вас 3 доллара. (зэтс θри ДО-лэ(р)з)</div>
+    </div>
+
+    <h3>Диалог 2: Обед в ресторане</h3>
+    <div class="example" style="background: #f8f9fa; padding: 15px; border-left: 4px solid #0fa981;">
+      <div class="en"><strong>Waiter:</strong> Are you ready to order?</div>
+      <div class="ru">Вы готовы сделать заказ? (А(р) ю РЭ-ди ту О(р)-дэ(р))</div>
+      <div class="en" style="margin-top: 8px;"><strong>You:</strong> Yes. I would like a chicken salad and a soup, please.</div>
+      <div class="ru">Да. Я бы хотел салат с курицей и суп, пожалуйста. (йес. ай вуд ЛАЙК э ЧИ-кин СА-лэд энд э суп, плиз)</div>
+      <div class="en" style="margin-top: 8px;"><strong>Waiter:</strong> Anything to drink?</div>
+      <div class="ru">Что-нибудь попить? (Э-ни-θин ту дринк)</div>
+      <div class="en" style="margin-top: 8px;"><strong>You:</strong> Just water, please.</div>
+      <div class="ru">Просто воду, пожалуйста. (джаст УО-тэ(р), плиз)</div>
+    </div>
+  </section>
+
+  <!-- ============ 6. ОШИБКИ ============ -->
+  <section id="mistakes">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, var(--accent-2), #0a7c5c);">6</span> Типичные ошибки</h2>
+
+    <h3>1. "Я хочу" звучит грубо</h3>
+    <div class="error-box">
+      <div><span class="wrong">❌</span> I want a coffee.</div>
+      <div class="ru" style="margin-top: 4px; font-style: italic; color: #7a2340;">(Я хочу кофе.) — звучит как требование.</div>
+      <div style="margin-top: 10px;"><span class="right">✅</span> I <strong>would like</strong> a coffee, please.</div>
+      
+      <details style="margin-top: 12px; background: rgba(255,255,255,0.5); border-color: #f3c0cf;">
+        <summary style="color: #c02a55;">💡 Почему именно так?</summary>
+        <p style="margin-top: 8px; font-size: 0.9rem;">В английском языке фраза <em>I want</em> (Я хочу) считается слишком прямой. В кафе и магазинах принято использовать вежливую форму <strong>I would like</strong> (Я бы хотел).</p>
+      </details>
+    </div>
+
+    <h3>2. Забываем про "please"</h3>
+    <div class="error-box">
+      <div><span class="wrong">❌</span> Give me water.</div>
+      <div class="ru" style="margin-top: 4px; font-style: italic; color: #7a2340;">(Дай мне воду.) — приказ.</div>
+      <div style="margin-top: 10px;"><span class="right">✅</span> Can I have water, <strong>please</strong>?</div>
+      <div class="ru" style="margin-top: 4px; font-style: italic; color: #2a7a5c;">(Можно мне воду, пожалуйста? — кэн ай хэв УО-тэ(р), плиз)</div>
+      
+      <details style="margin-top: 12px; background: rgba(255,255,255,0.5); border-color: #f3c0cf;">
+        <summary style="color: #c02a55;">💡 Почему именно так?</summary>
+        <p style="margin-top: 8px; font-size: 0.9rem;">Слово <strong>please</strong> (пожалуйста) — это волшебное слово. Оно превращает любой приказ в вежливую просьбу.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ============ 7. ЗАДАНИЕ ============ -->
+  <section id="task" class="task">
+    <h2>📝 Итоговое задание</h2>
+
+    <p>Представьте, что вы пришли в кафе. Напишите <strong>мини-диалог (4–5 строк)</strong> между вами и официантом в тетради или заметках.</p>
+    
+    <p><strong>Что нужно использовать:</strong></p>
+    <ul>
+      <li>Поздоровайтесь (Hello / Hi).</li>
+      <li>Сделайте заказ (I would like...).</li>
+      <li>Попросите что-то убрать или добавить (No sugar, please / With milk).</li>
+      <li>Попросите счет (Can I have the bill, please?).</li>
+    </ul>
+
+    <div class="hint">
+      <strong>Пример:</strong><br>
+      <em>Waiter: Hello! What would you like?</em><br>
+      <em>You: Hi! I would like a chicken salad and a cup of tea, please.</em><br>
+      <em>Waiter: With sugar?</em><br>
+      <em>You: No sugar, please.</em><br>
+      <em>You: Can I have the bill, please?</em>
+      <br><br>
+      <strong>Перевод примера:</strong> «Официант: Здравствуйте! Что бы вы хотели? — Вы: Привет! Я бы хотел салат с курицей и чашку чая, пожалуйста. — Официант: С сахаром? — Вы: Без сахара, пожалуйста. — Вы: Можно мне счет, пожалуйста?»
+    </div>
+
+    <button id="complete-btn" class="complete-btn" style="background: linear-gradient(135deg, var(--accent-2), #0a7c5c);">✅ Отметить урок пройденным</button>
+  </section>
+
+  <nav class="lesson-nav">
+    <a href="life-lesson-1.html">← Урок 1</a>
+    <a href="../../index.html">К курсу</a>
+    <a href="life-lesson-3.html">Урок 3 →</a>
+  </nav>
+
+  <footer>
+    English for Lesson · LIFE · Продолжение следует 🚀
+  </footer>
+
+</div>
+
+<button id="scroll-top" class="scroll-top" aria-label="Наверх">↑</button>
+
+<script src="../../script.js"></script>
+</body>
+</html>

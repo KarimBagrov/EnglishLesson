@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0fa981">
+  <title>Урок 1 — Алфавит, знакомство и семья | English for Life</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body data-lesson-id="life-lesson-1">
+
+<button id="menu-toggle" class="menu-toggle" aria-label="Открыть меню">☰</button>
+<div id="overlay" class="overlay"></div>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar__header">
+    <button id="menu-toggle-inside" class="menu-toggle-inside" aria-label="Закрыть меню">×</button>
+    <div class="sidebar__title-wrap">
+      <h3>Урок 1 (Life)</h3>
+      <a href="../../index.html" class="sidebar__home-link">← На главную</a>
+    </div>
+  </div>
+  <div class="sidebar__nav">
+    <ol>
+      <li><a href="#intro">Введение</a></li>
+      <li><a href="#alphabet">Алфавит и звуки</a></li>
+      <li><a href="#reading">Правила чтения</a></li>
+      <li><a href="#tobe">Глагол to be</a></li>
+      <li><a href="#have">Глагол to have</a></li>
+      <li><a href="#reading-text">📖 Текст для чтения</a></li>
+      <li><a href="#vocabulary">📚 Словарь: 30 слов</a></li>
+      <li><a href="#practice">✏️ Практика</a></li>
+      <li><a href="#mistakes">Типичные ошибки</a></li>
+      <li><a href="#task">Итоговое задание</a></li>
+    </ol>
+  </div>
+</aside>
+
+<div class="container">
+
+  <header>
+    <a href="../../index.html" class="back-link">← Вернуться к выбору курса</a>
+    <h1>Урок 1 · Алфавит, знакомство и семья</h1>
+    <p>Первый шаг: учимся читать, говорить о себе и своей семье</p>
+    <div class="badge" style="background: #d4f5e6; color: #0a7c5c; border-color: #b8e6d2;">A1 · LIFE · ≈ 120 МИН</div>
+    
+    <!-- Панель навигации по урокам (без класса active, скрипт сам подсветит) -->
+    <div class="lesson-top-nav">
+      <a href="life-lesson-1.html">1</a>
+      <a href="life-lesson-2.html">2</a>
+      <a href="life-lesson-3.html">3</a>
+      <a href="#" class="disabled">4</a>
+      <a href="#" class="disabled">5</a>
+    </div>
+  </header>
+
+  <!-- ============ 1. ВВЕДЕНИЕ ============ -->
+  <section id="intro">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, var(--accent-2), #0a7c5c);">1</span> Введение: С чего начинается язык</h2>
+
+    <p>Если вы открыли этот урок, значит, вы решили начать учить английский с нуля. Это отличное решение. В этом уроке мы заложим фундамент: научимся читать, выучим первые 30 слов и научимся составлять простые предложения о себе.</p>
+    
+    <p><strong>Главное правило:</strong> не бойтесь ошибаться. В английском, как и в любом языке, главное — начать говорить, даже если пока выходит коряво. Мы разберем все по шагам.</p>
+
+    <div class="note">
+      💡 <strong>Как устроен урок:</strong><br>
+      1. Выучим алфавит и звуки, которых нет в русском.<br>
+      2. Разберем, как читаются гласные.<br>
+      3. Выучим два главных глагола — <em>to be</em> и <em>to have</em>.<br>
+      4. Прочитаем текст о семье.<br>
+      5. Выучим 30 слов для знакомства.<br>
+      6. Сделаем упражнения.
+    </div>
+  </section>
+
+  <!-- ============ 2. АЛФАВИТ ============ -->
+  <section id="alphabet">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, var(--accent-2), #0a7c5c);">2</span> Алфавит и звуки</h2>
+
+    <p>В английском алфавите <strong>26 букв</strong>: 5 гласных (A, E, I, O, U) и 21 согласная. Но звуков <strong>больше, чем букв</strong> — примерно 44. Поэтому одна и та же буква может читаться по-разному.</p>
+
+    <h3>2.1. Алфавит с произношением</h3>
+    <div class="table-wrap">
+      <table class="alphabet-table">
+        <thead><tr><th>Буква</th><th>Название</th><th>Произношение</th><th>Буква</th><th>Название</th><th>Произношение</th></tr></thead>
+        <tbody>
+          <tr><td>A a</td><td>эй</td><td>[eɪ]</td><td>N n</td><td>эн</td><td>[en]</td></tr>
+          <tr><td>B b</td><td>би</td><td>[biː]</td><td>O o</td><td>оу</td><td>[əʊ]</td></tr>
+          <tr><td>C c</td><td>си</td><td>[siː]</td><td>P p</td><td>пи</td><td>[piː]</td></tr>
+          <tr><td>D d</td><td>ди</td><td>[diː]</td><td>Q q</td><td>кью</td><td>[kjuː]</td></tr>
+          <tr><td>E e</td><td>и</td><td>[iː]</td><td>R r</td><td>ар</td><td>[ɑːr]</td></tr>
+          <tr><td>F f</td><td>эф</td><td>[ef]</td><td>S s</td><td>эс</td><td>[es]</td></tr>
+          <tr><td>G g</td><td>джи</td><td>[dʒiː]</td><td>T t</td><td>ти</td><td>[tiː]</td></tr>
+          <tr><td>H h</td><td>эйч</td><td>[eɪtʃ]</td><td>U u</td><td>ю</td><td>[juː]</td></tr>
+          <tr><td>I i</td><td>ай</td><td>[aɪ]</td><td>V v</td><td>ви</td><td>[viː]</td></tr>
+          <tr><td>J j</td><td>джей</td><td>[dʒeɪ]</td><td>W w</td><td>дабл-ю</td><td>[ˈdʌbəljuː]</td></tr>
+          <tr><td>K k</td><td>кей</td><td>[keɪ]</td><td>X x</td><td>экс</td><td>[eks]</td></tr>
+          <tr><td>L l</td><td>эл</td><td>[el]</td><td>Y y</td><td>уай</td><td>[waɪ]</td></tr>
+          <tr><td>M m</td><td>эм</td><td>[em]</td><td>Z z</td><td>зед / зи</td><td>[zed] / [ziː]</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>2.2. Звуки, которых нет в русском</h3>
+    <p>Есть 3 звука, которые особенно важны — их нет в русском, и без них вас могут не понять:</p>
+
+    <div class="word-grid">
+      <div class="word-card">
+        <div class="en">th — глухой [θ]</div>
+        <div class="ru">Язык между зубами, выдох без голоса. Не «с», не «ф»!</div>
+        <div class="example" style="margin-top: 8px; padding: 8px 12px;">
+          <div class="en">think</div>
+          <div class="ru">думать (θинк)</div>
+        </div>
+      </div>
+      <div class="word-card">
+        <div class="en">w [w]</div>
+        <div class="ru">Губы трубочкой, как для «у», но без вибрации. Не «в»!</div>
+        <div class="example" style="margin-top: 8px; padding: 8px 12px;">
+          <div class="en">we</div>
+          <div class="ru">мы (уи)</div>
+        </div>
+      </div>
+      <div class="word-card">
+        <div class="en">r [r]</div>
+        <div class="ru">Язык загнут назад, не касается нёба. Не русское «р»!</div>
+        <div class="example" style="margin-top: 8px; padding: 8px 12px;">
+          <div class="en">read</div>
+          <div class="ru">читать (рид)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. ПРАВИЛА ЧТЕНИЯ ============ -->
+  <section id="reading">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, var(--accent-2), #0a7c5c);">3</span> Правила чтения</h2>
+
+    <p>В английском <strong>буквы и звуки не совпадают</strong>. Одна буква может читаться по-разному. Но есть <strong>базовое правило</strong> для гласных. Оно зависит от того, <strong>закрыт ли слог</strong>.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Тип слога</th><th>Когда</th><th>Буква A</th><th>Пример</th><th>Произношение</th><th>Перевод</th></tr></thead>
+        <tbody>
+          <tr><td>Открытый</td><td>заканчивается на гласную или на «гласная + согласная + e»</td><td>«эй»</td><td>name</td><td>нэйм</td><td>имя</td></tr>
+          <tr><td>Закрытый</td><td>заканчивается на согласную</td><td>«э»</td><td>man</td><td>мэн</td><td>мужчина</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Обратите внимание на слово <em>name</em>. Буква <strong>e</strong> на конце не читается, но она делает букву <strong>a</strong> «открытой», поэтому мы говорим «нэйм», а не «нам». То же самое происходит с буквой <strong>i</strong>: <em>like</em> (лайк), <em>time</em> (тайм).</p>
+  </section>
+
+  <!-- ============ 4. ГЛАГОЛ TO BE ============ -->
+  <section id="tobe">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, var(--accent-2), #0a7c5c);">4</span> Глагол to be (am / is / are)</h2>
+
+    <p>В русском мы говорим «Я студент», «Он мой друг» — без всяких глаголов. В английском <strong>без глагола-связки не обойтись</strong>. Этот глагол называется <strong>to be</strong>.</p>
+
+    <div class="note">
+      💡 <strong>Объяснение (чтобы не было путаницы):</strong><br>
+      В словаре этот глагол выглядит как <strong>to be</strong> (переводится «быть»).<br><br>
+      Но когда мы строим предложение, мы не можем сказать «Я быть Иван» или «I be Ivan». Мы должны сказать «Я <strong>есть</strong> Иван». В английском этот глагол «переодевается» в зависимости от того, кто действует:
+      <ul style="margin-top: 8px; margin-bottom: 0;">
+        <li>для «я» (I) он становится <strong>am</strong>;</li>
+        <li>для «он, она, оно» (he/she/it) — <strong>is</strong>;</li>
+        <li>для «мы, ты, они» (we/you/they) — <strong>are</strong>.</li>
+      </ul>
+      <strong>Перевод:</strong> все три формы означают одно и то же — «есть». На русский язык они отдельно не переводятся, в русском предложении мы их просто опускаем.
+    </div>
+
+    <div class="error-box">
+      <div><span class="wrong">❌</span> "I Ivan."</div>
+      <div class="ru" style="margin-top: 4px; font-style: italic; color: #7a2340;">(Я Иван.) — так нельзя.</div>
+      <div style="margin-top: 10px;"><span class="right">✅</span> "I <strong>am</strong> Ivan."</div>
+      <div class="ru" style="margin-top: 4px; font-style: italic; color: #2a7a5c;">(Я есть Иван. — ай ЭМ И-ван)</div>
+      
+      <details style="margin-top: 12px; background: rgba(255,255,255,0.5); border-color: #f3c0cf;">
+        <summary style="color: #c02a55;">💡 Почему именно так?</summary>
+        <p style="margin-top: 8px; font-size: 0.9rem;">В русском языке мы можем сказать «Я Иван», и нам не нужен глагол «быть». В английском языке <strong>без глагола не бывает предложения</strong>. Поэтому мы берем глагол <em>to be</em> и ставим его в нужную форму (для «я» — это <strong>am</strong>).</p>
+      </details>
+    </div>
+
+    <h3>4.1. Три формы: когда какую использовать</h3>
+    <p>Выбор формы зависит от того, <strong>с каким местоимением</strong> мы говорим.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Местоимение (Кто)</th><th>Форма</th><th>Перевод (смысл)</th><th>Пример</th><th>Перевод примера</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>I (я)</td><td><strong>am</strong></td><td>«есть» (для «я»)</td><td>I am happy.</td><td>Я счастлив(а). (слова <em>am</em> в переводе нет)</td></tr>
+          <tr><td>He (он)</td><td><strong>is</strong></td><td>«есть» (для одного лица)</td><td>He is my brother.</td><td>Он мой брат.</td></tr>
+          <tr><td>She (она)</td><td><strong>is</strong></td><td>«есть» (для одного лица)</td><td>She is a doctor.</td><td>Она врач.</td></tr>
+          <tr><td>It (оно)</td><td><strong>is</strong></td><td>«есть» (для предмета)</td><td>It is a cat.</td><td>Это кот.</td></tr>
+          <tr><td>We (мы)</td><td><strong>are</strong></td><td>«есть» (для группы)</td><td>We are friends.</td><td>Мы друзья.</td></tr>
+          <tr><td>You (ты/вы)</td><td><strong>are</strong></td><td>«есть» (для ты/вы)</td><td>You are nice.</td><td>Ты милый(ая).</td></tr>
+          <tr><td>They (они)</td><td><strong>are</strong></td><td>«есть» (для группы)</td><td>They are from Italy.</td><td>Они из Италии.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note">
+      💡 <strong>Запомните:</strong> <em>am</em> — только для «я». <em>Is</em> — для одного (он, она, оно). <em>Are</em> — для всех остальных (ты, мы, вы, они). В русском языке мы говорим просто «Я счастлив» без глагола «есть», но в английском <em>am</em> обязательно.
+    </div>
+
+    <h3>4.2. Отрицание (Я не...)</h3>
+    <p>Чтобы сказать «не», просто добавьте частицу <strong>not</strong> после глагола.</p>
+    <div class="example"><div class="en">I <strong>am not</strong> a doctor.</div><div class="ru">Я не врач. (ай эм НОТ э ДОК-тэ(р))</div></div>
+    <div class="example"><div class="en">She <strong>is not</strong> my sister.</div><div class="ru">Она не моя сестра. (ши ИЗ НОТ май СИС-тэ(р))</div></div>
+    <div class="example"><div class="en">We <strong>are not</strong> from Spain.</div><div class="ru">Мы не из Испании. (ви А(р) НОТ фром спэйн)</div></div>
+    
+    <h3>4.3. Вопрос (Ты...?)</h3>
+    <p>Чтобы задать вопрос, нужно просто поставить глагол на первое место.</p>
+    <div class="example"><div class="en"><strong>Are</strong> you a student?</div><div class="ru">Ты студент? (А(р) ю э СТЬЮ-дэнт)</div></div>
+    <div class="example"><div class="en"><strong>Is</strong> he your friend?</div><div class="ru">Он твой друг? (ИЗ хи ё(р) фрэнд)</div></div>
+  </section>
+
+  <!-- ============ 5. ГЛАГОЛ TO HAVE ============ -->
+  <section id="have">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, var(--accent-2), #0a7c5c);">5</span> Глагол to have (have / has)</h2>
+
+    <p>Этот глагол значит <strong>«иметь»</strong>. В русском мы говорим «У меня есть семья». В английском мы говорим буквально «Я имею семью».</p>
+
+    <div class="note">
+      💡 <strong>Объяснение:</strong><br>
+      В словаре этот глагол выглядит как <strong>to have</strong>. Но так же, как и <em>to be</em>, в реальной речи он меняет свою форму в зависимости от того, кто действует. С <em>he, she, it</em> он превращается в <strong>has</strong>.
+    </div>
+
+    <div class="example">
+      <div class="en">I <strong>have</strong> a family.</div>
+      <div class="ru">У меня есть семья. (ай ХЭВ э ФЭ-ми-ли)</div>
+    </div>
+
+    <h3>5.1. Две формы: have и has</h3>
+    <p>С <em>he</em>, <em>she</em>, <em>it</em> (он, она, оно) глагол <em>have</em> меняется на <strong>has</strong>. С остальными местоимениями остается <em>have</em>.</p>
+    
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Местоимение (Кто)</th><th>Форма</th><th>Перевод (смысл)</th><th>Пример</th><th>Перевод примера</th></tr></thead>
+        <tbody>
+          <tr><td>I (я)</td><td><strong>have</strong></td><td>«имею» / «у меня есть»</td><td>I have a family.</td><td>У меня есть семья.</td></tr>
+          <tr><td>He (он)</td><td><strong>has</strong></td><td>«имеет» / «у него есть»</td><td>He has a wife.</td><td>У него есть жена.</td></tr>
+          <tr><td>She (она)</td><td><strong>has</strong></td><td>«имеет» / «у неё есть»</td><td>She has a brother.</td><td>У неё есть брат.</td></tr>
+          <tr><td>It (оно)</td><td><strong>has</strong></td><td>«имеет» / «у него есть»</td><td>It has a tail.</td><td>У него (животного) есть хвост.</td></tr>
+          <tr><td>We (мы)</td><td><strong>have</strong></td><td>«имеем» / «у нас есть»</td><td>We have a house.</td><td>У нас есть дом.</td></tr>
+          <tr><td>You (ты/вы)</td><td><strong>have</strong></td><td>«имеешь» / «у тебя есть»</td><td>You have a car.</td><td>У тебя есть машина.</td></tr>
+          <tr><td>They (они)</td><td><strong>have</strong></td><td>«имеют» / «у них есть»</td><td>They have children.</td><td>У них есть дети.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note">
+      💡 <strong>Запомните:</strong> <em>has</em> используется только с <em>he, she, it</em>. Во всех остальных случаях — <em>have</em>. В русском языке мы говорим «У меня есть», а в английском — «Я имею» (I have). Это просто разница в построении фразы.
+    </div>
+  </section>
+
+  <!-- ============ 6. ТЕКСТ ============ -->
+  <section id="reading-text">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, var(--accent-2), #0a7c5c);">6</span> 📖 Текст для чтения: Моя семья</h2>
+    <p>Прочитайте текст. Обратите внимание, как используются глаголы <em>to be</em> и <em>to have</em>.</p>
+
+    <div class="example" style="font-size: 1rem; line-height: 1.8;">
+      <p>My name is Alex. I <strong>am</strong> 25 years old. I <strong>am</strong> from Russia. I <strong>have</strong> a small family: my wife, my little daughter and a cat.</p>
+      <p style="margin-top: 10px;">My wife's name <strong>is</strong> Anna. She <strong>is</strong> a teacher. She <strong>has</strong> a lot of books. Our daughter <strong>is</strong> only two years old. She <strong>has</strong> many toys.</p>
+      <p style="margin-top: 10px;">We <strong>are</strong> very happy together.</p>
+    </div>
+
+    <div class="note" style="margin-top: 15px; background: #eefaf4; border-color: #b8e6d2; color: #2a7a5c;">
+      <strong>Перевод:</strong><br>
+      Меня зовут Алекс. Мне 25 лет. Я из России. У меня есть маленькая семья: моя жена, моя маленькая дочь и кот.<br><br>
+      Мою жену зовут Анна. Она учитель. У неё есть много книг. Нашей дочери всего два года. У неё есть много игрушек.<br><br>
+      Мы очень счастливы вместе.
+    </div>
+  </section>
+
+  <!-- ============ 7. СЛОВАРЬ ============ -->
+  <section id="vocabulary">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, var(--accent-2), #0a7c5c);">7</span> 📚 Словарь: 30 слов</h2>
+
+    <p>Вот все слова, которые мы прошли в этом уроке. Их нужно выучить.</p>
+
+    <h3>7.1. Местоимения и люди</h3>
+    <div class="word-grid">
+      <div class="word-card"><div class="en">I</div><div class="tr">ай</div><div class="ru">я</div></div>
+      <div class="word-card"><div class="en">you</div><div class="tr">ю</div><div class="ru">ты / вы</div></div>
+      <div class="word-card"><div class="en">he</div><div class="tr">хи</div><div class="ru">он</div></div>
+      <div class="word-card"><div class="en">she</div><div class="tr">ши</div><div class="ru">она</div></div>
+      <div class="word-card"><div class="en">we</div><div class="tr">ви</div><div class="ru">мы</div></div>
+      <div class="word-card"><div class="en">they</div><div class="tr">зэй</div><div class="ru">они</div></div>
+      <div class="word-card"><div class="en">man</div><div class="tr">мэн</div><div class="ru">мужчина</div></div>
+      <div class="word-card"><div class="en">woman</div><div class="tr">ВУ-мэн</div><div class="ru">женщина</div></div>
+      <div class="word-card"><div class="en">friend</div><div class="tr">фрэнд</div><div class="ru">друг</div></div>
+      <div class="word-card"><div class="en">student</div><div class="tr">СТЬЮ-дэнт</div><div class="ru">студент</div></div>
+      <div class="word-card"><div class="en">doctor</div><div class="tr">ДОК-тэ(р)</div><div class="ru">врач</div></div>
+      <div class="word-card"><div class="en">teacher</div><div class="tr">ТИ-чэ(р)</div><div class="ru">учитель</div></div>
+    </div>
+
+    <h3>7.2. Семья</h3>
+    <div class="word-grid">
+      <div class="word-card"><div class="en">family</div><div class="tr">ФЭ-ми-ли</div><div class="ru">семья</div></div>
+      <div class="word-card"><div class="en">mother</div><div class="tr">МА-зэ(р)</div><div class="ru">мама</div></div>
+      <div class="word-card"><div class="en">father</div><div class="tr">ФА-зэ(р)</div><div class="ru">папа</div></div>
+      <div class="word-card"><div class="en">sister</div><div class="tr">СИС-тэ(р)</div><div class="ru">сестра</div></div>
+      <div class="word-card"><div class="en">brother</div><div class="tr">БРА-зэ(р)</div><div class="ru">брат</div></div>
+      <div class="word-card"><div class="en">wife</div><div class="tr">уайф</div><div class="ru">жена</div></div>
+      <div class="word-card"><div class="en">child</div><div class="tr">чайлд</div><div class="ru">ребенок</div></div>
+    </div>
+
+    <h3>7.3. Прилагательные и прочее</h3>
+    <div class="word-grid">
+      <div class="word-card"><div class="en">happy</div><div class="tr">ХЭ-пи</div><div class="ru">счастливый</div></div>
+      <div class="word-card"><div class="en">good</div><div class="tr">гуд</div><div class="ru">хороший</div></div>
+      <div class="word-card"><div class="en">big</div><div class="tr">биг</div><div class="ru">большой</div></div>
+      <div class="word-card"><div class="en">small</div><div class="tr">смол</div><div class="ru">маленький</div></div>
+      <div class="word-card"><div class="en">name</div><div class="tr">нэйм</div><div class="ru">имя</div></div>
+      <div class="word-card"><div class="en">year</div><div class="tr">йэ(р)</div><div class="ru">год</div></div>
+    </div>
+  </section>
+
+  <!-- ============ 8. ПРАКТИКА ============ -->
+  <section id="practice">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, var(--accent-2), #0a7c5c);">8</span> ✏️ Практика</h2>
+
+    <div class="mini-task">
+      <div class="title">Упражнение 1: Вставьте am, is или are</div>
+      <p><strong>1.</strong> I ___ a man.</p>
+      <details><summary>Ответ</summary>I <strong>am</strong> a man. (Потому что это «я»)</details>
+      
+      <p><strong>2.</strong> She ___ my friend.</p>
+      <details><summary>Ответ</summary>She <strong>is</strong> my friend. (Потому что это «она»)</details>
+      
+      <p><strong>3.</strong> We ___ happy.</p>
+      <details><summary>Ответ</summary>We <strong>are</strong> happy. (Потому что это «мы»)</details>
+    </div>
+
+    <div class="mini-task">
+      <div class="title">Упражнение 2: Вставьте have или has</div>
+      <p><strong>1.</strong> I ___ a family.</p>
+      <details><summary>Ответ</summary>I <strong>have</strong> a family. (Потому что это «я»)</details>
+      
+      <p><strong>2.</strong> He ___ a sister.</p>
+      <details><summary>Ответ</summary>He <strong>has</strong> a sister. (Потому что это «он»)</details>
+      
+      <p><strong>3.</strong> They ___ children.</p>
+      <details><summary>Ответ</summary>They <strong>have</strong> children. (Потому что это «они»)</details>
+    </div>
+  </section>
+
+  <!-- ============ 9. ОШИБКИ ============ -->
+  <section id="mistakes">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, var(--accent-2), #0a7c5c);">9</span> Типичные ошибки</h2>
+
+    <h3>1. Пропуск to be</h3>
+    <div class="error-box">
+      <div><span class="wrong">❌</span> I a student. · <span class="wrong">❌</span> He my friend.</div>
+      <div class="ru" style="margin-top: 4px; font-style: italic; color: #7a2340;">(Я студент. · Он мой друг.)</div>
+      <div style="margin-top: 10px;"><span class="right">✅</span> I <strong>am</strong> a student. · <span class="right">✅</span> He <strong>is</strong> my friend.</div>
+      
+      <details style="margin-top: 12px; background: rgba(255,255,255,0.5); border-color: #f3c0cf;">
+        <summary style="color: #c02a55;">💡 Почему именно так?</summary>
+        <p style="margin-top: 8px; font-size: 0.9rem;">В русском языке мы говорим «Я студент» без глагола. В английском языке <strong>без глагола не бывает предложения</strong>. Обязательно нужен глагол-связка <strong>to be</strong> (am/is/are).</p>
+      </details>
+    </div>
+
+    <h3>2. Забывают про has</h3>
+    <div class="error-box">
+      <div><span class="wrong">❌</span> He have a sister.</div>
+      <div class="ru" style="margin-top: 4px; font-style: italic; color: #7a2340;">(У него есть сестра.)</div>
+      <div style="margin-top: 10px;"><span class="right">✅</span> He <strong>has</strong> a sister.</div>
+      
+      <details style="margin-top: 12px; background: rgba(255,255,255,0.5); border-color: #f3c0cf;">
+        <summary style="color: #c02a55;">💡 Почему именно так?</summary>
+        <p style="margin-top: 8px; font-size: 0.9rem;">С местоимениями <strong>he, she, it</strong> глагол <em>have</em> превращается в <strong>has</strong>.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ============ 10. ЗАДАНИЕ ============ -->
+  <section id="task" class="task">
+    <h2>📝 Итоговое задание</h2>
+
+    <p>Напишите в тетради (или в заметках на телефоне) 5 предложений о себе и своей семье:</p>
+    <ol>
+      <li>Как вас зовут? (My name is ...)</li>
+      <li>Кто вы? (I am a man / a woman / a student)</li>
+      <li>У вас есть семья? (I have a ...)</li>
+      <li>Кто есть в семье? (I have a mother, a father...)</li>
+      <li>Как ваши дела? (I am happy / I am good)</li>
+    </ol>
+
+    <div class="hint">
+      <strong>Пример для самопроверки:</strong><br>
+      <em>My name is Anna.</em> (Меня зовут Анна)<br>
+      <em>I am a student.</em> (Я студентка)<br>
+      <em>I have a big family.</em> (У меня большая семья)<br>
+      <em>I have a mother and a father.</em> (У меня есть мама и папа)<br>
+      <em>I am happy.</em> (Я счастлива)
+      <br><br>
+      ✍️ Сравните свои предложения с примером. Если структура похожа (есть <strong>am/is/are</strong> и <strong>have/has</strong>), значит, вы всё сделали верно!
+    </div>
+
+    <button id="complete-btn" class="complete-btn" style="background: linear-gradient(135deg, var(--accent-2), #0a7c5c);">✅ Отметить урок пройденным</button>
+  </section>
+
+  <nav class="lesson-nav">
+    <a href="../../index.html">← К выбору курса</a>
+    <a href="life-lesson-2.html">Следующий урок →</a>
+  </nav>
+
+  <footer>
+    English for Life · Первые шаги 🚀
+  </footer>
+
+</div>
+
+<button id="scroll-top" class="scroll-top" aria-label="Наверх">↑</button>
+
+<script src="../../script.js"></script>
+</body>
+</html>

@@ -31,9 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const btn = document.getElementById('complete-btn');
 
     if (btn) {
-      // Блок с автопроверкой удален. Кнопка всегда синяя при загрузке.
-
-      // Логика при клике на кнопку
       btn.addEventListener('click', () => {
         const p = JSON.parse(localStorage.getItem('efwd-progress')) || {};
         p[lessonId] = true;
@@ -64,23 +61,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const sidebar = document.getElementById('sidebar');
   const overlay = document.getElementById('overlay');
 
-  // Функция для синхронизации иконки внешней кнопки
   function updateMenuIcon() {
     if (!menuToggle || !sidebar) return;
-    // Если меню открыто, ставим крестик, если закрыто - бургер
     menuToggle.innerHTML = sidebar.classList.contains('open') ? '×' : '☰';
   }
 
   if (sidebar) {
-    // На ПК по умолчанию открываем панель
     if (window.innerWidth >= 1024) {
       sidebar.classList.add('open');
     }
     
-    // Синхронизируем иконку при первой загрузке
     updateMenuIcon();
 
-    // Функция закрытия (вызывается внутренней кнопкой на ПК)
     function closeDesktopMenu() {
       document.body.classList.add('sidebar-closed');
       sidebar.classList.remove('open');
@@ -113,8 +105,6 @@ document.addEventListener('DOMContentLoaded', () => {
           isOpen = true;
         }
       }
-
-      // Обновляем иконку у внешней кнопки
       updateMenuIcon();
     }
 
@@ -154,4 +144,18 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }, { passive: true });
   }
+
+  // ---------- 6. АВТОМАТИЧЕСКАЯ ПОДСВЕТКА ТЕКУЩЕГО УРОКА ----------
+  const topNavLinks = document.querySelectorAll('.lesson-top-nav a');
+  const currentPath = window.location.pathname;
+
+  if (topNavLinks.length > 0) {
+    topNavLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href && href !== '#' && currentPath.includes(href)) {
+        link.classList.add('active');
+      }
+    });
+  }
+
 });

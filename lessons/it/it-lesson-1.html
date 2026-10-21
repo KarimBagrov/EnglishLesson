@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#3b62e0">
-  <title>Урок 1 — Основы английского с нуля | English for Developers</title>
-  <link rel="stylesheet" href="../style.css">
+  <title>Урок 1 — Основы английского с нуля | English for Lesson</title>
+  <link rel="stylesheet" href="../../style.css">
 </head>
 <body data-lesson-id="lesson-1">
 
@@ -17,7 +17,7 @@
     <button id="menu-toggle-inside" class="menu-toggle-inside" aria-label="Закрыть меню">×</button>
     <div class="sidebar__title-wrap">
       <h3>Урок 1</h3>
-      <a href="../index.html" class="sidebar__home-link">← На главную</a>
+      <a href="../../index.html" class="sidebar__home-link">← На главную</a>
     </div>
   </div>
   <div class="sidebar__nav">
@@ -41,10 +41,19 @@
 <div class="container">
 
   <header>
-    <a href="../index.html" class="back-link">← Вернуться к курсу</a>
+    <a href="../../index.html" class="back-link">← Вернуться к курсу</a>
     <h1>Урок 1 · Основы английского с нуля</h1>
     <p>Как устроен язык, части речи, звуки, правила чтения, порядок слов, to be, артикли</p>
     <div class="badge">A1 · ≈ 120 МИН</div>
+    
+    <!-- НОВЫЙ БЛОК НАВИГАЦИИ -->
+    <div class="lesson-top-nav">
+      <a href="it-lesson-1.html" class="active">1</a>
+      <a href="it-lesson-2.html">2</a>
+      <a href="it-lesson-3.html">3</a>
+      <a href="#" class="disabled">4</a>
+      <a href="#" class="disabled">5</a>
+    </div>
   </header>
 
   <!-- ============ ВВЕДЕНИЕ ============ -->
@@ -324,6 +333,20 @@
           <tr><td>ch</td><td>«ч»</td><td>check</td><td>чек</td><td>проверять</td></tr>
           <tr><td>ph</td><td>«ф»</td><td>phone</td><td>фоун</td><td>телефон</td></tr>
           <tr><td>wh</td><td>«у» / «х»</td><td>what</td><td>уот</td><td>что</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ДОБАВЛЕНО ИЗ САМОУЧИТЕЛЯ ПЕТРОВОЙ -->
+    <h3>4.4. Как читается окончание -s (множественное число)</h3>
+    <p>Когда мы ставим существительное во множественное число (добавляем <strong>-s</strong>), это окончание может читаться тремя разными способами. Это зависит от звука, который стоит перед ним:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Когда</th><th>Как читается</th><th>Пример</th><th>Произношение</th></tr></thead>
+        <tbody>
+          <tr><td>После <strong>глухих</strong> согласных (p, t, k, f)</td><td><strong>[s]</strong> (как русская «с»)</td><td>books, cats</td><td>бук<strong>с</strong>, кэт<strong>с</strong></td></tr>
+          <tr><td>После <strong>звонких</strong> согласных и гласных</td><td><strong>[z]</strong> (как русская «з»)</td><td>dogs, days</td><td>дог<strong>з</strong>, дэй<strong>з</strong></td></tr>
+          <tr><td>После шипящих и свистящих (s, ss, sh, ch, x)</td><td><strong>[iz]</strong> (как «из»)</td><td>boxes, classes</td><td>бокс<strong>из</strong>, клас<strong>из</strong></td></tr>
         </tbody>
       </table>
     </div>
@@ -908,9 +931,9 @@
     </div>
   </section>
 
-  <!-- ============ ОШИБКИ (С АККОРДЕОНАМИ) ============ -->
+  <!-- ============ ОШИБКИ ============ -->
   <section id="mistakes">
-    <h2><span class="lesson-num">11</span> Типичные ошибки русскоязычных</h2>
+    <h2><span class="lesson-num">11</span> Типичные ошибки</h2>
 
     <h3>1. Пропуск to be</h3>
     <div class="error-box">
@@ -922,7 +945,6 @@
       <details style="margin-top: 12px; background: rgba(255,255,255,0.5); border-color: #f3c0cf;">
         <summary style="color: #c02a55;">💡 Почему именно так?</summary>
         <p style="margin-top: 8px; font-size: 0.9rem;">В русском языке мы можем сказать «Я разработчик», и нам не нужен глагол «быть». В английском языке <strong>без глагола не бывает предложения</strong>. Если нет действия (например, «я пишу»), обязательно нужен глагол-связка <strong>to be</strong> («быть / являться»).</p>
-        <p style="font-size: 0.9rem;">Запомните: <em>I am</em> (я есть), <em>he is</em> (он есть), <em>we are</em> (мы есть).</p>
       </details>
     </div>
 
@@ -936,7 +958,6 @@
       <details style="margin-top: 12px; background: rgba(255,255,255,0.5); border-color: #f3c0cf;">
         <summary style="color: #c02a55;">💡 Почему именно так?</summary>
         <p style="margin-top: 8px; font-size: 0.9rem;"><em>Code</em> (код) — это <strong>неисчисляемое</strong> существительное (как вода, сахар или любовь). Его нельзя посчитать по штукам (нельзя сказать «один код, два кода»). Артикль <strong>a</strong> означает «один», поэтому с неисчисляемыми словами он не ставится.</p>
-        <p style="font-size: 0.9rem;">Если вы хотите подчеркнуть какой-то конкретный код, можно сказать <em>the code</em> (этот код), но просто <em>a code</em> сказать нельзя.</p>
       </details>
     </div>
 
@@ -950,7 +971,6 @@
       <details style="margin-top: 12px; background: rgba(255,255,255,0.5); border-color: #f3c0cf;">
         <summary style="color: #c02a55;">💡 Почему именно так?</summary>
         <p style="margin-top: 8px; font-size: 0.9rem;">В русском мы можем выкинуть слово «вчера» в самое начало, и смысл не потеряется. В английском <strong>порядок слов жесткий</strong>: сначала всегда идет тот, кто действует (I), потом действие (found), потом то, на что направлено действие (a bug), и только в конце — когда это было (yesterday).</p>
-        <p style="font-size: 0.9rem;">Кроме того, про баг мы говорим впервые (<em>a bug</em> — какой-то), а код уже обсуждали, он для нас конкретный (<em>the code</em>).</p>
       </details>
     </div>
 
@@ -1038,18 +1058,18 @@
   </section>
 
   <nav class="lesson-nav">
-    <a href="../index.html">← К курсу</a>
+    <a href="../../index.html">← К курсу</a>
     <a href="lesson-2.html">Следующий урок →</a>
   </nav>
 
   <footer>
-    English for Developers · Урок 1 · Продолжение следует 🚀
+    English for Lesson · Урок 1 · Продолжение следует 🚀
   </footer>
 
 </div>
 
 <button id="scroll-top" class="scroll-top" aria-label="Наверх">↑</button>
 
-<script src="../script.js"></script>
+<script src="../../script.js"></script>
 </body>
 </html>

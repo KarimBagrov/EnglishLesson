@@ -4,136 +4,84 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#3b62e0">
-  <title>English-for-Lesson — Курс</title>
+  <title>English for Lesson — Выбор направления</title>
+  
+  <!-- Подключение манифеста для PWA (офлайн-режим) -->
+  <link rel="manifest" href="manifest.json">
+  
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="container">
 
   <header class="course-header">
-    <h1>English-for-Lesson</h1>
-    <p>Английский для работы и жизни: разговор, чтение, документация, IT</p>
+    <h1>English for Lesson</h1>
+    <p>Выберите направление, которое вам ближе</p>
     <div class="badge">🚀 СТАРТ · A1 → B1</div>
   </header>
 
   <section class="intro-card">
-    <h2>👋 Что внутри</h2>
-    <p>Курс не только про IT. Мы учим <strong>живому английскому</strong>: как представиться, поддержать small talk, спросить дорогу, заказать кофе — и параллельно читать документацию, писать коммиты, понимать созвоны.</p>
-    <p><strong>Принцип:</strong> каждый урок = <em>грамматика + разговорная практика + лексика (общая + IT)</em>.</p>
+    <h2>👋 С чего начнём?</h2>
+    <p>Мы подготовили два пути. Вы можете выбрать тот, который нужен вам прямо сейчас, или проходить оба параллельно.</p>
   </section>
 
-  <section>
-    <h2>📚 Уроки</h2>
-
-    <div class="lesson-grid">
-
-      <!-- Урок 1 (Открыт) -->
-      <a href="lessons/lesson-1.html" class="lesson-card">
-        <div class="lesson-card__num">1</div>
-        <div class="lesson-card__body">
-          <h3>Основы + знакомство</h3>
-          <p>Части речи, произношение, порядок слов, to be, артикли. Как представиться и сказать о себе.</p>
-          <div class="lesson-card__meta">
-            <span class="tag tag--green">A1–A2</span>
-            <span class="tag">🗣️ разговор</span>
-            <span class="tag">💻 IT</span>
-          </div>
+  <!-- Карточки направлений -->
+  <div class="lesson-grid">
+    
+    <!-- Ветка IT -->
+    <a href="lessons/it/it-lesson-1.html" class="lesson-card" style="flex-direction: column; align-items: flex-start; padding: 30px;">
+      <div class="lesson-card__num" style="width: 60px; height: 60px; font-size: 1.5rem; margin-bottom: 15px;">💻</div>
+      <div class="lesson-card__body">
+        <h3 style="font-size: 1.3rem;">Английский для IT (Developers)</h3>
+        <p>Для тех, кто работает в технологиях. Учим не только язык, но и профессиональную лексику: чтение документации, code review, деплой и созвоны с командой.</p>
+        <div class="lesson-card__meta">
+          <span class="tag tag--green">A1–B1</span>
+          <span class="tag">📖 документация</span>
+          <span class="tag">💻 IT-лексика</span>
         </div>
-        <div class="lesson-card__arrow">→</div>
-      </a>
-
-      <!-- Урок 2 (Открыт) -->
-      <a href="lessons/lesson-2.html" class="lesson-card">
-        <div class="lesson-card__num">2</div>
-        <div class="lesson-card__body">
-          <h3>Present Simple + small talk</h3>
-          <p>Как говорить о привычках и работе. Фразы для small talk: how are you, what do you do.</p>
-          <div class="lesson-card__meta">
-            <span class="tag tag--green">A2</span>
-            <span class="tag">🗣️ разговор</span>
-            <span class="tag">💻 IT</span>
-          </div>
-        </div>
-        <div class="lesson-card__arrow">→</div>
-      </a>
-
-      <!-- Урок 3 (Закрыт) -->
-      <div class="lesson-card lesson-card--disabled">
-        <div class="lesson-card__num">3</div>
-        <div class="lesson-card__body">
-          <h3>Вопросы + как спросить</h3>
-          <p>Do/does, wh-вопросы. Как спросить дорогу, время, помощь — и понять ответ.</p>
-          <div class="lesson-card__meta">
-            <span class="tag tag--green">A2</span>
-            <span class="tag">🗣️ разговор</span>
-            <span class="tag">скоро</span>
-          </div>
-        </div>
-        <div class="lesson-card__arrow">🔒</div>
       </div>
+      <div class="lesson-card__arrow" style="margin-top: 15px; align-self: flex-end;">→</div>
+    </a>
 
-      <!-- Урок 4 (Закрыт) -->
-      <div class="lesson-card lesson-card--disabled">
-        <div class="lesson-card__num">4</div>
-        <div class="lesson-card__body">
-          <h3>Числа, время, дни</h3>
-          <p>Как сказать время, дату, цену. Дни недели, месяцы. Бытовые фразы.</p>
-          <div class="lesson-card__meta">
-            <span class="tag tag--green">A2</span>
-            <span class="tag">🗣️ жизнь</span>
-            <span class="tag">скоро</span>
-          </div>
+    <!-- Ветка LIFE -->
+    <a href="lessons/life/life-lesson-1.html" class="lesson-card" style="flex-direction: column; align-items: flex-start; padding: 30px;">
+      <div class="lesson-card__num" style="width: 60px; height: 60px; font-size: 1.5rem; margin-bottom: 15px; background: linear-gradient(135deg, var(--accent-2), #0a7c5c);">🌍</div>
+      <div class="lesson-card__body">
+        <h3 style="font-size: 1.3rem;">Общий английский (Для жизни)</h3>
+        <p>Для путешествий и повседневного общения. Учим, как заказать кофе, спросить дорогу, поддержать Small Talk, рассказать о семье и своих хобби.</p>
+        <div class="lesson-card__meta">
+          <span class="tag tag--green">A1–B1</span>
+          <span class="tag">🗣️ разговор</span>
+          <span class="tag">✈️ путешествия</span>
         </div>
-        <div class="lesson-card__arrow">🔒</div>
       </div>
+      <div class="lesson-card__arrow" style="margin-top: 15px; align-self: flex-end; color: var(--accent-2);">→</div>
+    </a>
 
-      <!-- Урок 5 (Закрыт) -->
-      <div class="lesson-card lesson-card--disabled">
-        <div class="lesson-card__num">5</div>
-        <div class="lesson-card__body">
-          <h3>Чтение документации + IT-лексика</h3>
-          <p>Как читать MDN, React docs, GitHub issues. 50 IT-слов, стратегии чтения.</p>
-          <div class="lesson-card__meta">
-            <span class="tag tag--green">A2–B1</span>
-            <span class="tag">📖 чтение</span>
-            <span class="tag">💻 IT</span>
-            <span class="tag">скоро</span>
-          </div>
-        </div>
-        <div class="lesson-card__arrow">🔒</div>
-      </div>
-
-      <!-- Урок 6 (Закрыт) -->
-      <div class="lesson-card lesson-card--disabled">
-        <div class="lesson-card__num">6</div>
-        <div class="lesson-card__body">
-          <h3>Созвоны и рабочие фразы</h3>
-          <p>Как начать встречу, переспросить, согласиться, вежливо возразить. Фразы для Slack/Teams.</p>
-          <div class="lesson-card__meta">
-            <span class="tag tag--green">B1</span>
-            <span class="tag">🗣️ работа</span>
-            <span class="tag">скоро</span>
-          </div>
-        </div>
-        <div class="lesson-card__arrow">🔒</div>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="progress-section">
-    <h2>📊 Ваш прогресс</h2>
-    <div class="progress-bar">
-      <div class="progress-bar__fill" id="progress-fill" style="width: 0%"></div>
-    </div>
-    <p class="progress-text"><span id="progress-count">0</span> из 6 уроков пройдено</p>
-  </section>
+  </div>
 
   <footer>
-    English-for-Lesson · Курс · Продолжение следует 🚀
+    English for Lesson · Выберите свой путь 🚀
   </footer>
 
 </div>
+
 <script src="script.js"></script>
+
+<!-- Скрипт для включения офлайн-режима -->
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js')
+        .then(registration => {
+          console.log('Service Worker зарегистрирован успешно!');
+        })
+        .catch(error => {
+          console.log('Ошибка регистрации Service Worker:', error);
+        });
+    });
+  }
+</script>
+
 </body>
 </html>
