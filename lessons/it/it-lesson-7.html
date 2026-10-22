@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#3b62e0">
+  <title>Урок 7 — Сообщение о багах и проблемах | English for IT</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body data-lesson-id="it-lesson-7">
+
+<button id="menu-toggle" class="menu-toggle" aria-label="Открыть меню">☰</button>
+<div id="overlay" class="overlay"></div>
+
+<aside id="sidebar" class="sidebar">
+  <div class="sidebar__header">
+    <button id="menu-toggle-inside" class="menu-toggle-inside" aria-label="Закрыть меню">×</button>
+    <div class="sidebar__title-wrap">
+      <h3>Урок 7 (IT)</h3>
+      <a href="../../index.html" class="sidebar__home-link">← На главную</a>
+    </div>
+  </div>
+  <div class="sidebar__nav">
+    <ol>
+      <li><a href="#intro">Введение</a></li>
+      <li><a href="#tenses-review">Повторение времен</a></li>
+      <li><a href="#bug-phrases">Как описать баг</a></li>
+      <li><a href="#jira">💻 Жизнь в Jira и GitHub</a></li>
+      <li><a href="#practice">✏️ Практика</a></li>
+      <li><a href="#mistakes">Типичные ошибки</a></li>
+      <li><a href="#task">Итоговое задание</a></li>
+    </ol>
+  </div>
+</aside>
+
+<div class="container">
+  <header>
+    <a href="../../index.html" class="back-link">← Вернуться к курсу</a>
+    <h1>Урок 7 · Сообщение о багах</h1>
+    <p>Как описать проблему, чтобы тебя поняли коллеги, и как не запутаться во временах</p>
+    <div class="badge">A2 · ≈ 120 МИН</div>
+    
+    <div class="lesson-top-nav">
+      <a href="it-lesson-1.html">1</a>
+      <a href="it-lesson-2.html">2</a>
+      <a href="it-lesson-3.html">3</a>
+      <a href="it-lesson-4.html">4</a>
+      <a href="it-lesson-5.html">5</a>
+      <a href="it-lesson-6.html">6</a>
+      <a href="it-lesson-7.html">7</a>
+    </div>
+  </header>
+
+  <!-- ============ 1. ВВЕДЕНИЕ ============ -->
+  <section id="intro">
+    <h2><span class="lesson-num">1</span> Введение: Баги случаются</h2>
+
+    <p>В IT-сфере ошибки (баги) — это нормальная часть работы. Но чтобы коллега (или заказчик) понял, что сломалось и как это исправить, нужно уметь правильно описывать проблему.</p>
+
+    <p>В этом уроке мы соберем "конструктор" из тех времен, которые уже прошли (Present Simple, Present Continuous, Past Simple), и научимся писать сообщения об ошибках (Bug Reports) в Jira или GitHub.</p>
+  </section>
+
+  <!-- ============ 2. ПОВТОРЕНИЕ ВРЕМЕН ============ -->
+  <section id="tenses-review">
+    <h2><span class="lesson-num">2</span> Повторение: Какое время использовать?</h2>
+
+    <p>Когда вы описываете баг, очень важно правильно выбрать время, чтобы вас поняли.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Время</th><th>Когда использовать</th><th>Пример</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Present Simple</strong></td><td>Регулярная ошибка (воспроизводится всегда)</td><td>The app <strong>crashes</strong> when I click this button.</td></tr>
+          <tr><td><strong>Past Simple</strong></td><td>Что случилось в конкретный момент в прошлом</td><td>Yesterday, the server <strong>went down</strong> at 5 PM.</td></tr>
+          <tr><td><strong>Present Continuous</strong></td><td>Что происходит прямо сейчас (в момент бага)</td><td>I <strong>am getting</strong> an error right now.</td></tr>
+          <tr><td><strong>Present Perfect</strong></td><td>Результат на данный момент (действие уже завершилось, но важен результат)</td><td>I <strong>have finished</strong> the fix.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note">
+      💡 <strong>Как это работает в жизни:</strong> Если вы пишете в чат поддержки, вы говорите: <em>"The app <strong>is crashing</strong> right now"</em> (оно падает прямо сейчас). А если пишете в тикет: <em>"The app <strong>crashes</strong> when I open the settings"</em> (оно падает каждый раз, когда я открываю настройки).
+    </div>
+  </section>
+
+  <!-- ============ 3. КАК ОПИСАТЬ БАГ ============ -->
+  <section id="bug-phrases">
+    <h2><span class="lesson-num">3</span> Конструктор для описания бага</h2>
+
+    <p>Хороший баг-репорт всегда отвечает на 3 вопроса: <strong>Что произошло?</strong> <strong>Что вы делали?</strong> <strong>Что должно было быть?</strong></p>
+
+    <h3>3.1. Фразы для описания проблемы</h3>
+    <div class="example">
+      <div class="en">I found a bug.</div>
+      <div class="ru">Я нашел баг. (ай ФАУНД э баг)</div>
+    </div>
+    <div class="example">
+      <div class="en">The app crashes when I click the "Save" button.</div>
+      <div class="ru">Приложение падает, когда я нажимаю кнопку «Сохранить».</div>
+    </div>
+    <div class="example">
+      <div class="en">I am getting an error message.</div>
+      <div class="ru">Я получаю сообщение об ошибке (прямо сейчас).</div>
+    </div>
+    <div class="example">
+      <div class="en">The page does not load.</div>
+      <div class="ru">Страница не загружается.</div>
+    </div>
+
+    <h3>3.2. Фразы для описания того, что вы делали (Steps to reproduce)</h3>
+    <div class="example">
+      <div class="en">I opened the app and clicked on "Settings".</div>
+      <div class="ru">Я открыл приложение и нажал на «Настройки».</div>
+    </div>
+    <div class="example">
+      <div class="en">I logged in and tried to upload a file.</div>
+      <div class="ru">Я вошел в систему и попытался загрузить файл.</div>
+    </div>
+    <div class="example">
+      <div class="en">I typed my password and pressed Enter.</div>
+      <div class="ru">Я ввел пароль и нажал Enter.</div>
+    </div>
+
+    <h3>3.3. Фразы для объяснения ожидаемого результата</h3>
+    <div class="example">
+      <div class="en">It should save the file, but it crashes.</div>
+      <div class="ru">Это должно сохранять файл, но оно падает.</div>
+    </div>
+    <div class="example">
+      <div class="en">It should show a success message.</div>
+      <div class="ru">Это должно показывать сообщение об успехе.</div>
+    </div>
+  </section>
+
+  <!-- ============ 4. IT-КОНТЕКСТ ============ -->
+  <section id="jira">
+    <h2><span class="lesson-num">4</span> 💻 Жизнь в Jira и GitHub</h2>
+
+    <p>В реальной работе вы будете писать не просто сообщения, а заполнять поля в трекерах (Jira, GitHub Issues).</p>
+
+    <h3>4.1. Стандартные поля в Jira</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Поле (English)</th><th>Перевод</th><th>Что писать</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Title / Summary</strong></td><td>Заголовок</td><td>Короткое описание (например: <em>Crash on login page</em> — Падение на странице входа)</td></tr>
+          <tr><td><strong>Description</strong></td><td>Описание</td><td>Детали: что случилось и как это повторить</td></tr>
+          <tr><td><strong>Steps to Reproduce</strong></td><td>Шаги для воспроизведения</td><td>1. Открыть... 2. Нажать... 3. Увидеть...</td></tr>
+          <tr><td><strong>Expected Behavior</strong></td><td>Ожидаемое поведение</td><td>Как должно работать</td></tr>
+          <tr><td><strong>Actual Behavior</strong></td><td>Фактическое поведение</td><td>Как работает на самом деле</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>4.2. Как вежливо попросить обновление</h3>
+    <p>Если баг висит долго, можно написать коллеге:</p>
+    <div class="example">
+      <div class="en">Could you please check this bug?</div>
+      <div class="ru">Не могли бы вы проверить этот баг?</div>
+    </div>
+    <div class="example">
+      <div class="en">What is the status of this ticket?</div>
+      <div class="ru">Какой статус у этого тикета?</div>
+    </div>
+    <div class="example">
+      <div class="en">I have found the root cause.</div>
+      <div class="ru">Я нашел первопричину (почему это случилось).</div>
+    </div>
+  </section>
+
+  <!-- ============ 5. ПРАКТИКА ============ -->
+  <section id="practice">
+    <h2><span class="lesson-num">5</span> ✏️ Практика</h2>
+
+    <div class="mini-task">
+      <div class="title">Упражнение 1: Соберите фразу</div>
+      <p><strong>1.</strong> (я / получить / ошибка) прямо сейчас.</p>
+      <details><summary>Ответ</summary>I am getting an error right now.</details>
+      
+      <p><strong>2.</strong> Приложение (падать) каждый раз, когда я (нажимать) кнопку.</p>
+      <details><summary>Ответ</summary>The app crashes every time I click the button.</details>
+    </div>
+
+    <div class="mini-task">
+      <div class="title">Упражнение 2: Переведите на английский</div>
+      <p><strong>1.</strong> Я нашел баг.</p>
+      <details><summary>Ответ</summary>I found a bug.</details>
+      
+      <p><strong>2.</strong> Оно должно сохранять файл, но падает.</p>
+      <details><summary>Ответ</summary>It should save the file, but it crashes.</details>
+    </div>
+  </section>
+
+  <!-- ============ 6. ОШИБКИ ============ -->
+  <section id="mistakes">
+    <h2><span class="lesson-num">6</span> Типичные ошибки</h2>
+
+    <h3>1. "Я нашел" (Find)</h3>
+    <div class="error-box">
+      <div><span class="wrong">❌</span> I finded a bug.</div>
+      <div style="margin-top: 10px;"><span class="right">✅</span> I <strong>found</strong> a bug.</div>
+      <details style="margin-top: 12px; background: rgba(255,255,255,0.5); border-color: #f3c0cf;">
+        <summary style="color: #c02a55;">💡 Почему именно так?</summary>
+        <p style="margin-top: 8px; font-size: 0.9rem;">Глагол <em>find</em> — неправильный. В Past Simple он превращается в <strong>found</strong>.</p>
+      </details>
+    </div>
+
+    <h3>2. Путаница с Present Perfect</h3>
+    <div class="error-box">
+      <div><span class="wrong">❌</span> I have founded the bug.</div>
+      <div style="margin-top: 10px;"><span class="right">✅</span> I <strong>have found</strong> the bug.</div>
+      <details style="margin-top: 12px; background: rgba(255,255,255,0.5); border-color: #f3c0cf;">
+        <summary style="color: #c02a55;">💡 Почему именно так?</summary>
+        <p style="margin-top: 8px; font-size: 0.9rem;">В Present Perfect (have/has + глагол) мы используем <strong>третью форму</strong> глагола (V3). Для <em>find</em> это <em>found</em> (а не finded).</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ============ 7. ЗАДАНИЕ ============ -->
+  <section id="task" class="task">
+    <h2>📝 Итоговое задание</h2>
+
+    <p>Представьте, что вы нашли баг в приложении. Напишите <strong>баг-репорт</strong> (4–5 предложений) на английском, используя структуру:</p>
+    
+    <ol>
+      <li>Короткий заголовок (что случилось).</li>
+      <li>Шаги (что вы делали).</li>
+      <li>Ожидаемое поведение (как должно быть).</li>
+      <li>Фактическое поведение (что произошло).</li>
+    </ol>
+
+    <div class="hint">
+      <strong>Пример:</strong><br>
+      <em><strong>Title:</strong> App crashes on login.<br>
+      <strong>Steps:</strong> I opened the app, typed my password and clicked "Login".<br>
+      <strong>Expected:</strong> The app should open the main page.<br>
+      <strong>Actual:</strong> The app crashes.</em>
+    </div>
+
+    <button id="complete-btn" class="complete-btn">✅ Отметить урок пройденным</button>
+  </section>
+
+  <nav class="lesson-nav">
+    <a href="it-lesson-6.html">← Урок 6</a>
+    <a href="../../index.html">К курсу</a>
+    <a href="#" class="disabled">Это последний урок 🎉</a>
+  </nav>
+
+  <footer>
+    English for IT · Урок 7 · Вы прошли IT-курс! 🎉
+  </footer>
+
+</div>
+
+<button id="scroll-top" class="scroll-top" aria-label="Наверх">↑</button>
+
+<script src="../../script.js"></script>
+</body>
+</html>

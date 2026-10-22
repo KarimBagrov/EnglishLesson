@@ -1,16 +1,31 @@
-const CACHE_NAME = 'english-lesson-cache-v3'; // Подняли версию, чтобы браузеры сбросили старый кеш
+const CACHE_NAME = 'english-lesson-cache-v8'; // Версия обновлена для сброса старого кеша
 
-// Список файлов, которые нужно сохранить для офлайн-режима
+// Список ВСЕХ файлов, которые нужно сохранить для офлайн-режима
 const ASSETS = [
   './',
   './index.html',
   './style.css',
   './script.js',
   './manifest.json',
+  // --- IT (7 уроков) ---
   './lessons/it/it-lesson-1.html',
   './lessons/it/it-lesson-2.html',
+  './lessons/it/it-lesson-3.html',
+  './lessons/it/it-lesson-4.html',
+  './lessons/it/it-lesson-5.html',
+  './lessons/it/it-lesson-6.html',
+  './lessons/it/it-lesson-7.html',
+  // --- LIFE (7 уроков) ---
   './lessons/life/life-lesson-1.html',
-  './lessons/life/life-lesson-2.html'
+  './lessons/life/life-lesson-2.html',
+  './lessons/life/life-lesson-3.html',
+  './lessons/life/life-lesson-4.html',
+  './lessons/life/life-lesson-5.html',
+  './lessons/life/life-lesson-6.html',
+  './lessons/life/life-lesson-7.html',
+  // --- Иконки ---
+  './images/icons/icon-192.ico',
+  './images/icons/og-preview.png'
 ];
 
 // 1. Установка: кэшируем основные файлы
@@ -20,7 +35,7 @@ self.addEventListener('install', (e) => {
       return cache.addAll(ASSETS);
     })
   );
-  self.skipWaiting(); // Активируем сразу
+  self.skipWaiting();
 });
 
 // 2. Активация: чистим старый кэш
@@ -36,10 +51,10 @@ self.addEventListener('activate', (e) => {
       );
     })
   );
-  self.clients.claim(); // Берем контроль над страницами сразу
+  self.clients.claim();
 });
 
-// 3. Стратегия Stale-While-Revalidate (Быстро из кэша, обновление в фоне)
+// 3. Стратегия Stale-While-Revalidate
 self.addEventListener('fetch', (e) => {
   if (e.request.method !== 'GET') return;
 

@@ -7,7 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
   if (progressFill && progressCount) {
     const progress = JSON.parse(localStorage.getItem('efwd-progress')) || {};
     const done = Object.values(progress).filter(Boolean).length;
-    const percent = Math.min(100, Math.round((done / 6) * 100));
+    
+    // ВАЖНО: Теперь у нас 7 IT + 7 Life = 14 уроков
+    const TOTAL_LESSONS = 14; 
+    const percent = Math.min(100, Math.round((done / TOTAL_LESSONS) * 100));
 
     progressFill.style.width = percent + '%';
     progressCount.textContent = done;
