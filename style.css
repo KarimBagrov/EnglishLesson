@@ -388,23 +388,3 @@ code { background: #e7edfb; padding: 2px 6px; border-radius: 5px; font-family: m
   .menu-toggle-inside:hover { color: var(--accent-3); }
   body.sidebar-closed .menu-toggle { display: flex; left: 15px; }
 }
-
-/* Темная тема */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0f1220; --card: #1a1f35; --card-2: #232a47; --text: #e8ecff; --muted: #9aa3c7; --border: #2e3659;
-    --code-bg: #141830; --error-bg: #2a1520; --error-border: #5a2238;
-  }
-  body { background: radial-gradient(circle at 20% 0%, #1b2140 0%, var(--bg) 50%); }
-  th { background: #2a3155; color: #9db4ff; }
-  td { background: #1a1f35; color: #d5dbf5; }
-  .example { background: #141830; }
-  .note { background: #2a2415; border-color: #5a4a1d; color: #f2dca0; }
-  .hint { background: #1c2540; color: #b8c4f0; }
-  code { background: #2a3155; color: #b8c4f0; }
-  .word-card .en { color: #9db4ff; }
-  .lesson-card { background: var(--card); }
-  details { background: #141830; }
-  .formula { background: #232a47; color: #d5dbf5; }
-  .mini-task { background: #232a47; }
-}
