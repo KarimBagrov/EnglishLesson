@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#d33a2c">
+  <title>Урок 3 — Числа и Возраст | Chinese for Life</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .tone-box { display: flex; align-items: center; gap: 20px; background: #fff; border: 1px solid #dde3f0; border-radius: 12px; padding: 20px; margin: 20px 0; }
+    .tone-svg { width: 160px; height: 100px; flex-shrink: 0; background: #fafbfc; border-radius: 8px; border: 1px dashed #ccc; }
+    .tone-text { font-size: 1rem; line-height: 1.7; }
+    .tone-text strong { color: #d33a2c; display: block; margin-bottom: 8px; font-size: 1.3rem; }
+    .pronunciation-tip { background: #e8efff; border-left: 4px solid #3b62e0; padding: 20px; border-radius: 8px; margin: 20px 0; }
+    .grid-2 { display: grid; grid-template-columns: 1fr; gap: 20px; }
+    @media (min-width: 768px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body data-lesson-id="ch-lesson-3">
+
+<button id="menu-toggle" class="menu-toggle" aria-label="Открыть меню">☰</button>
+<div id="overlay" class="overlay"></div>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar__header">
+    <button id="menu-toggle-inside" class="menu-toggle-inside" aria-label="Закрыть меню">×</button>
+    <div class="sidebar__title-wrap">
+      <h3>Урок 3 (Chinese)</h3>
+      <a href="../../index.html" class="sidebar__home-link">← На главную</a>
+    </div>
+  </div>
+  <div class="sidebar__nav">
+    <ol>
+      <li><a href="#intro">Введение</a></li>
+      <li><a href="#numbers">Числа 1-10</a></li>
+      <li><a href="#age">Возраст и вопрос «Сколько?»</a></li>
+      <li><a href="#vocabulary">📚 Новые слова</a></li>
+      <li><a href="#dialogue">🗣️ Диалог</a></li>
+      <li><a href="#practice">✏️ Практика</a></li>
+      <li><a href="#task">Итоговое задание</a></li>
+    </ol>
+  </div>
+</aside>
+
+<div class="container">
+
+  <header>
+    <a href="../../index.html" class="back-link">← Вернуться к выбору курса</a>
+    <h1>Урок 3 · Числа и Возраст</h1>
+    <p>Учимся считать и рассказывать о себе</p>
+    <div class="badge" style="background: #fce4e4; color: #c0392b; border-color: #f5c6c6;">A1 · CHINESE · ≈ 90 МИН</div>
+    
+    <div class="lesson-top-nav">
+      <a href="ch-lesson-1.html">1</a>
+      <a href="ch-lesson-2.html">2</a>
+      <a href="ch-lesson-3.html">3</a>
+      <a href="#" class="disabled">4</a>
+      <a href="#" class="disabled">5</a>
+    </div>
+  </header>
+
+  <!-- ============ 1. ВВЕДЕНИЕ ============ -->
+  <section id="intro">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #d33a2c, #e04b7d);">1</span> Введение</h2>
+    <p>В прошлом уроке мы научились говорить «Я есть студент». Теперь давайте научимся считать и рассказывать о своем возрасте. Китайские числа очень логичны, их легко запомнить.</p>
+    <div class="note">💡 <strong>Важно:</strong> В китайском языке для счета людей и вещей используются разные слова (счетные слова). Для возраста используется слово <strong>岁 (suì)</strong> — «лет».</div>
+  </section>
+
+  <!-- ============ 2. ЧИСЛА ============ -->
+  <section id="numbers">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #d33a2c, #e04b7d);">2</span> Числа от 1 до 10</h2>
+
+    <p>Давайте выучим базовые числа. Обратите внимание на тоны!</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Цифра</th><th>Иероглиф</th><th>Пиньинь</th><th>Тон</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>一</td><td>yī</td><td>1-й</td></tr>
+          <tr><td>2</td><td>二</td><td>èr</td><td>4-й</td></tr>
+          <tr><td>3</td><td>三</td><td>sān</td><td>1-й</td></tr>
+          <tr><td>4</td><td>四</td><td>sì</td><td>4-й</td></tr>
+          <tr><td>5</td><td>五</td><td>wǔ</td><td>3-й</td></tr>
+          <tr><td>6</td><td>六</td><td>liù</td><td>4-й</td></tr>
+          <tr><td>7</td><td>七</td><td>qī</td><td>1-й</td></tr>
+          <tr><td>8</td><td>八</td><td>bā</td><td>1-й</td></tr>
+          <tr><td>9</td><td>九</td><td>jiǔ</td><td>3-й</td></tr>
+          <tr><td>10</td><td>十</td><td>shí</td><td>2-й</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="pronunciation-tip">
+      <strong>Секрет чисел:</strong> Китайские числа строятся очень логично. «11» — это «десять один» (十一, shí yī). «20» — это «два десять» (二十, èr shí). Это как конструктор!
+    </div>
+  </section>
+
+  <!-- ============ 3. ВОЗРАСТ ============ -->
+  <section id="age">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #d33a2c, #e04b7d);">3</span> Возраст и вопрос «Сколько?»</h2>
+
+    <p>Чтобы спросить «Сколько тебе лет?», используется вопросительное слово <strong>几 (jǐ)</strong> — «сколько» (для небольших чисел) и слово <strong>岁 (suì)</strong> — «лет».</p>
+
+    <div class="example">
+      <div class="en">你几岁? (nǐ jǐ suì?)</div>
+      <div class="ru">Сколько тебе лет? (ни цзи суй?)</div>
+    </div>
+    <div class="example">
+      <div class="en">我二十岁。 (wǒ èr shí suì.)</div>
+      <div class="ru">Мне 20 лет. (во ар ши суй)</div>
+    </div>
+
+    <div class="note">
+      💡 <strong>Вежливость:</strong> Вопрос «你几岁» используется для детей. Для взрослых лучше спросить <strong>你多大? (nǐ duō dà?)</strong> — «Ты насколько большой?» (Сколько вам лет?). Это звучит вежливее.
+    </div>
+  </section>
+
+  <!-- ============ 4. СЛОВА ============ -->
+  <section id="vocabulary">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #d33a2c, #e04b7d);">4</span> 📚 Новые слова</h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Иероглиф</th><th>Пиньинь</th><th>Перевод</th></tr></thead>
+        <tbody>
+          <tr><td>几</td><td>jǐ</td><td>сколько</td></tr>
+          <tr><td>岁</td><td>suì</td><td>лет (возраст)</td></tr>
+          <tr><td>多大</td><td>duō dà</td><td>насколько большой (о возрасте)</td></tr>
+          <tr><td>大</td><td>dà</td><td>большой</td></tr>
+          <tr><td>小</td><td>xiǎo</td><td>маленький</td></tr>
+          <tr><td>也</td><td>yě</td><td>тоже</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ 5. ДИАЛОГ ============ -->
+  <section id="dialogue">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #d33a2c, #e04b7d);">5</span> 🗣️ Диалог</h2>
+
+    <div class="example" style="background: #f8f9fa; padding: 15px; border-left: 4px solid #d33a2c;">
+      <div class="en"><strong>A:</strong> 你多大? (nǐ duō dà?)</div>
+      <div class="ru">Сколько тебе лет? (ни до да)</div>
+      
+      <div class="en" style="margin-top: 8px;"><strong>B:</strong> 我二十岁。你呢? (wǒ èr shí suì. nǐ ne?)</div>
+      <div class="ru">Мне 20 лет. А тебе? (во ар ши суй. ни нэ)</div>
+      
+      <div class="en" style="margin-top: 8px;"><strong>A:</strong> 我也是二十岁。 (wǒ yě shì èr shí suì.)</div>
+      <div class="ru">Мне тоже 20 лет. (во е шы ар ши суй)</div>
+    </div>
+
+    <div class="note">
+      💡 <strong>Слово 呢 (ne):</strong> Это частица, которая значит «А как насчет...?». Она заменяет повторение вопроса. Вместо «А сколько тебе лет?» можно просто спросить «你呢?» (А ты?).
+    </div>
+  </section>
+
+  <!-- ============ 6. ПРАКТИКА ============ -->
+  <section id="practice">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #d33a2c, #e04b7d);">6</span> ✏️ Практика</h2>
+
+    <div class="mini-task">
+      <div class="title">Упражнение 1: Напишите числа</div>
+      <p>Как будет по-китайски число <strong>15</strong>?</p>
+      <details><summary>Ответ</summary>十五 (shí wǔ) — Десять + пять.</details>
+
+      <p>Как будет по-китайски число <strong>28</strong>?</p>
+      <details><summary>Ответ</summary>二十八 (èr shí bā) — Два + десять + восемь.</details>
+    </div>
+
+    <div class="mini-task">
+      <div class="title">Упражнение 2: Перевод</div>
+      <p>Переведите: «Мне 30 лет».</p>
+      <details><summary>Ответ</summary>我三十岁。 (wǒ sān shí suì.)</details>
+    </div>
+  </section>
+
+  <!-- ============ 7. ЗАДАНИЕ ============ -->
+  <section id="task" class="task">
+    <h2>📝 Итоговое задание</h2>
+
+    <p>Напишите, сколько вам лет и сколько лет вашему другу (используйте числа и слово 岁).</p>
+    <div class="hint">
+      <strong>Пример:</strong><br>
+      <em>我二十五岁。 (Мне 25 лет.)</em><br>
+      <em>我的朋友二十岁。 (Моему другу 20 лет.)</em>
+    </div>
+
+    <button id="complete-btn" class="complete-btn" style="background: linear-gradient(135deg, #d33a2c, #e04b7d);">✅ Отметить урок пройденным</button>
+  </section>
+
+  <nav class="lesson-nav">
+    <a href="ch-lesson-2.html">← Урок 2</a>
+    <a href="../../index.html">К курсу</a>
+    <a href="#" class="disabled">Следующий урок →</a>
+  </nav>
+
+  <footer>
+    Chinese for Life · Урок 3 · Продолжение следует 🚀
+  </footer>
+
+</div>
+
+<button id="scroll-top" class="scroll-top" aria-label="Наверх">↑</button>
+
+<script src="../../script.js"></script>
+</body>
+</html>

@@ -25,6 +25,8 @@ const ASSETS = [
   './lessons/life/life-lesson-7.html',
   // --- CHINESE (1 урок) ---
   './lessons/chinese/ch-lesson-1.html',
+  './lessons/chinese/ch-lesson-2.html',
+  './lessons/chinese/ch-lesson-3.html',
   // --- Иконки ---
   './images/icons/icon-192.ico',
   './images/icons/og-preview.png'
