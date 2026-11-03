@@ -1,4 +1,4 @@
-﻿const CACHE_NAME = 'english-lesson-cache-v9'; // Подняли версию для сброса кеша
+﻿const CACHE_NAME = 'english-lesson-cache-v10'; // Подняли версию для сброса кеша
 
 // Список ВСЕХ файлов, которые нужно сохранить для офлайн-режима
 const ASSETS = [
