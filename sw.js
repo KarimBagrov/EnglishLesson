@@ -1,4 +1,4 @@
-const CACHE_NAME = 'english-lesson-cache-v8'; // Версия обновлена для сброса старого кеша
+﻿const CACHE_NAME = 'english-lesson-cache-v9'; // Подняли версию для сброса кеша
 
 // Список ВСЕХ файлов, которые нужно сохранить для офлайн-режима
 const ASSETS = [
@@ -23,6 +23,8 @@ const ASSETS = [
   './lessons/life/life-lesson-5.html',
   './lessons/life/life-lesson-6.html',
   './lessons/life/life-lesson-7.html',
+  // --- CHINESE (1 урок) ---
+  './lessons/chinese/ch-lesson-1.html',
   // --- Иконки ---
   './images/icons/icon-192.ico',
   './images/icons/og-preview.png'
@@ -38,7 +40,7 @@ self.addEventListener('install', (e) => {
   self.skipWaiting();
 });
 
-// 2. Активация: чистим старый кэш
+// 2. Активация: чистим старый кеш
 self.addEventListener('activate', (e) => {
   e.waitUntil(
     caches.keys().then((keys) => {

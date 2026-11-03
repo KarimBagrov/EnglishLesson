@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#7c3aed">
+  <title>Урок 5 — TypeScript с нуля | Programming Course</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body data-lesson-id="prog-lesson-5">
+
+<button id="menu-toggle" class="menu-toggle" aria-label="Открыть меню">☰</button>
+<div id="overlay" class="overlay"></div>
+
+<aside id="sidebar" class="sidebar">
+  <div class="sidebar__header">
+    <button id="menu-toggle-inside" class="menu-toggle-inside" aria-label="Закрыть меню">×</button>
+    <div class="sidebar__title-wrap">
+      <h3>Урок 5</h3>
+      <a href="../../index.html" class="sidebar__home-link">← На главную</a>
+    </div>
+  </div>
+  <div class="sidebar__nav">
+    <ol>
+      <li><a href="#intro">Введение: зачем нужен TS</a></li>
+      <li><a href="#types">Базовые типы</a></li>
+      <li><a href="#interfaces">Интерфейсы и типы</a></li>
+      <li><a href="#generics">Дженерики (Generics)</a></li>
+      <li><a href="#interview">Как спросят на собеседовании</a></li>
+      <li><a href="#mistakes">Типичные ошибки</a></li>
+      <li><a href="#practice">Мини-задания</a></li>
+      <li><a href="#task">Итоговое задание</a></li>
+    </ol>
+  </div>
+</aside>
+
+<div class="container">
+
+  <header>
+    <a href="../../index.html" class="back-link">← Вернуться к курсу</a>
+    <h1>Урок 5 · TypeScript с нуля</h1>
+    <p>Зачем нужна типизация, как описывать объекты и что такое дженерики</p>
+    <div class="badge" style="background: #ede9fe; color: #5b21b6; border-color: #c4b5fd;">JUNIOR · 2026 · ≈ 90 МИН</div>
+    
+    <div class="lesson-top-nav">
+      <a href="prog-lesson-1.html">1</a>
+      <a href="prog-lesson-2.html">2</a>
+      <a href="prog-lesson-3.html">3</a>
+      <a href="prog-lesson-4.html">4</a>
+      <a href="prog-lesson-5.html">5</a>
+      <a href="prog-lesson-6.html">6</a>
+      <a href="prog-lesson-7.html">7</a>
+      <a href="prog-lesson-8.html">8</a>
+      <a href="prog-lesson-9.html">9</a>
+      <a href="prog-lesson-10.html">10</a>
+      <a href="prog-lesson-11.html">11</a>
+      <a href="prog-lesson-12.html">12</a>
+    </div>
+  </header>
+
+  <section id="intro">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">1</span> Введение: зачем нужен TypeScript</h2>
+
+    <p>Представь, что ты собираешь шкаф из IKEA. В обычном JavaScript тебе дают кучу деталей без инструкции и говорят: «Собери как-нибудь». Ты можешь прикрутить полку к потолку, и никто тебя не остановит, пока шкаф не развалится (ошибка в рантайме).</p>
+
+    <p><strong>TypeScript — это инструкция с чертежом.</strong> Ты заранее описываешь, что «эта деталь — это дверца, она крепится сюда». Если ты попытаешься прикрутить дверцу к полу, редактор кода (VS Code) сразу подчеркнет это красным и скажет: «Ошибка!». Ты исправляешь ошибку до того, как код попадет к пользователю.</p>
+
+    <div class="note">
+      💡 <strong>Главная мысль:</strong> TypeScript — это JavaScript с типами. Весь код компилируется обратно в обычный JS, чтобы его понимал браузер. Но процесс разработки становится в разы безопаснее и удобнее.
+    </div>
+  </section>
+
+  <section id="types">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">2</span> Базовые типы</h2>
+
+    <p>В TypeScript мы указываем тип после двоеточия. Синтаксис простой: <code>let имя: тип = значение;</code>.</p>
+
+    <h3>2.1. Примитивы</h3>
+    <div class="example">
+      <div class="en">let name: string = "Иван";</div>
+      <div class="en">let age: number = 25;</div>
+      <div class="en">let isStudent: boolean = true;</div>
+    </div>
+    <p>Если ты попытаешься записать в <code>age</code> строку, TS выдаст ошибку еще в редакторе.</p>
+
+    <h3>2.2. Массивы</h3>
+    <div class="example">
+      <div class="en">let numbers: number[] = [1, 2, 3];</div>
+      <div class="en">let names: string[] = ["Анна", "Иван"];</div>
+      <div class="en">// Альтернативная запись: Array&lt;number&gt;</div>
+    </div>
+
+    <h3>2.3. any vs unknown</h3>
+    <p><code>any</code> — это «отключить типизацию». Переменная с <code>any</code> может принимать что угодно. Это плохо, потому что мы теряем все преимущества TS.</p>
+    <div class="example">
+      <div class="en">let data: any = "строка";</div>
+      <div class="en">data = 123; // Ошибки нет, но и подсказок нет</div>
+    </div>
+    <p><code>unknown</code> — это безопасная альтернатива. Переменная с <code>unknown</code> тоже может принимать что угодно, но перед использованием её нужно проверить (сделать <code>typeof</code>). Это заставляет думать.</p>
+  </section>
+
+  <section id="interfaces">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">3</span> Интерфейсы и типы</h2>
+
+    <p>Когда у тебя есть объект с множеством свойств, писать <code>{ name: string; age: number; city: string }</code> каждый раз долго. Для этого есть <strong>интерфейсы</strong> (или псевдонимы типов).</p>
+
+    <h3>3.1. Интерфейс</h3>
+    <div class="example">
+      <div class="en">interface User {</div>
+      <div class="en">  name: string;</div>
+      <div class="en">  age: number;</div>
+      <div class="en">  city?: string; // ? означает, что свойство необязательное</div>
+      <div class="en">}</div>
+      <div class="en">const user: User = { name: "Иван", age: 25 };</div>
+    </div>
+    <p>Теперь если ты забудешь передать <code>name</code> или передашь <code>age</code> как строку, TS сразу это подсветит.</p>
+
+    <h3>3.2. Тип (type)</h3>
+    <p><code>type</code> работает почти так же, но может описывать не только объекты, но и объединения (union).</p>
+    <div class="example">
+      <div class="en">type Status = "success" | "error" | "loading";</div>
+      <div class="en">let currentStatus: Status = "success"; // Только эти три строки разрешены</div>
+    </div>
+  </section>
+
+  <section id="generics">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">4</span> Дженерики (Generics)</h2>
+
+    <p>Представь, что у тебя есть коробка. Ты можешь положить туда яблоко, а можешь — книгу. Но если ты положил яблоко, было бы странно достать оттуда книгу. <strong>Дженерики</strong> позволяют сказать: «Это коробка для яблок» или «Это коробка для книг».</p>
+
+    <p>Они обозначаются угловыми скобками <code>&lt;T&gt;</code> (T — от слова Type).</p>
+
+    <h3>4.1. Пример без дженериков</h3>
+    <div class="example">
+      <div class="en">function identity(value: any): any {</div>
+      <div class="en">  return value;</div>
+      <div class="en">}</div>
+      <div class="en">// Мы теряем информацию о типе</div>
+    </div>
+
+    <h3>4.2. С дженериками</h3>
+    <div class="example">
+      <div class="en">function identity&lt;T&gt;(value: T): T {</div>
+      <div class="en">  return value;</div>
+      <div class="en">}</div>
+      <div class="en">const num = identity(5); // TS знает, что num — это number</div>
+      <div class="en">const str = identity("Привет"); // TS знает, что str — это string</div>
+    </div>
+    <p>Дженерики часто используются в массивах (<code>Array&lt;T&gt;</code>), промисах (<code>Promise&lt;T&gt;</code>) и функциях работы с API.</p>
+  </section>
+
+  <section id="interview">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">5</span> Как спросят на собеседовании</h2>
+
+    <div class="mini-task" style="background: #f5f3ff; border-left-color: #7c3aed;">
+      <div class="title" style="color: #5b21b6;">Вопрос: Чем any отличается от unknown?</div>
+      <p><strong>Ответ:</strong> «<code>any</code> отключает проверку типов полностью, с ним можно делать что угодно. <code>unknown</code> — это безопасный тип, который может содержать что угодно, но перед использованием его нужно проверить (сделать typeof или приведение). <code>unknown</code> лучше, потому что заставляет разработчика явно обрабатывать возможные типы.»</p>
+    </div>
+
+    <div class="mini-task" style="background: #f5f3ff; border-left-color: #7c3aed;">
+      <div class="title" style="color: #5b21b6;">Вопрос: Что такое дженерики?</div>
+      <p><strong>Ответ:</strong> «Это способ создавать компоненты или функции, которые работают с разными типами, но при этом сохраняют информацию о конкретном типе. Например, функция <code>identity&lt;T&gt;(value: T): T</code> возвращает то же, что и приняла, и TS знает, какой именно тип был возвращен.»</p>
+    </div>
+  </section>
+
+  <section id="mistakes">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">6</span> Типичные ошибки</h2>
+
+    <h3>Ошибка 1: Использовать any везде</h3>
+    <div class="error-box">
+      <div><span class="wrong">❌</span> const data: any = fetchData();</div>
+      <div class="ru" style="margin-top: 4px; font-style: italic; color: #7a2340;">Мы не знаем, что внутри data, и теряем подсказки.</div>
+      <div style="margin-top: 10px;"><span class="right">✅</span> interface Data { id: number; name: string; }</div>
+      <div class="ru" style="margin-top: 4px; font-style: italic; color: #2a7a5c;">Теперь TS подскажет, какие поля есть.</div>
+    </div>
+
+    <h3>Ошибка 2: Забыть про ?</h3>
+    <div class="error-box">
+      <div><span class="wrong">❌</span> interface User { name: string; age: number; }</div>
+      <div class="ru" style="margin-top: 4px; font-style: italic; color: #7a2340;">Если age необязателен, TS будет ругаться.</div>
+      <div style="margin-top: 10px;"><span class="right">✅</span> interface User { name: string; age?: number; }</div>
+    </div>
+  </section>
+
+  <section id="practice">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">7</span> Мини-задания</h2>
+
+    <div class="mini-task" style="background: #f5f3ff; border-left-color: #7c3aed;">
+      <div class="title" style="color: #5b21b6;">Задание 1</div>
+      <p>Опишите интерфейс для объекта <code>product</code> с полями: <code>id</code> (число), <code>name</code> (строка), <code>price</code> (число), <code>description</code> (необязательная строка).</p>
+      <details><summary>Показать ответ</summary>
+        <div class="example">
+          <div class="en">interface Product {</div>
+          <div class="en">  id: number;</div>
+          <div class="en">  name: string;</div>
+          <div class="en">  price: number;</div>
+          <div class="en">  description?: string;</div>
+          <div class="en">}</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="mini-task" style="background: #f5f3ff; border-left-color: #7c3aed;">
+      <div class="title" style="color: #5b21b6;">Задание 2</div>
+      <p>Какой тип будет у переменной <code>x</code>?</p>
+      <div class="example"><div class="en">function getFirst&lt;T&gt;(arr: T[]): T {</div><div class="en">  return arr[0];</div><div class="en">}</div><div class="en">const x = getFirst([1, 2, 3]);</div></div>
+      <details><summary>Показать ответ</summary><strong>number</strong>. TS выводит тип из массива <code>[1, 2, 3]</code> — это массив чисел, значит <code>T</code> = <code>number</code>.</details>
+    </div>
+  </section>
+
+  <section id="task" class="task">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">8</span> Итоговое задание</h2>
+
+    <p>Ответьте на вопросы:</p>
+    <ol>
+      <li>Зачем нужен TypeScript, если браузеры его не понимают?</li>
+      <li>В чем разница между <code>interface</code> и <code>type</code>?</li>
+      <li>Почему <code>unknown</code> лучше, чем <code>any</code>?</li>
+      <li>Для чего нужны дженерики? Приведите пример.</li>
+    </ol>
+
+    <button id="complete-btn" class="complete-btn" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">✅ Отметить урок пройденным</button>
+  </section>
+
+  <nav class="lesson-nav">
+    <a href="prog-lesson-4.html">← Урок 4</a>
+    <a href="../../index.html">К курсу</a>
+    <a href="prog-lesson-6.html">Урок 6 →</a>
+  </nav>
+
+  <footer>
+    Programming Course · Урок 5 · Продолжение следует 🚀
+  </footer>
+
+</div>
+
+<button id="scroll-top" class="scroll-top" aria-label="Наверх">↑</button>
+
+<script src="../../script.js"></script>
+</body>
+</html>

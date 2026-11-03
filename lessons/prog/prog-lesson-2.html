@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#7c3aed">
+  <title>Урок 2 — Область видимости и Замыкания | Programming Course</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body data-lesson-id="prog-lesson-2">
+
+<button id="menu-toggle" class="menu-toggle" aria-label="Открыть меню">☰</button>
+<div id="overlay" class="overlay"></div>
+
+<aside id="sidebar" class="sidebar">
+  <div class="sidebar__header">
+    <button id="menu-toggle-inside" class="menu-toggle-inside" aria-label="Закрыть меню">×</button>
+    <div class="sidebar__title-wrap">
+      <h3>Урок 2</h3>
+      <a href="../../index.html" class="sidebar__home-link">← На главную</a>
+    </div>
+  </div>
+  <div class="sidebar__nav">
+    <ol>
+      <li><a href="#intro">Введение: где живут переменные</a></li>
+      <li><a href="#varletconst">var vs let vs const</a></li>
+      <li><a href="#hoisting">Поднятие (Hoisting)</a></li>
+      <li><a href="#loopsettimeout">Цикл и setTimeout (классика)</a></li>
+      <li><a href="#closures">Замыкания (Closures)</a></li>
+      <li><a href="#interview">Как спросят на собеседовании</a></li>
+      <li><a href="#mistakes">Типичные ошибки</a></li>
+      <li><a href="#practice">Мини-задания</a></li>
+      <li><a href="#task">Итоговое задание</a></li>
+    </ol>
+  </div>
+</aside>
+
+<div class="container">
+
+  <header>
+    <a href="../../index.html" class="back-link">← Вернуться к курсу</a>
+    <h1>Урок 2 · Область видимости и Замыкания</h1>
+    <p>Почему переменные видны не везде, что такое поднятие и как работает классическая задача с setTimeout</p>
+    <div class="badge" style="background: #ede9fe; color: #5b21b6; border-color: #c4b5fd;">JUNIOR · 2026 · ≈ 90 МИН</div>
+    
+    <div class="lesson-top-nav">
+      <a href="prog-lesson-1.html">1</a>
+      <a href="prog-lesson-2.html">2</a>
+      <a href="prog-lesson-3.html">3</a>
+      <a href="prog-lesson-4.html">4</a>
+      <a href="prog-lesson-5.html">5</a>
+      <a href="prog-lesson-6.html">6</a>
+      <a href="prog-lesson-7.html">7</a>
+      <a href="prog-lesson-8.html">8</a>
+      <a href="prog-lesson-9.html">9</a>
+      <a href="prog-lesson-10.html">10</a>
+      <a href="prog-lesson-11.html">11</a>
+      <a href="prog-lesson-12.html">12</a>
+    </div>
+  </header>
+
+  <section id="intro">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">1</span> Введение: где живут переменные</h2>
+
+    <p>Представь, что у тебя есть дом (твоя программа) и в нём есть комнаты (функции и блоки кода). Переменные — это вещи. Если ты положил молоток в гостиной (в глобальной области), ты можешь взять его из любой другой комнаты. Но если ты положил его в закрытый ящик в спальне (в локальную область), из кухни ты его уже не достанешь.</p>
+
+    <p><strong>Область видимости (Scope)</strong> — это правила, которые определяют, из какого места программы ты можешь «увидеть» переменную, а из какого — нет.</p>
+
+    <div class="note">
+      💡 <strong>Главная мысль:</strong> В JavaScript есть глобальная область видимости (видна везде), функциональная (видна внутри функции) и блочная (видна внутри фигурных скобок <code>{}</code>). Понимание этой разницы — половина успеха на собеседовании.
+    </div>
+  </section>
+
+  <section id="varletconst">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">2</span> var vs let vs const</h2>
+
+    <p>До 2015 года в JavaScript был только <code>var</code>. Потом вышла новая версия (ES6), и появились <code>let</code> и <code>const</code>. Они исправили старые проблемы.</p>
+
+    <h3>2.1. var — старый и опасный (функциональная область)</h3>
+    <p><code>var</code> виден во всей функции, даже если объявлен внутри <code>if</code> или цикла. Это называется <strong>функциональной областью видимости</strong>.</p>
+    <div class="example">
+      <div class="en">function testVar() {</div>
+      <div class="en">  if (true) {</div>
+      <div class="en">    var x = 10;</div>
+      <div class="en">  }</div>
+      <div class="en">  console.log(x); // 10! Хотя x объявлен внутри if</div>
+      <div class="en">}</div>
+    </div>
+    <p>В маленькой функции это не проблема. Но в большой — можно случайно изменить переменную, которая не должна была меняться.</p>
+
+    <h3>2.2. let — умный (блочная область)</h3>
+    <p><code>let</code> виден <strong>только внутри блока <code>{}</code></strong>, где он объявлен. Вышел за скобки — переменная недоступна.</p>
+    <div class="example">
+      <div class="en">function testLet() {</div>
+      <div class="en">  if (true) {</div>
+      <div class="en">    let x = 10;</div>
+      <div class="en">  }</div>
+      <div class="en">  console.log(x); // Ошибка! x is not defined</div>
+      <div class="en">}</div>
+    </div>
+
+    <h3>2.3. const — строгий (блочная область + запрет изменения)</h3>
+    <p><code>const</code> работает как <code>let</code>, но <strong>не позволяет перезаписать значение</strong>.</p>
+    <div class="example">
+      <div class="en">const a = 5;</div>
+      <div class="en">a = 10; // Ошибка! Assignment to constant variable.</div>
+    </div>
+    <p><strong>Важно:</strong> Если <code>const</code> хранит объект или массив, ты можешь менять его внутренности (например, добавлять элементы в массив), но не можешь перезаписать саму переменную.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Свойство</th><th>var</th><th>let</th><th>const</th></tr></thead>
+        <tbody>
+          <tr><td>Область видимости</td><td>Функциональная</td><td>Блочная</td><td>Блочная</td></tr>
+          <tr><td>Переприсвоение</td><td>Можно</td><td>Можно</td><td>Нельзя</td></tr>
+          <tr><td>Поднятие (hoisting)</td><td>Да (undefined)</td><td>Да (в временной мертвой зоне)</td><td>Да (в временной мертвой зоне)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="hoisting">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">3</span> Поднятие (Hoisting)</h2>
+
+    <p>Представь, что JavaScript перед выполнением кода проходит по нему сверху вниз и «поднимает» все объявления переменных и функций на самый верх. Это называется <strong>hoisting</strong>.</p>
+
+    <p>Из-за этого код может работать до того, как ты объявил переменную.</p>
+
+    <h3>3.1. С var</h3>
+    <div class="example">
+      <div class="en">console.log(x); // undefined (не ошибка!)</div>
+      <div class="en">var x = 5;</div>
+    </div>
+    <p>JavaScript видит <code>var x</code> и как бы переносит его наверх: <code>var x;</code> (но без значения). Поэтому <code>x</code> существует, но равно <code>undefined</code>.</p>
+
+    <h3>3.2. С let и const</h3>
+    <div class="example">
+      <div class="en">console.log(x); // Ошибка! Cannot access 'x' before initialization</div>
+      <div class="en">let x = 5;</div>
+    </div>
+    <p><code>let</code> и <code>const</code> тоже поднимаются, но они попадают в <strong>временную мёртвую зону (TDZ)</strong>. Это значит, что до строки с объявлением они существуют, но обращаться к ним нельзя — будет ошибка.</p>
+  </section>
+
+  <section id="loopsettimeout">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">4</span> Цикл и setTimeout (классика собеседований)</h2>
+
+    <p>Это, наверное, самый частый вопрос на собеседованиях. Давай разберем его по шагам.</p>
+
+    <h3>4.1. Задача с var</h3>
+    <p>Что выведет этот код?</p>
+    <div class="example">
+      <div class="en">for (var i = 0; i < 3; i++) {</div>
+      <div class="en">  setTimeout(() => console.log(i), 100);</div>
+      <div class="en">}</div>
+    </div>
+    <p><strong>Ответ: 3, 3, 3.</strong> Почему? Потому что <code>var</code> — это одна переменная на весь цикл. К моменту, когда <code>setTimeout</code> сработает (через 100 мс), цикл уже давно закончится, и <code>i</code> будет равно 3. Все три функции смотрят на одну и ту же переменную.</p>
+
+    <h3>4.2. Задача с let</h3>
+    <div class="example">
+      <div class="en">for (let i = 0; i < 3; i++) {</div>
+      <div class="en">  setTimeout(() => console.log(i), 100);</div>
+      <div class="en">}</div>
+    </div>
+    <p><strong>Ответ: 0, 1, 2.</strong> Почему? Потому что <code>let</code> создаёт <strong>новую переменную на каждой итерации цикла</strong>. Каждая стрелочная функция «запоминает» свою собственную <code>i</code> (замыкание).</p>
+  </section>
+
+  <section id="closures">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">5</span> Замыкания (Closures)</h2>
+
+    <p><strong>Замыкание</strong> — это когда функция «запоминает» переменные из той области видимости, где она была создана, даже если эта область уже завершила работу.</p>
+
+    <p>Представь, что ты собрал рюкзак с инструментами в комнате. Ты вышел из комнаты, но рюкзак остался с тобой. Ты можешь достать инструменты где угодно, потому что они «замкнуты» в твоем рюкзаке.</p>
+
+    <h3>5.1. Пример</h3>
+    <div class="example">
+      <div class="en">function createCounter() {</div>
+      <div class="en">  let count = 0; // это "рюкзак"</div>
+      <div class="en">  return function() {</div>
+      <div class="en">    count++;</div>
+      <div class="en">    return count;</div>
+      <div class="en">  };</div>
+      <div class="en">}</div>
+      <div class="en">const counter = createCounter();</div>
+      <div class="en">console.log(counter()); // 1</div>
+      <div class="en">console.log(counter()); // 2</div>
+    </div>
+    <p>Функция <code>createCounter</code> завершилась, но внутренняя функция всё ещё имеет доступ к <code>count</code>. Это и есть замыкание.</p>
+  </section>
+
+  <section id="interview">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">6</span> Как спросят на собеседовании</h2>
+
+    <div class="mini-task" style="background: #f5f3ff; border-left-color: #7c3aed;">
+      <div class="title" style="color: #5b21b6;">Вопрос: В чём разница между var, let и const?</div>
+      <p><strong>Ответ:</strong> «<code>var</code> имеет функциональную область видимости и поднимается со значением <code>undefined</code>. <code>let</code> и <code>const</code> имеют блочную область видимости. <code>const</code> нельзя переприсвоить, но внутренности объекта менять можно.»</p>
+    </div>
+
+    <div class="mini-task" style="background: #f5f3ff; border-left-color: #7c3aed;">
+      <div class="title" style="color: #5b21b6;">Вопрос: Что такое замыкание?</div>
+      <p><strong>Ответ:</strong> «Замыкание — это способность функции запоминать переменные из внешней области видимости, даже после того, как эта область завершила выполнение. Пример: функция-счётчик, которая помнит своё значение между вызовами.»</p>
+    </div>
+  </section>
+
+  <section id="mistakes">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">7</span> Типичные ошибки</h2>
+
+    <h3>Ошибка 1: Использование var в цикле с асинхронностью</h3>
+    <div class="error-box">
+      <div><span class="wrong">❌</span> for (var i = 0; i < 3; i++) { setTimeout(() => console.log(i), 100); }</div>
+      <div class="ru" style="margin-top: 4px; font-style: italic; color: #7a2340;">Выведет 3, 3, 3.</div>
+      <div style="margin-top: 10px;"><span class="right">✅</span> for (let i = 0; i < 3; i++) { setTimeout(() => console.log(i), 100); }</div>
+      <div class="ru" style="margin-top: 4px; font-style: italic; color: #2a7a5c;">Выведет 0, 1, 2.</div>
+    </div>
+
+    <h3>Ошибка 2: Попытка изменить const</h3>
+    <div class="error-box">
+      <div><span class="wrong">❌</span> const x = 5; x = 10;</div>
+      <div style="margin-top: 10px;"><span class="right">✅</span> let x = 5; x = 10;</div>
+    </div>
+  </section>
+
+  <section id="practice">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">8</span> Мини-задания</h2>
+
+    <div class="mini-task" style="background: #f5f3ff; border-left-color: #7c3aed;">
+      <div class="title" style="color: #5b21b6;">Задание 1</div>
+      <p>Что выведет этот код?</p>
+      <div class="example"><div class="en">console.log(x);</div><div class="en">var x = 5;</div></div>
+      <details><summary>Показать ответ</summary><strong>undefined</strong>. Из-за поднятия (hoisting) переменная <code>x</code> существует, но её значение ещё не присвоено.</details>
+    </div>
+
+    <div class="mini-task" style="background: #f5f3ff; border-left-color: #7c3aed;">
+      <div class="title" style="color: #5b21b6;">Задание 2</div>
+      <p>Что выведет этот код?</p>
+      <div class="example"><div class="en">for (let i = 0; i < 3; i++) {</div><div class="en">  setTimeout(() => console.log(i), 100);</div><div class="en">}</div></div>
+      <details><summary>Показать ответ</summary><strong>0, 1, 2</strong>. Потому что <code>let</code> создаёт новую переменную на каждой итерации, и каждая функция запоминает свою.</details>
+    </div>
+  </section>
+
+  <section id="task" class="task">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">9</span> Итоговое задание</h2>
+
+    <p>Ответьте на вопросы в тетради:</p>
+    <ol>
+      <li>В чём разница между <code>var</code>, <code>let</code> и <code>const</code>?</li>
+      <li>Что такое hoisting? Как он работает с <code>var</code> и с <code>let</code>?</li>
+      <li>Почему цикл с <code>var</code> и <code>setTimeout</code> выводит одно и то же число?</li>
+      <li>Что такое замыкание? Приведите пример из жизни.</li>
+    </ol>
+
+    <button id="complete-btn" class="complete-btn" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">✅ Отметить урок пройденным</button>
+  </section>
+
+  <nav class="lesson-nav">
+    <a href="prog-lesson-1.html">← Урок 1</a>
+    <a href="../../index.html">К курсу</a>
+    <a href="prog-lesson-3.html">Урок 3 →</a>
+  </nav>
+
+  <footer>
+    Programming Course · Урок 2 · Продолжение следует 🚀
+  </footer>
+
+</div>
+
+<button id="scroll-top" class="scroll-top" aria-label="Наверх">↑</button>
+
+<script src="../../script.js"></script>
+</body>
+</html>

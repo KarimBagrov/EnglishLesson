@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+﻿document.addEventListener('DOMContentLoaded', () => {
   
   // ---------- 1. Главная ----------
   const progressFill = document.getElementById('progress-fill');
@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const progress = JSON.parse(localStorage.getItem('efwd-progress')) || {};
     const done = Object.values(progress).filter(Boolean).length;
     
-    // ВАЖНО: Теперь у нас 7 IT + 7 Life = 14 уроков
-    const TOTAL_LESSONS = 14; 
+    // ВАЖНО: 7 IT + 7 Life + 12 Prog = 26 уроков
+    const TOTAL_LESSONS = 26; 
     const percent = Math.min(100, Math.round((done / TOTAL_LESSONS) * 100));
 
     progressFill.style.width = percent + '%';
@@ -19,10 +19,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const href = card.getAttribute('href');
       if (!href) return;
       const match = href.match(/lesson-(\d+)\.html/);
-      if (match && progress[`lesson-${match[1]}`]) {
+      if (match && progress['lesson-' + match[1]]) {
         card.classList.add('is-done');
         const num = card.querySelector('.lesson-card__num');
-        if (num) num.textContent = '✓';
+        if (num) num.textContent = '✔';
       }
     });
   }
@@ -70,10 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (sidebar) {
-    if (window.innerWidth >= 1024) {
-      sidebar.classList.add('open');
-    }
-    
+    if (window.innerWidth >= 1024) sidebar.classList.add('open');
     updateMenuIcon();
 
     function closeDesktopMenu() {
@@ -113,16 +110,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (menuToggle) menuToggle.addEventListener('click', toggleSidebar);
     if (overlay) overlay.addEventListener('click', toggleSidebar);
-
-    if (menuToggleInside) {
-      menuToggleInside.addEventListener('click', closeDesktopMenu);
-    }
+    if (menuToggleInside) menuToggleInside.addEventListener('click', closeDesktopMenu);
 
     document.querySelectorAll('.sidebar__nav a').forEach(link => {
       link.addEventListener('click', () => {
-        if (window.innerWidth < 1024 && sidebar.classList.contains('open')) {
-          toggleSidebar();
-        }
+        if (window.innerWidth < 1024 && sidebar.classList.contains('open')) toggleSidebar();
       });
     });
   }
@@ -141,14 +133,14 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       navLinks.forEach(link => {
         link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
+        if (link.getAttribute('href') === '#' + current) {
           link.classList.add('active');
         }
       });
     }, { passive: true });
   }
 
-  // ---------- 6. АВТОМАТИЧЕСКАЯ ПОДСВЕТКА ТЕКУЩЕГО УРОКА ----------
+  // ---------- 6. Автоматическая подсветка текущего урока ----------
   const topNavLinks = document.querySelectorAll('.lesson-top-nav a');
   const currentPath = window.location.pathname;
 
@@ -160,5 +152,4 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-
 });

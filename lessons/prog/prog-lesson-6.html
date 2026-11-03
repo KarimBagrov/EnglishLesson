@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#7c3aed">
+  <title>Урок 6 — React: Основы | Programming Course</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body data-lesson-id="prog-lesson-6">
+
+<button id="menu-toggle" class="menu-toggle" aria-label="Открыть меню">☰</button>
+<div id="overlay" class="overlay"></div>
+
+<aside id="sidebar" class="sidebar">
+  <div class="sidebar__header">
+    <button id="menu-toggle-inside" class="menu-toggle-inside" aria-label="Закрыть меню">×</button>
+    <div class="sidebar__title-wrap">
+      <h3>Урок 6</h3>
+      <a href="../../index.html" class="sidebar__home-link">← На главную</a>
+    </div>
+  </div>
+  <div class="sidebar__nav">
+    <ol>
+      <li><a href="#intro">Введение: что такое React</a></li>
+      <li><a href="#components">Компоненты</a></li>
+      <li><a href="#props">Props (входные данные)</a></li>
+      <li><a href="#state">State и useState</a></li>
+      <li><a href="#useeffect">useEffect (побочные эффекты)</a></li>
+      <li><a href="#interview">Как спросят на собеседовании</a></li>
+      <li><a href="#mistakes">Типичные ошибки</a></li>
+      <li><a href="#practice">Мини-задания</a></li>
+      <li><a href="#task">Итоговое задание</a></li>
+    </ol>
+  </div>
+</aside>
+
+<div class="container">
+
+  <header>
+    <a href="../../index.html" class="back-link">← Вернуться к курсу</a>
+    <h1>Урок 6 · React: Основы</h1>
+    <p>Компоненты, props, state и хуки — фундамент современного фронтенда</p>
+    <div class="badge" style="background: #ede9fe; color: #5b21b6; border-color: #c4b5fd;">JUNIOR · 2026 · ≈ 100 МИН</div>
+    
+    <div class="lesson-top-nav">
+      <a href="prog-lesson-1.html">1</a>
+      <a href="prog-lesson-2.html">2</a>
+      <a href="prog-lesson-3.html">3</a>
+      <a href="prog-lesson-4.html">4</a>
+      <a href="prog-lesson-5.html">5</a>
+      <a href="prog-lesson-6.html">6</a>
+      <a href="prog-lesson-7.html">7</a>
+      <a href="prog-lesson-8.html">8</a>
+      <a href="prog-lesson-9.html">9</a>
+      <a href="prog-lesson-10.html">10</a>
+      <a href="prog-lesson-11.html">11</a>
+      <a href="prog-lesson-12.html">12</a>
+    </div>
+  </header>
+
+  <section id="intro">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">1</span> Введение: что такое React</h2>
+
+    <p>Представь, что ты строишь дом из LEGO. В обычном JavaScript ты бы каждый раз собирал дом с нуля, если захочешь поменять одну деталь. React позволяет собирать дом из <strong>компонентов</strong> (кирпичиков). Если нужно поменять окно, ты меняешь только компонент «Окно», а не весь дом.</p>
+
+    <p>React — это библиотека, которая помогает описывать интерфейс как набор компонентов. Когда данные меняются, React <strong>автоматически</strong> обновляет только нужные части страницы (это называется Virtual DOM).</p>
+
+    <div class="note">
+      💡 <strong>Главная мысль:</strong> В React мы не ищем элементы на странице (<code>document.getElementById</code>), мы описываем, как интерфейс должен выглядеть при определенных данных, а React сам делает так, чтобы страница выглядела именно так.
+    </div>
+  </section>
+
+  <section id="components">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">2</span> Компоненты</h2>
+
+    <p>Компонент — это функция, которая возвращает JSX (разметку, похожую на HTML). Имя компонента всегда пишется с большой буквы.</p>
+
+    <div class="example">
+      <div class="en">function Welcome() {</div>
+      <div class="en">  return &lt;h1&gt;Привет, мир!&lt;/h1&gt;;</div>
+      <div class="en">}</div>
+    </div>
+    <p>Компоненты можно вкладывать друг в друга, как матрешку.</p>
+  </section>
+
+  <section id="props">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">3</span> Props (входные данные)</h2>
+
+    <p><strong>Props</strong> (сокращение от properties) — это данные, которые передаются в компонент извне. Это как аргументы функции.</p>
+
+    <h3>3.1. Пример</h3>
+    <div class="example">
+      <div class="en">function UserCard(props) {</div>
+      <div class="en">  return &lt;div&gt;Привет, {props.name}&lt;/div&gt;;</div>
+      <div class="en">}</div>
+      <div class="en">// Использование:</div>
+      <div class="en">&lt;UserCard name="Иван" /&gt;</div>
+    </div>
+
+    <p>Props <strong>нельзя изменять</strong> внутри компонента. Они только для чтения. Если нужно, чтобы данные менялись, используется <code>state</code>.</p>
+  </section>
+
+  <section id="state">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">4</span> State и useState</h2>
+
+    <p><strong>State</strong> — это внутреннее состояние компонента. Если props — это то, что пришло снаружи, то state — это то, что компонент «помнит» и может менять.</p>
+
+    <p>Для создания состояния используется хук <code>useState</code>.</p>
+
+    <div class="example">
+      <div class="en">import { useState } from 'react';</div>
+      <div class="en">function Counter() {</div>
+      <div class="en">  const [count, setCount] = useState(0);</div>
+      <div class="en">  return (</div>
+      <div class="en">    &lt;div&gt;</div>
+      <div class="en">      &lt;p&gt;Вы нажали {count} раз&lt;/p&gt;</div>
+      <div class="en">      &lt;button onClick={() => setCount(count + 1)}&gt;Нажми меня&lt;/button&gt;</div>
+      <div class="en">    &lt;/div&gt;</div>
+      <div class="en">  );</div>
+      <div class="en">}</div>
+    </div>
+    <p><strong>Как это читать:</strong> <code>count</code> — текущее значение, <code>setCount</code> — функция для его изменения. Начальное значение — <code>0</code>. Когда мы вызываем <code>setCount</code>, React перерисовывает компонент с новым значением.</p>
+  </section>
+
+  <section id="useeffect">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">5</span> useEffect (побочные эффекты)</h2>
+
+    <p><strong>useEffect</strong> используется для побочных эффектов: запросов к серверу, подписок, работы с DOM. Он запускается после того, как компонент отрисовался.</p>
+
+    <div class="example">
+      <div class="en">import { useEffect, useState } from 'react';</div>
+      <div class="en">function DataFetcher() {</div>
+      <div class="en">  const [data, setData] = useState(null);</div>
+      <div class="en">  useEffect(() => {</div>
+      <div class="en">    fetch('https://api.example.com/data')</div>
+      <div class="en">      .then(res => res.json())</div>
+      <div class="en">      .then(data => setData(data));</div>
+      <div class="en">  }, []); // Пустой массив означает: выполнить один раз при монтировании</div>
+      <div class="en">  return &lt;div&gt;{data ? data.name : 'Загрузка...'}&lt;/div&gt;;</div>
+      <div class="en">}</div>
+    </div>
+    <p>Пустой массив <code>[]</code> в конце означает, что эффект выполнится только один раз (как <code>componentDidMount</code> в старом React). Если убрать массив, эффект будет выполняться после каждой перерисовки.</p>
+  </section>
+
+  <section id="interview">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">6</span> Как спросят на собеседовании</h2>
+
+    <div class="mini-task" style="background: #f5f3ff; border-left-color: #7c3aed;">
+      <div class="title" style="color: #5b21b6;">Вопрос: В чем разница между props и state?</div>
+      <p><strong>Ответ:</strong> «Props передаются в компонент снаружи и доступны только для чтения. State — это внутреннее состояние компонента, которое он может менять с помощью <code>setState</code> (или <code>useState</code>). Изменение state вызывает перерисовку компонента.»</p>
+    </div>
+
+    <div class="mini-task" style="background: #f5f3ff; border-left-color: #7c3aed;">
+      <div class="title" style="color: #5b21b6;">Вопрос: Что делает useEffect?</div>
+      <p><strong>Ответ:</strong> «useEffect используется для побочных эффектов: запросов к API, подписок, работы с таймерами. Он принимает функцию и массив зависимостей. Если массив пустой — эффект срабатывает один раз при монтировании. Если в массиве есть значения — эффект срабатывает при их изменении.»</p>
+    </div>
+  </section>
+
+  <section id="mistakes">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">7</span> Типичные ошибки</h2>
+
+    <h3>Ошибка 1: Мутировать state напрямую</h3>
+    <div class="error-box">
+      <div><span class="wrong">❌</span> count = count + 1;</div>
+      <div class="ru" style="margin-top: 4px; font-style: italic; color: #7a2340;">React не узнает об изменении и не перерисует компонент.</div>
+      <div style="margin-top: 10px;"><span class="right">✅</span> setCount(count + 1);</div>
+    </div>
+
+    <h3>Ошибка 2: Забыть зависимости в useEffect</h3>
+    <div class="error-box">
+      <div><span class="wrong">❌</span> useEffect(() => { fetchData(id); }, []); // id не в зависимостях</div>
+      <div class="ru" style="margin-top: 4px; font-style: italic; color: #7a2340;">Если id изменится, данные не обновятся.</div>
+      <div style="margin-top: 10px;"><span class="right">✅</span> useEffect(() => { fetchData(id); }, [id]);</div>
+    </div>
+  </section>
+
+  <section id="practice">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">8</span> Мини-задания</h2>
+
+    <div class="mini-task" style="background: #f5f3ff; border-left-color: #7c3aed;">
+      <div class="title" style="color: #5b21b6;">Задание 1</div>
+      <p>Как передать в компонент <code>Greeting</code> имя пользователя?</p>
+      <div class="example"><div class="en">function Greeting(props) { return &lt;h1&gt;Привет, {props.name}&lt;/h1&gt;; }</div></div>
+      <details><summary>Показать ответ</summary><code>&lt;Greeting name="Иван" /&gt;</code></details>
+    </div>
+
+    <div class="mini-task" style="background: #f5f3ff; border-left-color: #7c3aed;">
+      <div class="title" style="color: #5b21b6;">Задание 2</div>
+      <p>Как сделать так, чтобы <code>useEffect</code> срабатывал только один раз при загрузке?</p>
+      <details><summary>Показать ответ</summary>Добавить пустой массив зависимостей: <code>useEffect(() => { ... }, []);</code></details>
+    </div>
+  </section>
+
+  <section id="task" class="task">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">9</span> Итоговое задание</h2>
+
+    <p>Ответьте на вопросы:</p>
+    <ol>
+      <li>Почему в React нельзя напрямую менять state?</li>
+      <li>Что такое JSX и зачем он нужен?</li>
+      <li>Чем props отличаются от state?</li>
+      <li>Как работает useEffect с пустым массивом зависимостей?</li>
+    </ol>
+
+    <button id="complete-btn" class="complete-btn" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">✅ Отметить урок пройденным</button>
+  </section>
+
+  <nav class="lesson-nav">
+    <a href="prog-lesson-5.html">← Урок 5</a>
+    <a href="../../index.html">К курсу</a>
+    <a href="prog-lesson-7.html">Урок 7 →</a>
+  </nav>
+
+  <footer>
+    Programming Course · Урок 6 · Продолжение следует 🚀
+  </footer>
+
+</div>
+
+<button id="scroll-top" class="scroll-top" aria-label="Наверх">↑</button>
+
+<script src="../../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#7c3aed">
+  <title>Урок 1 — Фундамент JavaScript | Programming Course</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body data-lesson-id="prog-lesson-1">
+
+<button id="menu-toggle" class="menu-toggle" aria-label="Открыть меню">☰</button>
+<div id="overlay" class="overlay"></div>
+
+<aside id="sidebar" class="sidebar">
+  <div class="sidebar__header">
+    <button id="menu-toggle-inside" class="menu-toggle-inside" aria-label="Закрыть меню">×</button>
+    <div class="sidebar__title-wrap">
+      <h3>Урок 1</h3>
+      <a href="../../index.html" class="sidebar__home-link">← На главную</a>
+    </div>
+  </div>
+  <div class="sidebar__nav">
+    <ol>
+      <li><a href="#intro">Введение: с чем едим</a></li>
+      <li><a href="#types">Типы данных (разбор)</a></li>
+      <li><a href="#equality">== vs === (главный вопрос)</a></li>
+      <li><a href="#nullundefined">null vs undefined</a></li>
+      <li><a href="#coercion">Магия приведения типов</a></li>
+      <li><a href="#truthy">Truthy и Falsy</a></li>
+      <li><a href="#interview">Как спросят на собеседовании</a></li>
+      <li><a href="#mistakes">Типичные ошибки (разбор)</a></li>
+      <li><a href="#practice">Мини-задания</a></li>
+      <li><a href="#task">Итоговое задание</a></li>
+    </ol>
+  </div>
+</aside>
+
+<div class="container">
+
+  <header>
+    <a href="../../index.html" class="back-link">← Вернуться к курсу</a>
+    <h1>Урок 1 · Фундамент JavaScript</h1>
+    <p>Типы данных, сравнение, приведение типов — база, без которой не пройти собеседование</p>
+    <div class="badge" style="background: #ede9fe; color: #5b21b6; border-color: #c4b5fd;">JUNIOR · 2026 · ≈ 90 МИН</div>
+    
+    <div class="lesson-top-nav">
+      <a href="prog-lesson-1.html">1</a>
+      <a href="prog-lesson-2.html">2</a>
+      <a href="prog-lesson-3.html">3</a>
+      <a href="prog-lesson-4.html">4</a>
+      <a href="prog-lesson-5.html">5</a>
+      <a href="prog-lesson-6.html">6</a>
+      <a href="prog-lesson-7.html">7</a>
+      <a href="prog-lesson-8.html">8</a>
+      <a href="prog-lesson-9.html">9</a>
+      <a href="prog-lesson-10.html">10</a>
+      <a href="prog-lesson-11.html">11</a>
+      <a href="prog-lesson-12.html">12</a>
+    </div>
+  </header>
+
+  <section id="intro">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">1</span> Введение: с чем едим JavaScript</h2>
+
+    <p>Представь, что ты пришёл на кухню, чтобы приготовить борщ. У тебя есть кастрюля, нож, доска и продукты. Но если ты не знаешь, <em>что</em> кладут в борщ (свёклу, а не бананы) и <em>в каком порядке</em> (сначала бульон, потом зажарку), у тебя получится непонятная жижа.</p>
+
+    <p><strong>JavaScript — это та же кухня.</strong> У нас есть «ингредиенты» (данные) и «действия» (операции). И есть строгие правила, как с ними обращаться. Если ты не знаешь правил — программа работает не так, как ты ожидаешь. А на собеседовании именно эти правила и проверяют.</p>
+
+    <div class="note">
+      💡 <strong>Главная мысль урока:</strong> JavaScript — это язык с <strong>динамической типизацией</strong>. Это значит, что мы не говорим заранее: «эта коробка только для чисел». Мы кладём в переменную что угодно, и JS сам решает, как с этим обращаться. Это даёт гибкость, но создаёт ловушки. Мы научимся их обходить.
+    </div>
+
+    <h3>1.1. Зачем вообще нужны переменные?</h3>
+    <p>Переменная — это коробка с наклейкой. Наклейка — это имя. Внутри лежит значение. Например:</p>
+    <div class="example">
+      <div class="en">let age = 25;         // в коробку с наклейкой "age" положили число 25</div>
+      <div class="en">let name = "Иван";    // в коробку "name" положили текст</div>
+    </div>
+    <p>В отличие от строгих языков (например, C++ или Java), в JavaScript мы <strong>не обязаны</strong> указывать, что лежит в коробке. Мы можем положить туда число, потом достать и положить строку. Это и есть динамическая типизация.</p>
+  </section>
+
+  <section id="types">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">2</span> Типы данных (разбираем с нуля)</h2>
+
+    <p>В JavaScript всего <strong>8 типов данных</strong>. Семь из них — «простые» (примитивы), и один — «сложный» (объект). Давай разберём каждый, как будто мы видим их впервые.</p>
+
+    <h3>2.1. Примитивы — это «кирпичики»</h3>
+    <p>Примитив — это простое значение, которое нельзя разбить на части. Как атом. Их семь:</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Тип</th><th>Что это</th><th>Пример</th><th>Аналогия из жизни</th></tr></thead>
+        <tbody>
+          <tr><td><strong>string</strong> (строка)</td><td>Текст в кавычках</td><td><code>"Привет"</code>, <code>'JS'</code></td><td>Записка на бумаге</td></tr>
+          <tr><td><strong>number</strong> (число)</td><td>Любое число (целое или дробное)</td><td><code>42</code>, <code>3.14</code>, <code>-10</code></td><td>Цифра на калькуляторе</td></tr>
+          <tr><td><strong>boolean</strong> (логическое)</td><td>Только <code>true</code> (истина) или <code>false</code> (ложь)</td><td><code>true</code>, <code>false</code></td><td>Выключатель: вкл/выкл</td></tr>
+          <tr><td><strong>null</strong></td><td>Намеренное отсутствие значения</td><td><code>null</code></td><td>Пустая коробка, на которой написано «пусто»</td></tr>
+          <tr><td><strong>undefined</strong></td><td>Значение ещё не задано</td><td><code>undefined</code></td><td>Коробка, которую забыли наполнить</td></tr>
+          <tr><td><strong>symbol</strong></td><td>Уникальный идентификатор (редко используется)</td><td><code>Symbol("id")</code></td><td>Уникальный штрих-код</td></tr>
+          <tr><td><strong>bigint</strong></td><td>Очень большие целые числа</td><td><code>12345678901234567890n</code></td><td>Длинный номер счёта в банке</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>2.2. Объект — это «конструктор»</h3>
+    <p>Всё, что <strong>не</strong> примитив — это объект. Объект может содержать в себе другие значения (в том числе другие объекты).</p>
+    <div class="example">
+      <div class="en">let user = { name: "Иван", age: 25 }; // обычный объект</div>
+      <div class="en">let colors = ["красный", "синий"];    // массив — это тоже объект</div>
+      <div class="en">function greet() { return "Привет"; } // функция — тоже объект</div>
+    </div>
+    <p>Представь, что примитив — это одна деталь Lego, а объект — это собранная из них фигурка. Она состоит из деталей, но сама является цельной вещью.</p>
+
+    <div class="note">
+      💡 <strong>Запомните навсегда:</strong> Оператор <code>typeof</code> показывает тип значения. Но есть историческая странность: <code>typeof null</code> возвращает <code>"object"</code>. Это баг, который был в первых версиях JS. Его не исправили, потому что если исправить — сломаются миллионы старых сайтов. На собеседовании это спрашивают, чтобы проверить, знаете ли вы историю языка.
+    </div>
+  </section>
+
+  <section id="equality">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">3</span> == vs === (главный вопрос собеседования)</h2>
+
+    <p>В JavaScript есть два оператора сравнения: <code>==</code> (два знака равно) и <code>===</code> (три знака равно). Начинающие часто думают, что это одно и то же. Это <strong>не так</strong>.</p>
+
+    <h3>3.1. Строгое сравнение === (как строгий учитель)</h3>
+    <p>Оператор <code>===</code> сравнивает <strong>и значение, и тип</strong>. Если типы разные — он даже не смотрит на значения, сразу говорит <code>false</code>.</p>
+    
+    <div class="example">
+      <div class="en">console.log(5 === 5);      // true (число и число, значения равны)</div>
+      <div class="en">console.log(5 === "5");    // false (число и строка — разные типы)</div>
+      <div class="en">console.log(true === 1);   // false (boolean и число)</div>
+    </div>
+    <p>Это как охранник в клубе: если у тебя нет нужного типа билета (например, ты пришёл с бумажкой вместо пластиковой карты), он тебя не пустит, даже если на бумажке написано «VIP».</p>
+
+    <h3>3.2. Нестрогое сравнение == (как ленивый охранник)</h3>
+    <p>Оператор <code>==</code> <strong>сначала приводит типы</strong> к одному, а потом сравнивает. Это называется <strong>приведением типов</strong> (type coercion).</p>
+    
+    <div class="example">
+      <div class="en">console.log(5 == "5");     // true! (строка "5" превращается в число 5)</div>
+      <div class="en">console.log(0 == false);   // true! (false превращается в 0)</div>
+      <div class="en">console.log("" == 0);      // true! (пустая строка превращается в 0)</div>
+    </div>
+    <p>Этот охранник видит, что у тебя бумажка, говорит: «Ладно, я её заламинирую, будет похоже на карту», — и пропускает. Вроде удобно, но может пропустить кого угодно.</p>
+
+    <div class="note">
+      💡 <strong>Правило на всю жизнь:</strong> Всегда используйте <code>===</code>. Единственное исключение — проверка на <code>null == undefined</code> (об этом ниже).
+    </div>
+
+    <h3>3.3. Почему == опасен на практике</h3>
+    <p>Представь, что пользователь ввёл в поле «возраст» строку <code>"0"</code>. Ты проверяешь: «если возраст равен 0, то показать ошибку». Пишешь <code>if (age == 0)</code>. Но что если возраст — пустая строка <code>""</code>? <code>"" == 0</code> тоже <code>true</code>! И ты покажешь ошибку, хотя пользователь ничего не ввёл, а не ввёл ноль.</p>
+    <p>А если написать <code>if (age === 0)</code>, то сработает только если это реально число 0. Строка <code>""</code> или <code>"0"</code> не пройдут.</p>
+  </section>
+
+  <section id="nullundefined">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">4</span> null vs undefined (две пустоты)</h2>
+
+    <p>Оба этих значения означают «пусто». Но они означают <strong>разную пустоту</strong>. Это как два разных способа сказать «ничего».</p>
+
+    <h3>4.1. undefined — «я не знаю, что тут»</h3>
+    <p><code>undefined</code> — это когда JavaScript <strong>сам</strong> ставит это значение, потому что переменная ещё не заполнена.</p>
+    <ul>
+      <li>Ты объявил переменную, но не дал ей значение: <code>let x;</code> → <code>x</code> равно <code>undefined</code>.</li>
+      <li>Ты вызвал функцию, которая ничего не возвращает: <code>function f() {}</code> → <code>f()</code> равно <code>undefined</code>.</li>
+      <li>Ты обратился к свойству, которого нет: <code>{}.name</code> → <code>undefined</code>.</li>
+    </ul>
+    <p>Это как пустая коробка, на которой написано: «Содержимое не задано».</p>
+
+    <h3>4.2. null — «я специально положил пустоту»</h3>
+    <p><code>null</code> — это когда <strong>ты сам</strong> (разработчик) говоришь: «Здесь пусто, и это правильно». Это осознанное решение.</p>
+    <div class="example">
+      <div class="en">let currentUser = null; // пользователь ещё не вошёл</div>
+      <div class="en">// ... позже, когда вошёл:</div>
+      <div class="en">currentUser = { name: "Иван" };</div>
+    </div>
+    <p>Это как пустая коробка, на которой ты маркером написал: «Пусто. Это нормально».</p>
+
+    <h3>4.3. Главное сравнение</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Операция</th><th>Результат</th><th>Почему</th></tr></thead>
+        <tbody>
+          <tr><td><code>null == undefined</code></td><td><strong>true</strong></td><td>При нестрогом сравнении они считаются равными (оба — «пустота»)</td></tr>
+          <tr><td><code>null === undefined</code></td><td><strong>false</strong></td><td>Разные типы, строгое сравнение их не пропускает</td></tr>
+          <tr><td><code>typeof null</code></td><td><code>"object"</code></td><td>Исторический баг языка</td></tr>
+          <tr><td><code>typeof undefined</code></td><td><code>"undefined"</code></td><td>Всё логично</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note">
+      💡 <strong>Лайфхак:</strong> Вместо <code>if (x === null || x === undefined)</code> можно написать <code>if (x == null)</code>. Это единственный случай, когда <code>==</code> официально полезен.
+    </div>
+  </section>
+
+  <section id="coercion">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">5</span> Как JS приводит типы (магия под капотом)</h2>
+
+    <p>JavaScript — язык, который очень старается сделать хоть что-то, вместо того чтобы выдать ошибку. Когда ты складываешь число и строку, он не говорит: «Так нельзя». Он <strong>приводит</strong> одно к другому. Это и есть <strong>type coercion</strong>.</p>
+
+    <h3>5.1. Оператор + (двойная жизнь)</h3>
+    <p>У плюса две роли: <strong>сложение чисел</strong> и <strong>склеивание строк</strong> (конкатенация). Какую роль он выберет?</p>
+    <p><strong>Правило:</strong> Если <strong>хотя бы один</strong> операнд (то, что стоит слева или справа) — строка, то плюс работает как клей.</p>
+    
+    <div class="example">
+      <div class="en">console.log(5 + 5);   // 10 (оба числа — сложение)</div>
+      <div class="en">console.log(5 + "5"); // "55" (строка справа — склеивание)</div>
+      <div class="en">console.log("5" + 5); // "55" (строка слева — склеивание)</div>
+      <div class="en">console.log("5" + "5"); // "55" (обе строки — склеивание)</div>
+    </div>
+    <p>Это как если бы у тебя был клей и молоток в одном инструменте. Если видишь бумагу (строку) — клеишь. Если видишь гвоздь (число) — стучишь.</p>
+
+    <h3>5.2. Операторы -, *, / (всегда математика)</h3>
+    <p>Минус, умножить и делить <strong>всегда</strong> превращают всё в числа. Если строка похожа на число — она станет числом. Если не похожа — получится <code>NaN</code> (Not a Number).</p>
+    <div class="example">
+      <div class="en">console.log(5 - "5"); // 0 (строка превратилась в 5)</div>
+      <div class="en">console.log("10" * 2); // 20</div>
+      <div class="en">console.log("привет" - 1); // NaN (нельзя превратить в число)</div>
+    </div>
+
+    <h3>5.3. Boolean в математике</h3>
+    <p><code>true</code> превращается в <code>1</code>, <code>false</code> — в <code>0</code>.</p>
+    <div class="example">
+      <div class="en">console.log(true + 1);  // 2</div>
+      <div class="en">console.log(false + 1); // 1</div>
+    </div>
+  </section>
+
+  <section id="truthy">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">6</span> Truthy и Falsy (кто прав, кто виноват)</h2>
+
+    <p>В условиях (<code>if</code>, <code>while</code>) JavaScript не требует, чтобы ты передавал именно <code>true</code> или <code>false</code>. Он принимает любое значение и сам решает, «правда это или ложь».</p>
+    <p>Все значения делятся на две группы: <strong>falsy</strong> (ведут себя как ложь) и <strong>truthy</strong> (ведут себя как правда).</p>
+
+    <h3>6.1. Falsy — всего 6 штук (и их надо знать наизусть)</h3>
+    <div class="example">
+      <div class="en">false</div>
+      <div class="en">0</div>
+      <div class="en">-0  (минус ноль, редкость)</div>
+      <div class="en">""  (пустая строка)</div>
+      <div class="en">null</div>
+      <div class="en">undefined</div>
+      <div class="en">NaN (Not a Number)</div>
+    </div>
+    <p>Всё остальное — truthy. Даже пустой массив <code>[]</code>, даже пустой объект <code>{}</code>, даже строка с пробелом <code>" "</code>.</p>
+
+    <h3>6.2. Ловушка со строкой "0"</h3>
+    <div class="example">
+      <div class="en">console.log(Boolean(0));   // false (число ноль)</div>
+      <div class="en">console.log(Boolean("0")); // true! (строка с нулём — это не пусто)</div>
+    </div>
+    <p>Это очень частая ошибка. Строка <code>"0"</code> — это текст, в ней есть символ. А <code>0</code> — это число. Разные вещи.</p>
+  </section>
+
+  <section id="interview">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">7</span> Как спросят на собеседовании (готовые ответы)</h2>
+
+    <p>Ниже — вопросы, которые задают 90% интервьюеров на junior-позиции. Выучи формулировки, но не заучивай — <strong>пойми</strong>.</p>
+
+    <div class="mini-task" style="background: #f5f3ff; border-left-color: #7c3aed;">
+      <div class="title" style="color: #5b21b6;">Вопрос 1: В чём разница между == и ===?</div>
+      <p><strong>Ответ:</strong> «<code>==</code> сравнивает с приведением типов, <code>===</code> — без приведения. Если типы разные, <code>===</code> сразу даёт <code>false</code>. В современном коде всегда используют <code>===</code>, кроме проверки на <code>null == undefined</code>, которая даёт <code>true</code> и позволяет проверить оба случая одной проверкой.»</p>
+    </div>
+
+    <div class="mini-task" style="background: #f5f3ff; border-left-color: #7c3aed;">
+      <div class="title" style="color: #5b21b6;">Вопрос 2: Чем null отличается от undefined?</div>
+      <p><strong>Ответ:</strong> «<code>undefined</code> — это когда значение не задано системой: переменная объявлена без инициализации, функция ничего не вернула, свойство не существует. <code>null</code> — это намеренное отсутствие значения, которое ставит разработчик. При этом <code>typeof null</code> возвращает <code>"object"</code> — это исторический баг JavaScript.»</p>
+    </div>
+
+    <div class="mini-task" style="background: #f5f3ff; border-left-color: #7c3aed;">
+      <div class="title" style="color: #5b21b6;">Вопрос 3: Что выведет 5 + "5"?</div>
+      <p><strong>Ответ:</strong> «Выведет строку <code>"55"</code>. Оператор <code>+</code> при наличии строки выполняет конкатенацию, поэтому число 5 приводится к строке. Если бы было <code>5 - "5"</code>, результат был бы <code>0</code>, потому что <code>-</code> всегда приводит к числу.»</p>
+    </div>
+
+    <div class="mini-task" style="background: #f5f3ff; border-left-color: #7c3aed;">
+      <div class="title" style="color: #5b21b6;">Вопрос 4: Назовите falsy-значения</div>
+      <p><strong>Ответ:</strong> «В JavaScript 6 falsy-значений: <code>false</code>, <code>0</code>, <code>-0</code>, <code>""</code>, <code>null</code>, <code>undefined</code>, <code>NaN</code>. Всё остальное — truthy. Важно помнить, что строка <code>"0"</code> — truthy, потому что это непустая строка, а пустой массив <code>[]</code> и объект <code>{}</code> тоже truthy.»</p>
+    </div>
+  </section>
+
+  <section id="mistakes">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">8</span> Типичные ошибки (и как их избежать)</h2>
+
+    <h3>Ошибка 1: Использование == вместо ===</h3>
+    <div class="error-box">
+      <div><span class="wrong">❌</span> if (x == 0) { ... }</div>
+      <div class="ru" style="margin-top: 4px; font-style: italic; color: #7a2340;">Если x = "" или x = false, условие тоже сработает — неожиданно.</div>
+      <div style="margin-top: 10px;"><span class="right">✅</span> if (x === 0) { ... }</div>
+      <details style="margin-top: 12px; background: rgba(255,255,255,0.5); border-color: #f3c0cf;">
+        <summary style="color: #c02a55;">💡 Почему именно так?</summary>
+        <p style="margin-top: 8px; font-size: 0.9rem;"><code>==</code> приводит <code>""</code> к <code>0</code>, поэтому <code>"" == 0</code> даёт <code>true</code>. С <code>===</code> такого не будет: типы разные, сразу <code>false</code>.</p>
+      </details>
+    </div>
+
+    <h3>Ошибка 2: Путать null и undefined</h3>
+    <div class="error-box">
+      <div><span class="wrong">❌</span> let user; // undefined, но разработчик думает, что это null</div>
+      <div style="margin-top: 10px;"><span class="right">✅</span> let user = null; // явно говорим: пользователя нет</div>
+      <details style="margin-top: 12px; background: rgba(255,255,255,0.5); border-color: #f3c0cf;">
+        <summary style="color: #c02a55;">💡 Почему именно так?</summary>
+        <p style="margin-top: 8px; font-size: 0.9rem;"><code>undefined</code> — это «значение не задано». Если вы хотите сказать «здесь пусто намеренно», используйте <code>null</code>. Это делает код понятнее для коллег.</p>
+      </details>
+    </div>
+
+    <h3>Ошибка 3: Ожидать число от 5 + "5"</h3>
+    <div class="error-box">
+      <div><span class="wrong">❌</span> console.log(5 + "5"); // ожидание 10</div>
+      <div style="margin-top: 10px;"><span class="right">✅</span> console.log(5 + Number("5")); // 10</div>
+      <details style="margin-top: 12px; background: rgba(255,255,255,0.5); border-color: #f3c0cf;">
+        <summary style="color: #c02a55;">💡 Почему именно так?</summary>
+        <p style="margin-top: 8px; font-size: 0.9rem;">Если один операнд — строка, <code>+</code> делает конкатенацию. Чтобы сложить числа, нужно явно привести строку к числу через <code>Number()</code>, <code>parseInt()</code> или <code>+</code> перед переменной.</p>
+      </details>
+    </div>
+  </section>
+
+  <section id="practice">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">9</span> Мини-задания (проверь себя)</h2>
+
+    <div class="mini-task" style="background: #f5f3ff; border-left-color: #7c3aed;">
+      <div class="title" style="color: #5b21b6;">Задание 1</div>
+      <p>Что выведет этот код и почему?</p>
+      <div class="example"><div class="en">console.log(1 + "2" + 3);</div></div>
+      <details><summary>Показать ответ</summary><strong>"123"</strong>. Сначала <code>1 + "2"</code> → <code>"12"</code> (конкатенация). Потом <code>"12" + 3</code> → <code>"123"</code> (снова конкатенация).</details>
+    </div>
+
+    <div class="mini-task" style="background: #f5f3ff; border-left-color: #7c3aed;">
+      <div class="title" style="color: #5b21b6;">Задание 2</div>
+      <p>Что выведет этот код?</p>
+      <div class="example"><div class="en">console.log(null == undefined);</div>
+      <div class="en">console.log(null === undefined);</div></div>
+      <details><summary>Показать ответ</summary><strong>true</strong> и <strong>false</strong>. При <code>==</code> они считаются равными (оба означают пустоту). При <code>===</code> — разные типы, поэтому <code>false</code>.</details>
+    </div>
+
+    <div class="mini-task" style="background: #f5f3ff; border-left-color: #7c3aed;">
+      <div class="title" style="color: #5b21b6;">Задание 3</div>
+      <p>Какие из этих значений falsy?</p>
+      <div class="example"><div class="en">0, "0", "", [], null, undefined, NaN, false</div></div>
+      <details><summary>Показать ответ</summary>Falsy: <strong>0, "", null, undefined, NaN, false</strong>. Truthy: <strong>"0"</strong> (непустая строка), <strong>[]</strong> (пустой массив — объект).</details>
+    </div>
+
+    <div class="mini-task" style="background: #f5f3ff; border-left-color: #7c3aed;">
+      <div class="title" style="color: #5b21b6;">Задание 4</div>
+      <p>Что выведет?</p>
+      <div class="example"><div class="en">console.log(typeof null);</div></div>
+      <details><summary>Показать ответ</summary><strong>"object"</strong>. Это исторический баг JavaScript: <code>null</code> должен был быть отдельным типом, но из-за ошибки в первых версиях движка он определяется как объект. Баг не исправили, чтобы не ломать старый код.</details>
+    </div>
+  </section>
+
+  <section id="task" class="task">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">10</span> Итоговое задание</h2>
+
+    <p>Напишите в тетради или в заметках ответы на вопросы. Это подготовка к собеседованию.</p>
+
+    <ol>
+      <li>В чём разница между <code>==</code> и <code>===</code>? Приведите пример, где они дают разный результат.</li>
+      <li>Чем <code>null</code> отличается от <code>undefined</code>? Кто и когда их ставит?</li>
+      <li>Что выведет <code>5 + "5" - 2</code>? Объясните по шагам.</li>
+      <li>Перечислите все falsy-значения.</li>
+      <li>Почему <code>typeof null</code> возвращает <code>"object"</code>?</li>
+    </ol>
+
+    <div class="hint">
+      <strong>Проверка:</strong> если вы можете ответить на все 5 вопросов без подглядывания — вы готовы к блоку «типы данных» на собеседовании. Если нет — вернитесь к разделам 3–6.
+    </div>
+
+    <button id="complete-btn" class="complete-btn" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">✅ Отметить урок пройденным</button>
+  </section>
+
+  <nav class="lesson-nav">
+    <a href="../../index.html">← К курсу</a>
+    <a href="prog-lesson-2.html">Урок 2 →</a>
+  </nav>
+
+  <footer>
+    Programming Course · Урок 1 · Продолжение следует 🚀
+  </footer>
+
+</div>
+
+<button id="scroll-top" class="scroll-top" aria-label="Наверх">↑</button>
+
+<script src="../../script.js"></script>
+</body>
+</html>

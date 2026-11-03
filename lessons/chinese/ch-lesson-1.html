@@ -1,0 +1,425 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#d33a2c">
+  <title>Урок 1 — Фонетика: Полный гид | Chinese for Life</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .tone-box { display: flex; align-items: center; gap: 20px; background: #fff; border: 1px solid #dde3f0; border-radius: 12px; padding: 20px; margin: 20px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+    .tone-svg { width: 160px; height: 100px; flex-shrink: 0; background: #fafbfc; border-radius: 8px; border: 1px dashed #ccc; }
+    .tone-text { font-size: 1rem; line-height: 1.7; }
+    .tone-text strong { color: #d33a2c; display: block; margin-bottom: 8px; font-size: 1.3rem; }
+    .pronunciation-tip { background: #e8efff; border-left: 4px solid #3b62e0; padding: 20px; border-radius: 8px; margin: 20px 0; font-size: 1rem; }
+    .history-box { background: #fcf8e3; border: 1px solid #faebcc; padding: 20px; border-radius: 12px; margin: 20px 0; color: #8a6d3b; }
+    .history-box h4 { color: #8a6d3b; margin-bottom: 10px; }
+    .grid-2 { display: grid; grid-template-columns: 1fr; gap: 20px; }
+    @media (min-width: 768px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body data-lesson-id="ch-lesson-1">
+
+<button id="menu-toggle" class="menu-toggle" aria-label="Открыть меню">☰</button>
+<div id="overlay" class="overlay"></div>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar__header">
+    <button id="menu-toggle-inside" class="menu-toggle-inside" aria-label="Закрыть меню">×</button>
+    <div class="sidebar__title-wrap">
+      <h3>Урок 1 (Chinese)</h3>
+      <a href="../../index.html" class="sidebar__home-link">← На главную</a>
+    </div>
+  </div>
+  <div class="sidebar__nav">
+    <ol>
+      <li><a href="#intro">Введение: Зачем нужна фонетика</a></li>
+      <li><a href="#pinyin">Что такое Пиньинь</a></li>
+      <li><a href="#initials-basic">Инициали: Базовые</a></li>
+      <li><a href="#initials-hard">Инициали: Сложные</a></li>
+      <li><a href="#initials-pairs">Парные согласные (Придыхание)</a></li>
+      <li><a href="#finals-simple">Финали: Простые</a></li>
+      <li><a href="#finals-compound">Финали: Составные</a></li>
+      <li><a href="#finals-nasal">Финали: Носовые</a></li>
+      <li><a href="#tones-intro">Тоны: Введение</a></li>
+      <li><a href="#tones-detail">Тоны: Детальный разбор</a></li>
+      <li><a href="#sandhi">Правила Сандхи (Sandhi)</a></li>
+      <li><a href="#practice">✏️ Практика и Упражнения</a></li>
+      <li><a href="#mistakes">Типичные ошибки</a></li>
+      <li><a href="#task">Итоговое задание</a></li>
+    </ol>
+  </div>
+</aside>
+
+<div class="container">
+
+  <header>
+    <a href="../../index.html" class="back-link">← Вернуться к выбору курса</a>
+    <h1>Урок 1 · Фонетика: Полный гид</h1>
+    <p>Все звуки, тоны и правила произношения в одном месте</p>
+    <div class="badge" style="background: #fce4e4; color: #c0392b; border-color: #f5c6c6;">A1 · CHINESE · ≈ 180 МИН</div>
+    
+    <div class="lesson-top-nav">
+      <a href="ch-lesson-1.html" class="active">1</a>
+      <a href="#" class="disabled">2</a>
+      <a href="#" class="disabled">3</a>
+      <a href="#" class="disabled">4</a>
+      <a href="#" class="disabled">5</a>
+    </div>
+  </header>
+
+  <!-- ============ 1. ВВЕДЕНИЕ ============ -->
+  <section id="intro">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #d33a2c, #e04b7d);">1</span> Введение: Зачем нужна фонетика</h2>
+
+    <p>Китайский язык — это язык, в котором **интонация меняет смысл слова**. Если вы произнесете слово с неправильным тоном, вас просто не поймут. Поэтому в любом учебнике (например, HSK Standard Course) первые 1–2 урока посвящены только звукам.</p>
+    
+    <p>В этом уроке мы разберем, из чего состоит китайский слог, как работают согласные (инициали) и гласные (финали), и самое главное — как не запутаться в тонах.</p>
+
+    <div class="history-box">
+      <h4>📜 Немного истории</h4>
+      <p>Долгое время у китайского языка не было системы записи звуков для иностранцев. Только в 1958 году правительство КНР официально утвердило систему <strong>Пиньинь (拼音)</strong> — запись китайских звуков латинскими буквами. Именно поэтому буквы в пиньине читаются не так, как в английском, а так, как удобно было китайцам.</p>
+    </div>
+  </section>
+
+  <!-- ============ 2. ПИНЬИНЬ ============ -->
+  <section id="pinyin">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #d33a2c, #e04b7d);">2</span> Что такое Пиньинь и структура слога</h2>
+
+    <p>Китайский слог состоит из трех частей:</p>
+    <ul>
+      <li><strong>Инициаль</strong> (начальный согласный).</li>
+      <li><strong>Финал</strong> (гласный).</li>
+      <li><strong>Тон</strong> (интонация).</li>
+    </ul>
+
+    <div class="example">
+      <div class="en">m + a + ¯ = mā</div>
+      <div class="ru">Инициаль (m) + Финал (a) + 1-й тон = Слог</div>
+    </div>
+  </section>
+
+  <!-- ============ 3. ИНИЦИАЛИ (БАЗОВЫЕ) ============ -->
+  <section id="initials-basic">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #d33a2c, #e04b7d);">3</span> Инициали: Базовые согласные</h2>
+
+    <p>В китайском языке 21 инициаль. Давайте разобьем их на группы для удобства. Сначала те, которые звучат почти как в русском языке.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Пиньинь</th><th>Звучание</th><th>Пример</th><th>Перевод</th><th>Совет по артикуляции</th></tr></thead>
+        <tbody>
+          <tr><td><strong>m</strong></td><td>м</td><td>mā</td><td>мама</td><td>Губы сомкнуты, как в русском.</td></tr>
+          <tr><td><strong>n</strong></td><td>н</td><td>nǐ</td><td>ты</td><td>Кончик языка у альвеол.</td></tr>
+          <tr><td><strong>l</strong></td><td>л</td><td>lǎo</td><td>старый</td><td>Кончик языка у верхних зубов.</td></tr>
+          <tr><td><strong>f</strong></td><td>ф</td><td>fàn</td><td>рис</td><td>Верхние зубы на нижней губе.</td></tr>
+          <tr><td><strong>s</strong></td><td>с</td><td>sān</td><td>три</td><td>Широкая улыбка, язык у нижних зубов.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ 4. ИНИЦИАЛИ (СЛОЖНЫЕ) ============ -->
+  <section id="initials-hard">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #d33a2c, #e04b7d);">4</span> Инициали: Сложные согласные</h2>
+
+    <h3>4.1. Звуки j, q, x</h3>
+    <p>Они произносятся с широкой улыбкой. Кончик языка упирается в нижние зубы.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Пиньинь</th><th>Звучание</th><th>Пример</th><th>Перевод</th></tr></thead>
+        <tbody>
+          <tr><td><strong>j</strong></td><td>цз (мягкое)</td><td>jiā</td><td>дом / семья</td></tr>
+          <tr><td><strong>q</strong></td><td>ч (мягкое)</td><td>qī</td><td>семь</td></tr>
+          <tr><td><strong>x</strong></td><td>сь (мягкое)</td><td>xiè</td><td>спасибо</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>4.2. Звуки zh, ch, sh, r</h3>
+    <p>Здесь язык загибается назад (как при произнесении русского «ж» или «ш», но тверже).</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Пиньинь</th><th>Звучание</th><th>Пример</th><th>Перевод</th></tr></thead>
+        <tbody>
+          <tr><td><strong>zh</strong></td><td>дж (твердое)</td><td>zhī</td><td>знать</td></tr>
+          <tr><td><strong>ch</strong></td><td>ч (твердое)</td><td>chī</td><td>есть (кушать)</td></tr>
+          <tr><td><strong>sh</strong></td><td>ш (твердое)</td><td>shī</td><td>стихотворение</td></tr>
+          <tr><td><strong>r</strong></td><td>ж</td><td>rén</td><td>человек</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ 5. ПАРНЫЕ СОГЛАСНЫЕ ============ -->
+  <section id="initials-pairs">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #d33a2c, #e04b7d);">5</span> Парные согласные (Придыхание)</h2>
+
+    <p>Это самая частая ошибка новичков. В китайском языке есть пары звуков, которые отличаются только наличием выдоха. Если вы не выдохнете, вас поймут неправильно.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Без выдоха</th><th>С выдохом</th><th>Разница</th></tr></thead>
+        <tbody>
+          <tr><td><strong>b</strong> (как «п»)</td><td><strong>p</strong> (как «пх»)</td><td>Положите ладонь перед ртом. При «p» вы должны почувствовать поток воздуха.</td></tr>
+          <tr><td><strong>d</strong> (как «т»)</td><td><strong>t</strong> (как «тх»)</td><td>То же самое. «d» — глухой, «t» — с выдохом.</td></tr>
+          <tr><td><strong>g</strong> (как «к»)</td><td><strong>k</strong> (как «кх»)</td><td>«g» — без выдоха, «k» — с сильным выдохом.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="pronunciation-tip">
+      <strong>Упражнение на придыхание:</strong> Скажите слово «папа» по-русски (без выдоха). А теперь попробуйте сказать «пха-пха» с сильным выдохом. В китайском <strong>bā</strong> (восемь) и <strong>pā</strong> (лежать) — это разные слова.
+    </div>
+  </section>
+
+  <!-- ============ 6. ФИНАЛИ (ПРОСТЫЕ) ============ -->
+  <section id="finals-simple">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #d33a2c, #e04b7d);">6</span> Финали: Простые гласные</h2>
+
+    <p>Финали — это гласные звуки. В китайском языке их 37, но для начала нужно знать 6 базовых.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Пиньинь</th><th>Звучание</th><th>Пример</th><th>Перевод</th></tr></thead>
+        <tbody>
+          <tr><td><strong>a</strong></td><td>а (широкое)</td><td>mā</td><td>мама</td></tr>
+          <tr><td><strong>o</strong></td><td>о</td><td>wǒ</td><td>я</td></tr>
+          <tr><td><strong>e</strong></td><td>э (гортанное)</td><td>hē</td><td>пить</td></tr>
+          <tr><td><strong>i</strong></td><td>и</td><td>nǐ</td><td>ты</td></tr>
+          <tr><td><strong>u</strong></td><td>у</td><td>shū</td><td>книга</td></tr>
+          <tr><td><strong>ü</strong></td><td>юй</td><td>nǚ</td><td>женщина</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="pronunciation-tip">
+      <strong>Звук «e»:</strong> Это не русское «е». Он произносится глубже, как будто вы хотите сказать «э», но с гортанным призвуком.
+    </div>
+  </section>
+
+  <!-- ============ 7. ФИНАЛИ (СОСТАВНЫЕ) ============ -->
+  <section id="finals-compound">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #d33a2c, #e04b7d);">7</span> Финали: Составные гласные</h2>
+
+    <p>В китайском языке гласные часто объединяются в дифтонги (сочетания двух звуков).</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Пиньинь</th><th>Звучание</th><th>Пример</th><th>Перевод</th></tr></thead>
+        <tbody>
+          <tr><td><strong>ai</strong></td><td>ай</td><td>ài</td><td>любить</td></tr>
+          <tr><td><strong>ei</strong></td><td>эй</td><td>měi</td><td>красивый</td></tr>
+          <tr><td><strong>ao</strong></td><td>ао</td><td>hǎo</td><td>хороший</td></tr>
+          <tr><td><strong>ou</strong></td><td>оу</td><td>dōu</td><td>все</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+    <!-- ============ 8. ФИНАЛИ (НОСОВЫЕ) ============ -->
+  <section id="finals-nasal">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #d33a2c, #e04b7d);">8</span> Финали: Носовые звуки</h2>
+
+    <p>В китайском языке есть звуки, которые произносятся «в нос». Если вы видите в конце слога букву <strong>n</strong> или <strong>ng</strong>, значит, воздух должен проходить через нос.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Пиньинь</th><th>Звучание</th><th>Пример</th><th>Перевод</th></tr></thead>
+        <tbody>
+          <tr><td><strong>an</strong></td><td>ань</td><td>fàn</td><td>рис</td></tr>
+          <tr><td><strong>en</strong></td><td>энь</td><td>rén</td><td>человек</td></tr>
+          <tr><td><strong>ang</strong></td><td>ан (в нос)</td><td>táng</td><td>сахар</td></tr>
+          <tr><td><strong>eng</strong></td><td>эн (в нос)</td><td>péng</td><td>друг (в péngyou)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note">
+      💡 <strong>Совет:</strong> Разница между <em>an</em> и <em>ang</em> — это разница между «ань» (язык у зубов) и «ан» (язык уходит назад, звук в нос).
+    </div>
+  </section>
+
+  <!-- ============ 9. ТОНЫ (ВВЕДЕНИЕ) ============ -->
+  <section id="tones-intro">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #d33a2c, #e04b7d);">9</span> Тоны: Введение</h2>
+
+    <p>В китайском языке <strong>4 основных тона</strong> (плюс нейтральный). Один и тот же слог, произнесенный с разным тоном, означает разные вещи. Если вы скажете «mā» (мама) с 4-м тоном, получится «mà» (ругать).</p>
+
+    <div class="note">
+      💡 <strong>Запомните:</strong> Тоны — это не эмоции. Это часть самого слова, как ударение в русском, только более строгое.
+    </div>
+  </section>
+
+  <!-- ============ 10. ТОНЫ (ДЕТАЛЬНЫЙ РАЗБОР) ============ -->
+  <section id="tones-detail">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #d33a2c, #e04b7d);">10</span> Тоны: Детальный разбор</h2>
+
+    <p>Давайте разберем каждый тон с графиком и примером.</p>
+
+    <div class="tone-box">
+      <svg class="tone-svg" viewBox="0 0 100 80">
+        <line x1="10" y1="40" x2="90" y2="40" stroke="#3b62e0" stroke-width="4" stroke-linecap="round"/>
+        <text x="50" y="25" font-size="14" fill="#666" text-anchor="middle">1-й тон (ровный)</text>
+      </svg>
+      <div class="tone-text">
+        <strong>mā (мама)</strong>
+        Высокий и ровный. Как будто вы поете ноту. Держите голос на одной высоте.
+      </div>
+    </div>
+
+    <div class="tone-box">
+      <svg class="tone-svg" viewBox="0 0 100 80">
+        <line x1="10" y1="60" x2="90" y2="20" stroke="#3b62e0" stroke-width="4" stroke-linecap="round"/>
+        <text x="50" y="75" font-size="14" fill="#666" text-anchor="middle">2-й тон (восходящий)</text>
+      </svg>
+      <div class="tone-text">
+        <strong>má (конопля)</strong>
+        Голос идет вверх. Как будто вы переспрашиваете.
+      </div>
+    </div>
+
+    <div class="tone-box">
+      <svg class="tone-svg" viewBox="0 0 100 80">
+        <path d="M 10 20 Q 50 70 90 20" fill="none" stroke="#3b62e0" stroke-width="4" stroke-linecap="round"/>
+        <text x="50" y="75" font-size="14" fill="#666" text-anchor="middle">3-й тон (падает и вверх)</text>
+      </svg>
+      <div class="tone-text">
+        <strong>mǎ (лошадь)</strong>
+        Самый сложный. Голос падает вниз, а потом идет вверх.
+      </div>
+    </div>
+
+    <div class="tone-box">
+      <svg class="tone-svg" viewBox="0 0 100 80">
+        <line x1="10" y1="20" x2="90" y2="60" stroke="#3b62e0" stroke-width="4" stroke-linecap="round"/>
+        <text x="50" y="75" font-size="14" fill="#666" text-anchor="middle">4-й тон (падающий)</text>
+      </svg>
+      <div class="tone-text">
+        <strong>mà (ругать)</strong>
+        Резкий, падающий сверху вниз. Как приказ.
+      </div>
+    </div>
+
+    <div class="tone-box">
+      <svg class="tone-svg" viewBox="0 0 100 80">
+        <text x="50" y="50" font-size="16" fill="#999" text-anchor="middle">(нет значка)</text>
+        <text x="50" y="70" font-size="14" fill="#666" text-anchor="middle">Нейтральный</text>
+      </svg>
+      <div class="tone-text">
+        <strong>ma (вопросительная частица)</strong>
+        Очень короткий и легкий. Произносится без напряжения, как выдох.
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 11. САНДХИ ============ -->
+  <section id="sandhi">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #d33a2c, #e04b7d);">11</span> Правила изменения тонов (Sandhi)</h2>
+
+    <p>Когда тоны встречаются в реальной речи, они меняются. Это физиология — так проще говорить.</p>
+
+    <h3>1. Два третьих тона подряд</h3>
+    <p>Если в предложении стоят два слога с 3-м тоном, первый из них меняется на 2-й.</p>
+    <div class="example">
+      <div class="en">nǐ hǎo (привет)</div>
+      <div class="ru">Читается как <strong>ní hǎo</strong>. Второй слог остается 3-м.</div>
+    </div>
+
+    <h3>2. Иероглиф 不 (bù — не)</h3>
+    <p>Он имеет 4-й тон. Но если после него идет другой 4-й тон, 不 меняет свой тон на 2-й.</p>
+    <div class="example">
+      <div class="en">bú shì (не есть / нет)</div>
+      <div class="ru">Вместо bù shì.</div>
+    </div>
+
+    <h3>3. Иероглиф 一 (yī — один)</h3>
+    <p>Он имеет 1-й тон. Но если после него идет 4-й тон, он меняется на 2-й. А если 1-й, 2-й или 3-й — то на 4-й.</p>
+    <div class="example">
+      <div class="en">yí gè (один штука)</div>
+      <div class="ru">Вместо yī gè.</div>
+    </div>
+  </section>
+
+  <!-- ============ 12. ПРАКТИКА ============ -->
+  <section id="practice">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #d33a2c, #e04b7d);">12</span> ✏️ Практика</h2>
+
+    <div class="mini-task">
+      <div class="title">Упражнение 1: Тоны</div>
+      <p>Произнесите вслух, четко меняя интонацию:</p>
+      <ol>
+        <li>mā (ровно)</li>
+        <li>má (вверх)</li>
+        <li>mǎ (вниз-вверх)</li>
+        <li>mà (вниз)</li>
+      </ol>
+    </div>
+
+    <div class="mini-task">
+      <div class="title">Упражнение 2: Придыхание</div>
+      <p>Почувствуйте разницу между <strong>b</strong> и <strong>p</strong>:</p>
+      <ul>
+        <li><strong>bā</strong> (восемь) — без выдоха.</li>
+        <li><strong>pā</strong> (лежать) — с сильным выдохом (поднесите ладонь ко рту).</li>
+      </ul>
+    </div>
+
+    <div class="mini-task">
+      <div class="title">Упражнение 3: Сандхи</div>
+      <p>Прочитайте вслух и скажите, какие тоны изменятся:</p>
+      <ol>
+        <li>nǐ hǎo</li>
+        <li>bù shì</li>
+        <li>yī gè</li>
+      </ol>
+      <details><summary>Ответ</summary>1. ní hǎo, 2. bú shì, 3. yí gè</details>
+    </div>
+  </section>
+
+  <!-- ============ 13. ОШИБКИ ============ -->
+  <section id="mistakes">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #d33a2c, #e04b7d);">13</span> Типичные ошибки</h2>
+
+    <h3>1. Неправильное придыхание</h3>
+    <div class="error-box">
+      <div><span class="wrong">❌</span> Говорить "bā" (восемь) с выдохом, как "pā".</div>
+      <div style="margin-top: 10px;"><span class="right">✅</span> "b" — без выдоха, "p" — с выдохом.</div>
+    </div>
+
+    <h3>2. Игнорирование тонов</h3>
+    <div class="error-box">
+      <div><span class="wrong">❌</span> Произносить все слоги ровно, как в русском.</div>
+      <div style="margin-top: 10px;"><span class="right">✅</span> Тоны — это часть слова. Их нужно учить.</div>
+    </div>
+  </section>
+
+  <!-- ============ 14. ЗАДАНИЕ ============ -->
+  <section id="task" class="task">
+    <h2>📝 Итоговое задание</h2>
+
+    <p>Потренируйтесь вслух:</p>
+    <ol>
+      <li>Скажите «привет» (nǐ hǎo), помня о правиле сандхи (ní hǎo).</li>
+      <li>Скажите «нет» (bú shì), помня о правиле сандхи.</li>
+      <li>Почувствуйте разницу между <strong>b</strong> и <strong>p</strong>, <strong>d</strong> и <strong>t</strong>.</li>
+    </ol>
+
+    <button id="complete-btn" class="complete-btn" style="background: linear-gradient(135deg, #d33a2c, #e04b7d);">✅ Отметить урок пройденным</button>
+  </section>
+
+  <nav class="lesson-nav">
+    <a href="../../index.html">← К курсу</a>
+    <a href="#" class="disabled">Следующий урок →</a>
+  </nav>
+
+  <footer>
+    Chinese for Life · Урок 1 · Продолжение следует 🚀
+  </footer>
+
+</div>
+
+<button id="scroll-top" class="scroll-top" aria-label="Наверх">↑</button>
+
+<script src="../../script.js"></script>
+</body>
+</html>

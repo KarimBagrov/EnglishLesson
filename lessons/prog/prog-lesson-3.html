@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#7c3aed">
+  <title>Урок 3 — Асинхронность и Event Loop | Programming Course</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body data-lesson-id="prog-lesson-3">
+
+<button id="menu-toggle" class="menu-toggle" aria-label="Открыть меню">☰</button>
+<div id="overlay" class="overlay"></div>
+
+<aside id="sidebar" class="sidebar">
+  <div class="sidebar__header">
+    <button id="menu-toggle-inside" class="menu-toggle-inside" aria-label="Закрыть меню">×</button>
+    <div class="sidebar__title-wrap">
+      <h3>Урок 3</h3>
+      <a href="../../index.html" class="sidebar__home-link">← На главную</a>
+    </div>
+  </div>
+  <div class="sidebar__nav">
+    <ol>
+      <li><a href="#intro">Введение: почему JS не ждет</a></li>
+      <li><a href="#eventloop">Event Loop (цикл событий)</a></li>
+      <li><a href="#promises">Promise (обещания)</a></li>
+      <li><a href="#asyncawait">async / await</a></li>
+      <li><a href="#interview">Как спросят на собеседовании</a></li>
+      <li><a href="#mistakes">Типичные ошибки</a></li>
+      <li><a href="#practice">Мини-задания</a></li>
+      <li><a href="#task">Итоговое задание</a></li>
+    </ol>
+  </div>
+</aside>
+
+<div class="container">
+
+  <header>
+    <a href="../../index.html" class="back-link">← Вернуться к курсу</a>
+    <h1>Урок 3 · Асинхронность и Event Loop</h1>
+    <p>Почему JavaScript не блокируется, как работают Promise и async/await</p>
+    <div class="badge" style="background: #ede9fe; color: #5b21b6; border-color: #c4b5fd;">JUNIOR · 2026 · ≈ 100 МИН</div>
+    
+    <div class="lesson-top-nav">
+      <a href="prog-lesson-1.html">1</a>
+      <a href="prog-lesson-2.html">2</a>
+      <a href="prog-lesson-3.html">3</a>
+      <a href="prog-lesson-4.html">4</a>
+      <a href="prog-lesson-5.html">5</a>
+      <a href="prog-lesson-6.html">6</a>
+      <a href="prog-lesson-7.html">7</a>
+      <a href="prog-lesson-8.html">8</a>
+      <a href="prog-lesson-9.html">9</a>
+      <a href="prog-lesson-10.html">10</a>
+      <a href="prog-lesson-11.html">11</a>
+      <a href="prog-lesson-12.html">12</a>
+    </div>
+  </header>
+
+  <section id="intro">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">1</span> Введение: почему JS не ждет</h2>
+
+    <p>Представь, что ты работаешь в ресторане один. Ты принимаешь заказы (выполняешь код), а повар (сервер) готовит блюда. Если ты будешь стоять и ждать, пока повар приготовит стейк (а это 20 минут), ты не сможешь принять заказ у следующего посетителя. Очередь будет расти.</p>
+
+    <p><strong>JavaScript — это ты в этом ресторане.</strong> Если бы он ждал, пока сервер ответит (например, загрузится картинка), страница бы «зависала». Поэтому JS использует <strong>асинхронность</strong>: он отправляет запрос серверу и идет заниматься другими делами. Когда сервер ответит, JS вернется к этому запросу.</p>
+
+    <div class="note">
+      💡 <strong>Главная мысль:</strong> JavaScript — <strong>однопоточный</strong> язык. В один момент он может делать только одно действие. Но благодаря <strong>Event Loop</strong> он может обрабатывать сетевые запросы, таймеры и клики, не блокируя основной поток.
+    </div>
+  </section>
+
+  <section id="eventloop">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">2</span> Event Loop (цикл событий)</h2>
+
+    <p>У JavaScript есть три «очереди»:</p>
+    <ul>
+      <li><strong>Стек вызовов (Call Stack)</strong> — здесь выполняется обычный код. Например, <code>console.log("1")</code>. Работает по принципу «последним пришел, первым ушел» (как стопка тарелок).</li>
+      <li><strong>Очередь микротасок (Microtask Queue)</strong> — сюда попадают <code>Promise</code>. Они имеют <strong>приоритет</strong> над макротасками.</li>
+      <li><strong>Очередь макротасок (Macrotask Queue)</strong> — сюда попадают <code>setTimeout</code>, <code>setInterval</code>, события кликов и сетевые запросы.</li>
+    </ul>
+
+    <h3>2.1. Как это работает вместе</h3>
+    <p>Представь, что Event Loop — это диспетчер, который смотрит на стек вызовов. Если стек пуст, он берет задачу из микротасок. Когда микротаски закончились, берет одну задачу из макротасок.</p>
+
+    <h3>2.2. Классический вопрос на порядок вывода</h3>
+    <div class="example">
+      <div class="en">console.log("1");</div>
+      <div class="en">setTimeout(() => console.log("2"), 0);</div>
+      <div class="en">Promise.resolve().then(() => console.log("3"));</div>
+      <div class="en">console.log("4");</div>
+    </div>
+    <p><strong>Ответ: 1, 4, 3, 2.</strong></p>
+    <p>Почему?</p>
+    <ol>
+      <li><code>1</code> — обычный код, попадает в стек и сразу выполняется.</li>
+      <li><code>setTimeout</code> уходит в макротаски (даже если 0 мс).</li>
+      <li><code>Promise.then</code> уходит в микротаски.</li>
+      <li><code>4</code> — обычный код, выполняется сразу после 1.</li>
+      <li>Стек пуст. Event Loop берет микротаски: выполняет <code>3</code>.</li>
+      <li>Микротаски закончились. Берет макротаски: выполняет <code>2</code>.</li>
+    </ol>
+  </section>
+
+  <section id="promises">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">3</span> Promise (обещания)</h2>
+
+    <p><code>Promise</code> — это объект, который представляет результат асинхронной операции. Он может находиться в одном из трех состояний:</p>
+    <ul>
+      <li><strong>pending</strong> (ожидание) — операция ещё не завершилась.</li>
+      <li><strong>fulfilled</strong> (успех) — операция завершилась успешно.</li>
+      <li><strong>rejected</strong> (ошибка) — операция завершилась с ошибкой.</li>
+    </ul>
+
+    <h3>3.1. Аналогия</h3>
+    <p>Представь, что ты заказал пиццу. Тебе дали чек с номером заказа. Это и есть <code>Promise</code>. Пока пицца готовится, ты можешь заниматься другими делами. Когда пицца готова, курьер звонит в дверь (срабатывает <code>.then</code>). Если пиццерия закрылась, курьер сообщает об ошибке (срабатывает <code>.catch</code>).</p>
+
+    <h3>3.2. Пример кода</h3>
+    <div class="example">
+      <div class="en">const promise = new Promise((resolve, reject) => {</div>
+      <div class="en">  setTimeout(() => {</div>
+      <div class="en">    resolve("Пицца готова!");</div>
+      <div class="en">  }, 1000);</div>
+      <div class="en">});</div>
+      <div class="en">promise</div>
+      <div class="en">  .then(result => console.log(result))</div>
+      <div class="en">  .catch(error => console.log(error));</div>
+    </div>
+  </section>
+
+  <section id="asyncawait">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">4</span> async / await</h2>
+
+    <p><code>async/await</code> — это «синтаксический сахар» над <code>Promise</code>. Он позволяет писать асинхронный код так, как будто он синхронный. Это делает код читаемее.</p>
+
+    <h3>4.1. Как использовать</h3>
+    <div class="example">
+      <div class="en">async function getPizza() {</div>
+      <div class="en">  try {</div>
+      <div class="en">    const result = await new Promise((resolve) => {</div>
+      <div class="en">      setTimeout(() => resolve("Пицца готова!"), 1000);</div>
+      <div class="en">    });</div>
+      <div class="en">    console.log(result);</div>
+      <div class="en">  } catch (error) {</div>
+      <div class="en">    console.log("Ошибка:", error);</div>
+      <div class="en">  }</div>
+      <div class="en">}</div>
+      <div class="en">getPizza();</div>
+    </div>
+    <p><strong>Ключевые слова:</strong></p>
+    <ul>
+      <li><code>async</code> — ставится перед функцией, чтобы внутри можно было использовать <code>await</code>. Такая функция всегда возвращает <code>Promise</code>.</li>
+      <li><code>await</code> — ставится перед <code>Promise</code>, чтобы «подождать» его выполнения. Код внутри функции приостанавливается, но остальная программа продолжает работать.</li>
+    </ul>
+  </section>
+
+  <section id="interview">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">5</span> Как спросят на собеседовании</h2>
+
+    <div class="mini-task" style="background: #f5f3ff; border-left-color: #7c3aed;">
+      <div class="title" style="color: #5b21b6;">Вопрос: Что такое Event Loop?</div>
+      <p><strong>Ответ:</strong> «Event Loop — это механизм, который позволяет JavaScript выполнять асинхронные операции в однопоточной среде. Он следит за стеком вызовов и очередями (микро- и макротасками). Если стек пуст, он берет задачи из микротасок (Promise), а затем из макротасок (setTimeout).»</p>
+    </div>
+
+    <div class="mini-task" style="background: #f5f3ff; border-left-color: #7c3aed;">
+      <div class="title" style="color: #5b21b6;">Вопрос: Чем Promise лучше колбэков?</div>
+      <p><strong>Ответ:</strong> «Promise решает проблему «ада колбэков» (callback hell). Код становится более читаемым и плоским. Кроме того, Promise можно обрабатывать в любом месте программы, а не только внутри функции.»</p>
+    </div>
+  </section>
+
+  <section id="mistakes">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">6</span> Типичные ошибки</h2>
+
+    <h3>Ошибка 1: Забыть await</h3>
+    <div class="error-box">
+      <div><span class="wrong">❌</span> const data = fetch(url); console.log(data); // Promise, а не данные</div>
+      <div style="margin-top: 10px;"><span class="right">✅</span> const data = await fetch(url); console.log(data);</div>
+    </div>
+
+    <h3>Ошибка 2: Не обрабатывать ошибки в async</h3>
+    <div class="error-box">
+      <div><span class="wrong">❌</span> async function f() { const res = await fetch(url); }</div>
+      <div style="margin-top: 10px;"><span class="right">✅</span> async function f() { try { const res = await fetch(url); } catch (e) { console.log(e); } }</div>
+    </div>
+  </section>
+
+  <section id="practice">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">7</span> Мини-задания</h2>
+
+    <div class="mini-task" style="background: #f5f3ff; border-left-color: #7c3aed;">
+      <div class="title" style="color: #5b21b6;">Задание 1</div>
+      <p>Что выведет этот код?</p>
+      <div class="example">
+        <div class="en">console.log("A");</div>
+        <div class="en">setTimeout(() => console.log("B"), 0);</div>
+        <div class="en">Promise.resolve().then(() => console.log("C"));</div>
+        <div class="en">console.log("D");</div>
+      </div>
+      <details><summary>Показать ответ</summary><strong>A, D, C, B</strong>. Обычный код (A, D) выполняется сразу. Затем микротаски (C). Затем макротаски (B).</details>
+    </div>
+
+    <div class="mini-task" style="background: #f5f3ff; border-left-color: #7c3aed;">
+      <div class="title" style="color: #5b21b6;">Задание 2</div>
+      <p>Как переписать этот код с помощью async/await?</p>
+      <div class="example">
+        <div class="en">fetch(url)</div>
+        <div class="en">  .then(res => res.json())</div>
+        <div class="en">  .then(data => console.log(data));</div>
+      </div>
+      <details><summary>Показать ответ</summary>
+        <div class="example">
+          <div class="en">async function getData() {</div>
+          <div class="en">  const res = await fetch(url);</div>
+          <div class="en">  const data = await res.json();</div>
+          <div class="en">  console.log(data);</div>
+          <div class="en">}</div>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <section id="task" class="task">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">8</span> Итоговое задание</h2>
+
+    <p>Ответьте на вопросы:</p>
+    <ol>
+      <li>Почему JavaScript называют однопоточным, но он может делать несколько вещей одновременно?</li>
+      <li>В каком порядке выполняются микротаски и макротаски?</li>
+      <li>Что такое Promise и в каких состояниях он может быть?</li>
+      <li>Чем async/await лучше, чем цепочки .then()?</li>
+    </ol>
+
+    <button id="complete-btn" class="complete-btn" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">✅ Отметить урок пройденным</button>
+  </section>
+
+  <nav class="lesson-nav">
+    <a href="prog-lesson-2.html">← Урок 2</a>
+    <a href="../../index.html">К курсу</a>
+    <a href="prog-lesson-4.html">Урок 4 →</a>
+  </nav>
+
+  <footer>
+    Programming Course · Урок 3 · Продолжение следует 🚀
+  </footer>
+
+</div>
+
+<button id="scroll-top" class="scroll-top" aria-label="Наверх">↑</button>
+
+<script src="../../script.js"></script>
+</body>
+</html>

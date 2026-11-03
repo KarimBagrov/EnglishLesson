@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#7c3aed">
+  <title>Урок 4 — Современный JavaScript (ES2024+) | Programming Course</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body data-lesson-id="prog-lesson-4">
+
+<button id="menu-toggle" class="menu-toggle" aria-label="Открыть меню">☰</button>
+<div id="overlay" class="overlay"></div>
+
+<aside id="sidebar" class="sidebar">
+  <div class="sidebar__header">
+    <button id="menu-toggle-inside" class="menu-toggle-inside" aria-label="Закрыть меню">×</button>
+    <div class="sidebar__title-wrap">
+      <h3>Урок 4</h3>
+      <a href="../../index.html" class="sidebar__home-link">← На главную</a>
+    </div>
+  </div>
+  <div class="sidebar__nav">
+    <ol>
+      <li><a href="#intro">Введение: зачем это нужно</a></li>
+      <li><a href="#destructuring">Деструктуризация</a></li>
+      <li><a href="#spreadrest">Spread и Rest (...)</a></li>
+      <li><a href="#optional">Optional Chaining (?.)</a></li>
+      <li><a href="#nullish">Nullish Coalescing (??)</a></li>
+      <li><a href="#interview">Как спросят на собеседовании</a></li>
+      <li><a href="#mistakes">Типичные ошибки</a></li>
+      <li><a href="#practice">Мини-задания</a></li>
+      <li><a href="#task">Итоговое задание</a></li>
+    </ol>
+  </div>
+</aside>
+
+<div class="container">
+
+  <header>
+    <a href="../../index.html" class="back-link">← Вернуться к курсу</a>
+    <h1>Урок 4 · Современный JavaScript</h1>
+    <p>Деструктуризация, spread/rest, optional chaining — фишки, без которых ваш код будет выглядеть устаревшим</p>
+    <div class="badge" style="background: #ede9fe; color: #5b21b6; border-color: #c4b5fd;">JUNIOR · 2026 · ≈ 80 МИН</div>
+    
+    <div class="lesson-top-nav">
+      <a href="prog-lesson-1.html">1</a>
+      <a href="prog-lesson-2.html">2</a>
+      <a href="prog-lesson-3.html">3</a>
+      <a href="prog-lesson-4.html">4</a>
+      <a href="prog-lesson-5.html">5</a>
+      <a href="prog-lesson-6.html">6</a>
+      <a href="prog-lesson-7.html">7</a>
+      <a href="prog-lesson-8.html">8</a>
+      <a href="prog-lesson-9.html">9</a>
+      <a href="prog-lesson-10.html">10</a>
+      <a href="prog-lesson-11.html">11</a>
+      <a href="prog-lesson-12.html">12</a>
+    </div>
+  </header>
+
+  <section id="intro">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">1</span> Введение: зачем это нужно</h2>
+
+    <p>Раньше код на JavaScript был громоздким. Чтобы достать значение из объекта, приходилось писать длинные цепочки, а чтобы скопировать массив — использовать циклы. С 2015 года (ES6) и далее язык сильно изменился. Появились «синтаксический сахар» — короткие и удобные конструкции, которые делают код читаемее.</p>
+
+    <p>На собеседовании junior-разработчика спрашивают про эти фишки, чтобы проверить, пишете ли вы современный код или застряли в 2010 году.</p>
+
+    <div class="note">
+      💡 <strong>Главная мысль:</strong> Современный JavaScript — это не про то, чтобы учить больше команд, а про то, чтобы писать меньше кода и делать его понятнее для коллег.
+    </div>
+  </section>
+
+  <section id="destructuring">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">2</span> Деструктуризация</h2>
+
+    <p><strong>Деструктуризация</strong> — это когда мы «разбираем» объект или массив на отдельные переменные. Вместо того чтобы писать <code>user.name</code> и <code>user.age</code>, мы можем сразу вытащить их в переменные.</p>
+
+    <h3>2.1. Деструктуризация объектов</h3>
+    <div class="example">
+      <div class="en">const user = { name: "Иван", age: 25 };</div>
+      <div class="en">// Старый способ:</div>
+      <div class="en">const name = user.name;</div>
+      <div class="en">const age = user.age;</div>
+      <div class="en">// Современный способ (деструктуризация):</div>
+      <div class="en">const { name, age } = user;</div>
+      <div class="en">console.log(name); // "Иван"</div>
+      <div class="en">console.log(age);  // 25</div>
+    </div>
+
+    <h3>2.2. Деструктуризация массивов</h3>
+    <div class="example">
+      <div class="en">const colors = ["красный", "синий", "зеленый"];</div>
+      <div class="en">const [first, second] = colors;</div>
+      <div class="en">console.log(first);  // "красный"</div>
+      <div class="en">console.log(second); // "синий"</div>
+    </div>
+
+    <h3>2.3. Переименование</h3>
+    <p>Иногда имя переменной не совпадает с именем свойства. Тогда можно переименовать:</p>
+    <div class="example">
+      <div class="en">const { name: userName } = user;</div>
+      <div class="en">console.log(userName); // "Иван"</div>
+    </div>
+  </section>
+
+  <section id="spreadrest">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">3</span> Spread и Rest (...)</h2>
+
+    <p>Три точки <code>...</code> в JavaScript могут значить две разные вещи в зависимости от контекста: <strong>spread</strong> (развернуть) и <strong>rest</strong> (собрать).</p>
+
+    <h3>3.1. Spread (развернуть)</h3>
+    <p>Используется, чтобы скопировать массив или объект или объединить их. Это как высыпать содержимое одной коробки в другую.</p>
+    <div class="example">
+      <div class="en">const arr1 = [1, 2, 3];</div>
+      <div class="en">const arr2 = [...arr1, 4, 5]; // [1, 2, 3, 4, 5]</div>
+      <div class="en">// То же самое с объектами:</div>
+      <div class="en">const user = { name: "Иван" };</div>
+      <div class="en">const updatedUser = { ...user, age: 25 }; // { name: "Иван", age: 25 }</div>
+    </div>
+
+    <h3>3.2. Rest (собрать)</h3>
+    <p>Используется в параметрах функции, чтобы собрать все оставшиеся аргументы в массив.</p>
+    <div class="example">
+      <div class="en">function sum(...numbers) {</div>
+      <div class="en">  return numbers.reduce((acc, num) => acc + num, 0);</div>
+      <div class="en">}</div>
+      <div class="en">console.log(sum(1, 2, 3, 4)); // 10</div>
+    </div>
+  </section>
+
+  <section id="optional">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">4</span> Optional Chaining (?.)</h2>
+
+    <p>Представь, что у тебя есть данные с сервера, и ты хочешь достать оттуда имя пользователя. Но пользователь может быть <code>null</code> (например, он ещё не вошел). Если ты напишешь <code>user.name</code>, а <code>user</code> равен <code>null</code>, программа упадет с ошибкой.</p>
+
+    <p><strong>Optional chaining</strong> (<code>?.</code>) позволяет безопасно обратиться к свойству: если объект <code>null</code> или <code>undefined</code>, он просто вернет <code>undefined</code>, а не упадет.</p>
+
+    <div class="example">
+      <div class="en">const user = null;</div>
+      <div class="en">// Ошибка! TypeError: Cannot read properties of null (reading 'name')</div>
+      <div class="en">console.log(user.name);</div>
+      <div class="en">// Безопасно: вернет undefined</div>
+      <div class="en">console.log(user?.name);</div>
+    </div>
+    <p>Это работает и для вызовов функций: <code>user?.getName?.()</code>.</p>
+  </section>
+
+  <section id="nullish">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">5</span> Nullish Coalescing (??)</h2>
+
+    <p>Этот оператор (<code>??</code>) возвращает правую часть, только если левая равна <code>null</code> или <code>undefined</code>. В остальных случаях (даже если это <code>0</code> или <code>""</code>) он возвращает левую часть.</p>
+    <p>Раньше для этого использовали <code>||</code> (логическое ИЛИ), но у него есть проблема: он считает <code>0</code> и <code>""</code> «ложными» и заменяет их.</p>
+
+    <div class="example">
+      <div class="en">const count = 0;</div>
+      <div class="en">console.log(count || 10); // 10 (потому что 0 — falsy)</div>
+      <div class="en">console.log(count ?? 10); // 0 (потому что 0 — это не null и не undefined)</div>
+    </div>
+    <p>Оператор <code>??</code> намного безопаснее для установки значений по умолчанию, когда <code>0</code> или пустая строка — это валидные значения.</p>
+  </section>
+
+  <section id="interview">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">6</span> Как спросят на собеседовании</h2>
+
+    <div class="mini-task" style="background: #f5f3ff; border-left-color: #7c3aed;">
+      <div class="title" style="color: #5b21b6;">Вопрос: Чем ?? отличается от ||?</div>
+      <p><strong>Ответ:</strong> «Оператор <code>||</code> возвращает правое значение, если левое — любое falsy-значение (включая 0, пустую строку, false). Оператор <code>??</code> возвращает правое значение только если левое — <code>null</code> или <code>undefined</code>. Поэтому для значений по умолчанию, когда 0 или пустая строка важны, лучше использовать <code>??</code>.»</p>
+    </div>
+  </section>
+
+  <section id="mistakes">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">7</span> Типичные ошибки</h2>
+
+    <h3>Ошибка 1: Использование || вместо ?? для чисел</h3>
+    <div class="error-box">
+      <div><span class="wrong">❌</span> const price = 0 || 100; // 100 (неправильно, если 0 — валидная цена)</div>
+      <div style="margin-top: 10px;"><span class="right">✅</span> const price = 0 ?? 100; // 0 (правильно)</div>
+    </div>
+
+    <h3>Ошибка 2: Забыли ?. и получили ошибку</h3>
+    <div class="error-box">
+      <div><span class="wrong">❌</span> const name = user.profile.name; // ошибка, если user или profile — null</div>
+      <div style="margin-top: 10px;"><span class="right">✅</span> const name = user?.profile?.name;</div>
+    </div>
+  </section>
+
+  <section id="practice">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">8</span> Мини-задания</h2>
+
+    <div class="mini-task" style="background: #f5f3ff; border-left-color: #7c3aed;">
+      <div class="title" style="color: #5b21b6;">Задание 1</div>
+      <p>Как с помощью деструктуризации достать <code>name</code> и <code>age</code> из объекта <code>user</code>?</p>
+      <div class="example"><div class="en">const user = { name: "Иван", age: 25, city: "Москва" };</div></div>
+      <details><summary>Показать ответ</summary><code>const { name, age } = user;</code></details>
+    </div>
+
+    <div class="mini-task" style="background: #f5f3ff; border-left-color: #7c3aed;">
+      <div class="title" style="color: #5b21b6;">Задание 2</div>
+      <p>Что выведет этот код?</p>
+      <div class="example"><div class="en">const x = 0; console.log(x ?? 5); console.log(x || 5);</div></div>
+      <details><summary>Показать ответ</summary><strong>0 и 5</strong>. Потому что <code>??</code> видит, что 0 — это не null/undefined, и оставляет 0. А <code>||</code> считает 0 ложным и возвращает 5.</details>
+    </div>
+  </section>
+
+  <section id="task" class="task">
+    <h2><span class="lesson-num" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">9</span> Итоговое задание</h2>
+
+    <p>Ответьте на вопросы:</p>
+    <ol>
+      <li>Что такое деструктуризация и зачем она нужна?</li>
+      <li>В чем разница между spread и rest?</li>
+      <li>Как работает optional chaining и какую проблему он решает?</li>
+      <li>Почему <code>??</code> лучше <code>||</code> для значений по умолчанию?</li>
+    </ol>
+
+    <button id="complete-btn" class="complete-btn" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">✅ Отметить урок пройденным</button>
+  </section>
+
+  <nav class="lesson-nav">
+    <a href="prog-lesson-3.html">← Урок 3</a>
+    <a href="../../index.html">К курсу</a>
+    <a href="prog-lesson-5.html">Урок 5 →</a>
+  </nav>
+
+  <footer>
+    Programming Course · Урок 4 · Продолжение следует 🚀
+  </footer>
+
+</div>
+
+<button id="scroll-top" class="scroll-top" aria-label="Наверх">↑</button>
+
+<script src="../../script.js"></script>
+</body>
+</html>

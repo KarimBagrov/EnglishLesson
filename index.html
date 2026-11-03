@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
@@ -7,12 +7,12 @@
   <title>English for Lesson — Выбор направления</title>
   
   <!-- SEO описание -->
-  <meta name="description" content="Интерактивный курс английского языка с нуля до уверенного общения. Два направления: IT-лексика для работы и общий английский для повседневной жизни и путешествий.">
+  <meta name="description" content="Интерактивный курс языков и программирования с нуля. Четыре направления: IT-лексика, общий английский, китайский язык и программирование.">
 
   <!-- Open Graph (для соцсетей и мессенджеров) -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="English for Lesson — Английский с нуля до уверенного общения">
-  <meta property="og:description" content="Выберите свой путь: английский для IT (документация, созвоны) или для повседневной жизни (путешествия, Small Talk).">
+  <meta property="og:title" content="English for Lesson — Языки и Программирование">
+  <meta property="og:description" content="Выберите свой путь: английский для IT, английский для повседневной жизни, китайский язык с нуля или уроки программирования.">
   <!-- ВАЖНО: Замените https://ВАШ-АДРЕС.tw1.ru/ на реальный адрес вашего сайта -->
   <meta property="og:url" content="https://ВАШ-АДРЕС.tw1.ru/">
   <meta property="og:image" content="https://ВАШ-АДРЕС.tw1.ru/images/icons/og-preview.png">
@@ -28,7 +28,7 @@
     "@type": "WebSite",
     "name": "English for Lesson",
     "url": "https://ВАШ-АДРЕС.tw1.ru/",
-    "description": "Универсальный интерактивный курс английского языка: от основ грамматики до IT-лексики и повседневного общения.",
+    "description": "Универсальный интерактивный курс языков и программирования.",
     "inLanguage": "ru"
   }
   </script>
@@ -41,7 +41,7 @@
   
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="home-page">
 <div class="container">
 
   <header class="course-header">
@@ -52,7 +52,7 @@
 
   <section class="intro-card">
     <h2>👋 С чего начнём?</h2>
-    <p>Мы подготовили два пути. Вы можете выбрать тот, который нужен вам прямо сейчас, или проходить оба параллельно.</p>
+    <p>Мы подготовили четыре пути. Вы можете выбрать тот, который нужен вам прямо сейчас, или проходить их параллельно.</p>
   </section>
 
   <!-- Карточки направлений -->
@@ -86,6 +86,36 @@
         </div>
       </div>
       <div class="lesson-card__arrow" style="margin-top: 15px; align-self: flex-end; color: var(--accent-2);">→</div>
+    </a>
+
+    <!-- Ветка PROG (Программирование) -->
+    <a href="lessons/prog/prog-lesson-1.html" class="lesson-card" style="flex-direction: column; align-items: flex-start; padding: 30px;">
+      <div class="lesson-card__num" style="width: 60px; height: 60px; font-size: 1.5rem; margin-bottom: 15px; background: linear-gradient(135deg, #f39c12, #d35400);">👨‍💻</div>
+      <div class="lesson-card__body">
+        <h3 style="font-size: 1.3rem;">Программирование (для начинающих)</h3>
+        <p>Введение в мир кода. Разбираем основы алгоритмов, синтаксиса и логики на примере популярных языков (Python, JavaScript).</p>
+        <div class="lesson-card__meta">
+          <span class="tag tag--green">A1–B1</span>
+          <span class="tag">🐍 Python</span>
+          <span class="tag">💻 Web</span>
+        </div>
+      </div>
+      <div class="lesson-card__arrow" style="margin-top: 15px; align-self: flex-end; color: #f39c12;">→</div>
+    </a>
+
+    <!-- Ветка CHINESE -->
+    <a href="lessons/chinese/ch-lesson-1.html" class="lesson-card" style="flex-direction: column; align-items: flex-start; padding: 30px;">
+      <div class="lesson-card__num" style="width: 60px; height: 60px; font-size: 1.5rem; margin-bottom: 15px; background: linear-gradient(135deg, #d33a2c, #e04b7d);">中文</div>
+      <div class="lesson-card__body">
+        <h3 style="font-size: 1.3rem;">Китайский с нуля (HSK 1)</h3>
+        <p>Для тех, кто хочет освоить один из самых перспективных языков мира. Учим иероглифы, тоны, пиньинь и базовую грамматику.</p>
+        <div class="lesson-card__meta">
+          <span class="tag tag--green">A1</span>
+          <span class="tag">🀄 иероглифы</span>
+          <span class="tag">🗣️ тоны</span>
+        </div>
+      </div>
+      <div class="lesson-card__arrow" style="margin-top: 15px; align-self: flex-end; color: #d33a2c;">→</div>
     </a>
 
   </div>
